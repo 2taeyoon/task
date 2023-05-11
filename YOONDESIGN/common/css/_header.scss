@@ -42,8 +42,25 @@ header { position: fixed; top: 0; right: 0; left: 0; height: 85px; padding: 20px
 
     .ham_wrap { visibility: hidden; position: fixed; top: 0; left: 100%; right: 0; bottom: 0; background: #000; opacity: 0; transition: all .5s; z-index: 20;
         &.active { visibility: visible; left: 0; opacity: 1; }
-        .ham_menu { position: absolute; top: 40%; left: 50%; transform: translateX(-50%); }
+        .ham_menu { display: flex; flex-direction: column; position: absolute; top: 25%; left: 50%; transform: translateX(-50%); font-size: 50px; text-align: center;
+            li { position: relative; width: 100%; margin: 30px 0;
+                .ham_bar { position: absolute; top: 60px; left: 0; width: 0; height: 5px; background: #fff; transition: all .3s; }
+                &:hover .ham_bar { width: 100%; }
+            }
+        }
     }
 }
 
+
+@media all and (max-width:1024px){
+    header .inner .nav { display: none; }
+}
+
+@media all and (max-width:768px){
+    header .inner { padding: 0 50px; }
+}
+
+@media all and (max-width:480px){
+    header .inner { padding: 0 25px; }
+}
 /* header end! */

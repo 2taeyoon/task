@@ -5,7 +5,7 @@
     .slider_main li { position: absolute; width: 100%; opacity: 0; z-index: -1; transition: all .7s;
         &.active { opacity: 1; z-index: 1; }
 
-        .text_wrap { position: absolute; top: 35%; left: 50%; transform: translate(-50%); color: #fff; text-align: center; transition: all .7s;
+        .text_wrap { position: absolute; top: 35%; left: 50%; transform: translate(-50%); width: 95%; color: #fff; text-align: center; transition: all .7s;
 
             &.active { top: 40%; }
             h2 { font-size: 56px; font-weight: 600; }
@@ -38,6 +38,40 @@
 
 
             a { display: block; width: 100%; height: 100%; }
+        }
+    }
+}
+
+
+@media all and (max-width:1024px){
+    .slider{
+        .slider_main li .text_wrap {
+            h2 { font-size: 48px; }
+            p { font-size: 20px; }
+        }
+    }
+}
+
+@media all and (max-width:768px){
+    .slider {
+        .sns_ico { display: flex; justify-content: space-around; position: absolute; width: 60%; top: 70%; transform: translate(-50%,-50%); right: 0; left: 50%;
+            li { margin: 0 5px; }
+        }
+
+        .slider_main li .text_wrap {
+            h2 { font-size: 42px; }
+            p { font-size: 18px; }
+        }
+    }
+}
+
+@media all and (max-width:480px){
+    .slider {
+        .sns_ico { width: 85%; }
+
+        .slider_main li .text_wrap {
+            h2 { font-size: 36px; }
+            p { font-size: 16px; }
         }
     }
 }
