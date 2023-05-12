@@ -20,6 +20,7 @@ header.active {
   padding: 0;
   color: #000;
   background: #fff;
+  box-shadow: 0 0 1px rgb(150, 150, 150);
 }
 header.active .inner .logo {
   background: url("../../common/img/logo_black.svg") no-repeat center center/150px;
@@ -28,7 +29,11 @@ header.active .inner .ham_btn span {
   background: #000;
 }
 header.active .inner .nav li:hover {
+  border-bottom: none;
   background: rgba(150, 150, 150, 0.1);
+}
+header.on {
+  padding: 20px 0;
 }
 header .inner {
   display: flex;
@@ -40,6 +45,10 @@ header .inner {
 header .inner .logo {
   width: 150px;
   height: 17px;
+  background: url("../../common/img/logo_white.svg") no-repeat center center/150px;
+  z-index: 50;
+}
+header .inner .logo.active {
   background: url("../../common/img/logo_white.svg") no-repeat center center/150px;
 }
 header .inner .logo a {
@@ -76,7 +85,7 @@ header .inner .ham_btn {
   width: 35px;
   height: 35px;
   cursor: pointer;
-  z-index: 30;
+  z-index: 50;
 }
 header .inner .ham_btn:hover span:nth-child(1) {
   left: 0;
@@ -105,6 +114,9 @@ header .inner .ham_btn span {
   height: 3px;
   background: #fff;
   transition: 0.3s;
+}
+header .inner .ham_btn span.active {
+  background: #fff;
 }
 header .inner .ham_btn span:nth-child(1) {
   left: 50%;
@@ -187,6 +199,7 @@ header .ham_wrap .ham_menu li:hover .ham_bar {
   position: relative;
   width: 100%;
   height: 100vh;
+  min-height: 600px;
 }
 .slider .slider_main li {
   position: absolute;
@@ -224,6 +237,7 @@ header .ham_wrap .ham_menu li:hover .ham_bar {
 .slider .slider_main li .slider_img {
   display: block;
   height: 100vh;
+  min-height: 600px;
   filter: brightness(0.7);
 }
 .slider .slider_dot {

@@ -1,7 +1,7 @@
 @import '../../common/css/header';
 
 /* slider start! */
-.slider { position: relative; width: 100%; height: 100vh;
+.slider { position: relative; width: 100%; height: 100vh; min-height: 600px;
     .slider_main li { position: absolute; width: 100%; opacity: 0; z-index: -1; transition: all .7s;
         &.active { opacity: 1; z-index: 1; }
 
@@ -12,7 +12,7 @@
 
             p { margin-top: 24px; font-size: 22px; font-weight: 400; }
         }
-        .slider_img { display: block; height: 100vh; filter: brightness(0.7); }
+        .slider_img { display: block; height: 100vh; min-height: 600px; filter: brightness(0.7); }
     }
 
     .slider_dot { display: flex; position: absolute; left: 50%; bottom: 100px; transform: translateX(-50%); z-index: 5;
