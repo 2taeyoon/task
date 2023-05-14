@@ -38,7 +38,7 @@ sliderDot.forEach((slider, index)=>{
         clearInterval(IntervalID);
         count = index;
         mainSlider();
-        IntervalID = setInterval(mainSlider, 3000);
+        IntervalID = setInterval(mainSlider, 5000);
     });
 });
 
@@ -64,5 +64,5 @@ next_btn.addEventListener('click', ()=>{
     IntervalID = setInterval(mainSlider, 5000);
 });
 
-//IntervalID = setInterval(mainSlider, 5000);
+IntervalID = setInterval(mainSlider, 5000);
 // slider end!
