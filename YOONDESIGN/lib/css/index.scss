@@ -1,6 +1,11 @@
 @import '../../common/css/header';
 
-/* slider start! */
+// scrollbar style!
+::-webkit-scrollbar { width: 0.5rem; background: #35343f; }
+::-webkit-scrollbar-thumb { border-radius: 9999px; background-color: rgb(180,180,180); }
+::-webkit-scrollbar-thumb:hover { background-color: rgb(220,220,220); }
+
+// slider start!
 .slider { position: relative; width: 100%; height: 100vh; min-height: 600px;
     .slider_main li { position: absolute; width: 100%; opacity: 0; z-index: -1; transition: all .7s; overflow: hidden;
         &.active { opacity: 1; z-index: 1; }
@@ -27,7 +32,7 @@
         .prev_btn { transform: rotate(180deg); }
         }
 
-    .sns_ico { position: fixed; top: 50%; transform: translateY(-50%); right: 50px; z-index: 5;
+    .sns_ico { position: absolute; top: 50%; transform: translateY(-50%); right: 50px; z-index: 5;
         li { width: 40px; height: 40px; margin: 10px 0; border-radius: 50%; box-shadow: 0px 0px 15px rgba(0,0,0,.1);
 
             &:hover { filter: brightness(0.8); }
@@ -37,19 +42,18 @@
             &:nth-of-type(4) { background: #fff url("../img/ic_04.png") no-repeat center center / 30px; }
             &:nth-of-type(5) { background: #fff url("../img/ic_05.png") no-repeat center center / 30px; }
 
-
             a { display: block; width: 100%; height: 100%; }
         }
     }
 }
-/* slider end! */
+// slider end!
 
 
 
 
-/* section start! */
+// section start!
 .section {
-    .inner { max-width: 1024px; margin: 0 auto; padding: 120px 0;
+    .inner { max-width: 1024px; margin: 0 auto; padding: 120px 20px;
         .section_text { text-align: center; max-width: 600px; margin: 0 auto;
             h2 { color: #333; font-size: 40px; font-weight: 700; }
             p { color: #777; padding: 20px 0 30px; font-size: 17px; font-weight: 400; }
@@ -69,16 +73,16 @@
 .section2 { background: #f6f6f6;
     .inner {
         .port_wrap {
-            .port_ul { display: flex; flex-wrap: wrap; margin-top: 20px;
-                li { width: calc(25% - 20px); height: 256px; margin: 10px; box-shadow: 0 0 10px rgba(0,0,0,.2);
-                    a { display: block; width: 100%; height: 100%; }
+            .port_ul { display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px;
+                li { width: calc(25% - 20px); margin: 10px; box-shadow: 0 0 10px rgba(0,0,0,.2);
+                    a { display: block; padding-bottom: 100%; }
                 }
             }
         }
     }
 }
 
-.section3 { animation: backPosition 20s linear infinite;
+.section3 { animation: backPosition 10s linear infinite;
     .inner {
         .section_text { 
             h2 { color: #fff; }
@@ -93,47 +97,55 @@
 .section4 { background: #f6f6f6;
     .inner {
         .partner_wrap {
-            ul { display: flex; flex-direction: row; flex-wrap: wrap;
-                li { width: calc(20% - 30px); height: 30px; margin: 5px; padding: 15px 10px; background: #fff; box-sizing: unset;
-                    span { display: block; width: 100%; height: 100%; }
+            ul { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;
+                li { width: calc(20% - 30px); margin: 5px; padding: 15px 10px; background: #fff; box-sizing: unset;
+                    span { display: block; width: 100%; padding-bottom: 18%; }
                 }
             }
         }
     }
 }
-
-.buy_list .introduce::-webkit-scrollbar { width: 10px;}
-/* 스크롤바 레일 스타일링 */
-.buy_list .introduce::-webkit-scrollbar-track { background-color: #f1f1f100; }
-/* 스크롤바 썸네일 스타일링 */
-.buy_list .introduce::-webkit-scrollbar-thumb { background-color: #88888800; border-radius: 10px; border: 2px solid #444; }
-/* section end! */
+// section end!
 
 
 
-/* section3의 keyframes */
+// section3의 keyframes
 @keyframes backPosition {
     0% {
-        background: url('../img/img_company.jpg') no-repeat center 0 / 1500px;
+        background: url('../img/img_company.jpg') no-repeat center 0 / cover;
     }
     100% {
-        background: url('../img/img_company.jpg') no-repeat center -450px / 1500px;
+        background: url('../img/img_company.jpg') no-repeat center -200px / cover;
     }
 }
 
 
 
 
-footer { height: 1000px; }
-
-
-
-
+// mediaquery start!
 @media all and (max-width:1024px){
     .slider{
         .slider_main li .text_wrap {
             h2 { font-size: 48px; }
             p { font-size: 20px; }
+        }
+    }
+
+    .section {
+        .inner {
+            .section_text { max-width: 550px;
+                h2 { font-size: 32px; }
+                p { font-size: 16px; }
+            }
+        }
+    }
+
+    @keyframes backPosition {
+        0% {
+            background: url('../img/img_company.jpg') no-repeat center 0 / 1100px;
+        }
+        100% {
+            background: url('../img/img_company.jpg') no-repeat center -200px / 1100px;
         }
     }
 }
@@ -149,6 +161,21 @@ footer { height: 1000px; }
             p { font-size: 18px; }
         }
     }
+
+    .section {
+        .inner {
+            .section_text { max-width: 500px;
+                h2 { font-size: 28px; }
+                p { font-size: 14px; }
+            }
+        }
+    }
+
+    .section4 .inner .partner_wrap ul li { width: calc(25% - 30px); }
+}
+
+@media all and (max-width:550px){
+    .section2 .inner .port_wrap .port_ul li { width: calc(50% - 20px); }
 }
 
 @media all and (max-width:480px){
@@ -160,4 +187,7 @@ footer { height: 1000px; }
             p { font-size: 16px; }
         }
     }
+
+    .section4 .inner .partner_wrap ul li { width: calc(40% - 30px); }
 }
+// mediaquery end!

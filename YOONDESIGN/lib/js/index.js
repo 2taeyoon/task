@@ -67,6 +67,9 @@ next_btn.addEventListener('click', ()=>{
 IntervalID = setInterval(mainSlider, 5000);
 // slider end!
 
+
+
+
 fetch('./lib/js/data/data.json')
     .then(response => response.json())
     .then(data => {

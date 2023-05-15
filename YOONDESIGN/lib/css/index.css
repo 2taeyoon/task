@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* header start! */
 body.active {
   overflow: hidden;
@@ -288,7 +287,20 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   }
 }
 /* header end! */
-/* slider start! */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background: #35343f;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background-color: rgb(180, 180, 180);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(220, 220, 220);
+}
+
 .slider {
   position: relative;
   width: 100%;
@@ -381,7 +393,7 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   transform: rotate(180deg);
 }
 .slider .sns_ico {
-  position: fixed;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 50px;
@@ -418,12 +430,10 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   height: 100%;
 }
 
-/* slider end! */
-/* section start! */
 .section .inner {
   max-width: 1024px;
   margin: 0 auto;
-  padding: 120px 0;
+  padding: 120px 20px;
 }
 .section .inner .section_text {
   text-align: center;
@@ -468,22 +478,21 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
 .section2 .inner .port_wrap .port_ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 20px;
 }
 .section2 .inner .port_wrap .port_ul li {
   width: calc(25% - 20px);
-  height: 256px;
   margin: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .section2 .inner .port_wrap .port_ul li a {
   display: block;
-  width: 100%;
-  height: 100%;
+  padding-bottom: 100%;
 }
 
 .section3 {
-  animation: backPosition 20s linear infinite;
+  animation: backPosition 10s linear infinite;
 }
 .section3 .inner .section_text h2 {
   color: #fff;
@@ -508,10 +517,10 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .section4 .inner .partner_wrap ul li {
   width: calc(20% - 30px);
-  height: 30px;
   margin: 5px;
   padding: 15px 10px;
   background: #fff;
@@ -520,45 +529,40 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
 .section4 .inner .partner_wrap ul li span {
   display: block;
   width: 100%;
-  height: 100%;
+  padding-bottom: 18%;
 }
 
-.buy_list .introduce::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* 스크롤바 레일 스타일링 */
-.buy_list .introduce::-webkit-scrollbar-track {
-  background-color: rgba(241, 241, 241, 0);
-}
-
-/* 스크롤바 썸네일 스타일링 */
-.buy_list .introduce::-webkit-scrollbar-thumb {
-  background-color: rgba(136, 136, 136, 0);
-  border-radius: 10px;
-  border: 2px solid #444;
-}
-
-/* section end! */
-/* section3의 keyframes */
 @keyframes backPosition {
   0% {
-    background: url("../img/img_company.jpg") no-repeat center 0/1500px;
+    background: url("../img/img_company.jpg") no-repeat center 0/cover;
   }
   100% {
-    background: url("../img/img_company.jpg") no-repeat center -450px/1500px;
+    background: url("../img/img_company.jpg") no-repeat center -200px/cover;
   }
 }
-footer {
-  height: 1000px;
-}
-
 @media all and (max-width: 1024px) {
   .slider .slider_main li .text_wrap h2 {
     font-size: 48px;
   }
   .slider .slider_main li .text_wrap p {
     font-size: 20px;
+  }
+  .section .inner .section_text {
+    max-width: 550px;
+  }
+  .section .inner .section_text h2 {
+    font-size: 32px;
+  }
+  .section .inner .section_text p {
+    font-size: 16px;
+  }
+  @keyframes backPosition {
+    0% {
+      background: url("../img/img_company.jpg") no-repeat center 0/1100px;
+    }
+    100% {
+      background: url("../img/img_company.jpg") no-repeat center -200px/1100px;
+    }
   }
 }
 @media all and (max-width: 768px) {
@@ -581,6 +585,23 @@ footer {
   .slider .slider_main li .text_wrap p {
     font-size: 18px;
   }
+  .section .inner .section_text {
+    max-width: 500px;
+  }
+  .section .inner .section_text h2 {
+    font-size: 28px;
+  }
+  .section .inner .section_text p {
+    font-size: 14px;
+  }
+  .section4 .inner .partner_wrap ul li {
+    width: calc(25% - 30px);
+  }
+}
+@media all and (max-width: 550px) {
+  .section2 .inner .port_wrap .port_ul li {
+    width: calc(50% - 20px);
+  }
 }
 @media all and (max-width: 480px) {
   .slider .sns_ico {
@@ -591,5 +612,8 @@ footer {
   }
   .slider .slider_main li .text_wrap p {
     font-size: 16px;
+  }
+  .section4 .inner .partner_wrap ul li {
+    width: calc(40% - 30px);
   }
 }/*# sourceMappingURL=index.css.map */
