@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* header start! */
 body.active {
   overflow: hidden;
@@ -308,7 +309,7 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
 }
 .slider .slider_main li.active .slider_img {
   transform: scale(1.2);
-  transition: 10s;
+  transition: transform 10s;
 }
 .slider .slider_main li .text_wrap {
   position: absolute;
@@ -342,16 +343,16 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   display: flex;
   position: absolute;
   left: 50%;
-  bottom: 100px;
+  bottom: 101px;
   transform: translateX(-50%);
   z-index: 5;
 }
 .slider .slider_dot li {
-  width: 15px;
-  height: 15px;
-  margin: 0 15px;
+  width: 10px;
+  height: 10px;
+  margin: 0 10px;
   border-radius: 50%;
-  background: #878787;
+  border: 2px solid #fff;
   cursor: pointer;
 }
 .slider .slider_dot li.active {
@@ -371,7 +372,7 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
 .slider .slider_btn div {
   width: 30px;
   height: 30px;
-  margin: 0 70px;
+  margin: 0 50px;
   filter: invert(1);
   background: url("../img/btn_arrow.png") no-repeat center center/30px;
   cursor: pointer;
@@ -417,6 +418,141 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   height: 100%;
 }
 
+/* slider end! */
+/* section start! */
+.section .inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 120px 0;
+}
+.section .inner .section_text {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.section .inner .section_text h2 {
+  color: #333;
+  font-size: 40px;
+  font-weight: 700;
+}
+.section .inner .section_text p {
+  color: #777;
+  padding: 20px 0 30px;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.section1 .inner .more_bth {
+  width: 150px;
+  height: 33px;
+  margin: 0 auto;
+  border: 1px solid #777;
+  color: #555;
+  transition: all 0.3s;
+}
+.section1 .inner .more_bth:hover {
+  color: #fff;
+  background: #777;
+}
+.section1 .inner .more_bth a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+.section2 {
+  background: #f6f6f6;
+}
+.section2 .inner .port_wrap .port_ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.section2 .inner .port_wrap .port_ul li {
+  width: calc(25% - 20px);
+  height: 256px;
+  margin: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.section2 .inner .port_wrap .port_ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.section3 {
+  animation: backPosition 20s linear infinite;
+}
+.section3 .inner .section_text h2 {
+  color: #fff;
+}
+.section3 .inner .section_text p {
+  color: #fff;
+}
+.section3 .inner .section_text .more_bth {
+  border: 1px solid #fff;
+  color: #fff;
+  transition: all 0.3s;
+}
+.section3 .inner .section_text .more_bth:hover {
+  color: #333;
+  background: #fff;
+}
+
+.section4 {
+  background: #f6f6f6;
+}
+.section4 .inner .partner_wrap ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.section4 .inner .partner_wrap ul li {
+  width: calc(20% - 30px);
+  height: 30px;
+  margin: 5px;
+  padding: 15px 10px;
+  background: #fff;
+  box-sizing: unset;
+}
+.section4 .inner .partner_wrap ul li span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.buy_list .introduce::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 스크롤바 레일 스타일링 */
+.buy_list .introduce::-webkit-scrollbar-track {
+  background-color: rgba(241, 241, 241, 0);
+}
+
+/* 스크롤바 썸네일 스타일링 */
+.buy_list .introduce::-webkit-scrollbar-thumb {
+  background-color: rgba(136, 136, 136, 0);
+  border-radius: 10px;
+  border: 2px solid #444;
+}
+
+/* section end! */
+/* section3의 keyframes */
+@keyframes backPosition {
+  0% {
+    background: url("../img/img_company.jpg") no-repeat center 0/1500px;
+  }
+  100% {
+    background: url("../img/img_company.jpg") no-repeat center -450px/1500px;
+  }
+}
+footer {
+  height: 1000px;
+}
+
 @media all and (max-width: 1024px) {
   .slider .slider_main li .text_wrap h2 {
     font-size: 48px;
@@ -456,8 +592,4 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   .slider .slider_main li .text_wrap p {
     font-size: 16px;
   }
-}
-/* slider end! */
-footer {
-  height: 1000px;
 }/*# sourceMappingURL=index.css.map */
