@@ -1,0 +1,23 @@
+// footer start
+.footer { background: #2E2E2E; color: #999;  font-size: 15px;
+    .inner { display: flex; justify-content: space-between; padding: 80px 100px;
+        .footer_left { display: flex; flex-direction: column; width: 70%;
+            .footer_logo { width: 200px; height: 23px; background: url('../../common/img/logo_footer.svg') no-repeat center center / cover;}
+            .footer_link { display: flex; margin-top: 20px; color: #ccc;
+                li { margin-right: 30px;
+                    a { font-weight: 700; }
+                }
+            }
+            .footer_bt { display: flex; flex-wrap: wrap; width: 100%; margin-top: 15px;
+                li { width: calc(33.33% - 50px); font-weight: 600; }
+                li:not(:last-child) { margin-right: 50px; }
+            }
+        }
+
+        .footer_right { display: flex;
+            .footer_email {}
+            .family_site {}
+        }
+    }
+}
+// footer end

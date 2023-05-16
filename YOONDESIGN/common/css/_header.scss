@@ -1,4 +1,4 @@
-/* header start! */
+// header start!
 body.active { overflow: hidden; }
 
 header { position: fixed; top: 0; right: 0; left: 0; height: 85px; padding: 20px 0; background: none; box-sizing: unset; z-index: 10; transition: all .3s;
@@ -121,4 +121,4 @@ header { position: fixed; top: 0; right: 0; left: 0; height: 85px; padding: 20px
         .inner { padding: 0 25px; }
     }
 }
-/* header end! */
+// header end!
