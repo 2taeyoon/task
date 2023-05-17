@@ -8,9 +8,9 @@
                     a { font-weight: 700; }
                 }
             }
-            .footer_bt { display: flex; flex-wrap: wrap; margin-top: 15px;
-                li {  font-weight: 600; }
-                li:not(:last-child) { margin-right: 50px; }
+            .footer_bt { display: flex; flex-wrap: wrap; margin-top: 10px;
+                li { margin-top: 7px; font-weight: 600; }
+                li:not(:last-child) { margin-right: 20px; }
             }
         }
 
@@ -21,7 +21,9 @@
                     &::after { content: ''; position: absolute; top: 50%; transform: translateY(-45%); right: 15px; width: 25px; height: 25px; background: url('../../common/img/footer_arrow.png') no-repeat center center / 25px; filter: invert(0.5); }
                 }
 
-                ul { visibility: visible; position: absolute; bottom: 38px; width: 100%; border-radius: 3px 3px 0 0; background: #eee; color: #999; font-size: 17px;
+                ul { visibility: hidden; position: absolute; bottom: 38px; width: 100%; border-radius: 3px 3px 0 0; background: #eee; color: #999; font-size: 17px; z-index: 5; opacity: 0; transition: all .3s;
+                    &.active { visibility: visible; opacity: 1; }
+
                     li { padding: 15px; text-indent: 10px;
                         &:hover { background: #aaa; }
                         &:hover a { color: #fff; }
@@ -35,16 +37,24 @@
 
 
 @media all and (max-width:1024px){
-    .footer .inner { flex-direction: column;
-        .footer_left { width: 100%; }
-        .footer_right { width: 100%; align-items: flex-end; margin-top: 30px;
+    .footer .inner { //flex-direction: column;
+        .footer_left { width: 100%;
+            // .footer_bt {
+            //     li {
+            //         &:not(:last-child) { margin-right: 20px; }
+            //     }
+            // }    
+        }
+        .footer_right { width: 100%; align-items: flex-end;
             .footer_email { width: 100%; font-size: 20px; text-align: right; }
         }
     }
 }
 
 @media all and (max-width:768px){
-    .footer .inner { padding: 80px 50px; }
+    .footer .inner { flex-direction: column; padding: 80px 50px;
+        .footer_right { margin-top: 30px; }
+    }
 }
 
 @media all and (max-width:550px){
@@ -59,7 +69,7 @@
                 li { margin: 0 5px; }
             }
             .footer_bt { justify-content: center; text-align: center;
-                li { margin-top: 7px;
+                li { width: 100%; margin-top: 7px;
                     &:not(:last-child) { margin-right: 0; }
                     &:last-child { font-size: 14px; }
                 }
