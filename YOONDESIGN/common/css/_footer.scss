@@ -4,7 +4,8 @@
         .footer_left { display: flex; flex-direction: column; width: 70%;
             .footer_logo { width: 200px; height: 23px; background: url('../../common/img/logo_footer.svg') no-repeat center center / cover;}
             .footer_link { display: flex; margin-top: 20px; color: #ccc;
-                li { margin-right: 30px;
+                li { position: relative; margin-right: 30px;
+                    &:first-child::after { content: ""; position: absolute; width: 1.5px; height: 15px; background: #999; left: 65px; }
                     a { font-weight: 700; }
                 }
             }
@@ -27,7 +28,6 @@
                     li { padding: 15px; text-indent: 10px;
                         &:hover { background: #aaa; }
                         &:hover a { color: #fff; }
-                        a {}
                     }
                 }
             }
@@ -66,7 +66,9 @@
         .footer_left { align-items: center;
             .footer_logo { width: 170px; height: 19px; }
             .footer_link { margin-top: 35px;
-                li { margin: 0 5px; }
+                li { margin: 0 5px;
+                    &:first-child::after { display: none; }
+                }
             }
             .footer_bt { justify-content: center; text-align: center;
                 li { width: 100%; margin-top: 7px;
@@ -82,7 +84,9 @@
                     &::after { width: 15px; height: 15px; background-size: 15px; }
                 }
 
-                ul { font-size: 14px; }
+                ul { font-size: 14px;
+                    li { padding: 12px; }
+                }
             }
         }
     }

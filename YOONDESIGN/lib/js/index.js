@@ -7,15 +7,15 @@ const next_btn = document.querySelector('.next_btn');
 
 let count = 0;
 let IntervalID = null;
+let touchStartX = 0;
+let touchEndX = 0;
 
 
 
 
 const mainSlider = ()=>{
     if(count >= sliderLi.length) count = 0;
-
     sliderClass();
-
     count++;
 }
 
@@ -38,6 +38,7 @@ sliderDot.forEach((slider, index)=>{
         clearInterval(IntervalID);
         count = index;
         mainSlider();
+
         IntervalID = setInterval(mainSlider, 5000);
     });
 });
@@ -45,9 +46,7 @@ sliderDot.forEach((slider, index)=>{
 prevBtn.addEventListener('click', ()=>{
     count--;
     if(count < 0) count = sliderLi.length -1;
-
     clearInterval(IntervalID);
-
     sliderClass();
 
     IntervalID = setInterval(mainSlider, 5000);
@@ -56,13 +55,48 @@ prevBtn.addEventListener('click', ()=>{
 next_btn.addEventListener('click', ()=>{
     count++;
     if(count >= sliderLi.length) count = 0;
-
     clearInterval(IntervalID);
-
     sliderClass();
 
     IntervalID = setInterval(mainSlider, 5000);
 });
+
+
+
+
+sliderLi.forEach((slider, index) => {
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slider.addEventListener('touchstart', (event) => {
+        touchStartX = event.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', (event) => {
+        touchEndX = event.changedTouches[0].clientX;
+        handleSwipeAction(touchStartX, touchEndX);
+    });
+
+    slider.addEventListener('click', () => {
+        clearInterval(IntervalID);
+        count = index;
+        mainSlider();
+        IntervalID = setInterval(mainSlider, 5000);
+    });
+});
+
+function handleSwipeAction(startX, endX) {
+    const threshold = 100; // Minimum swipe distance required
+
+    if (startX - endX > threshold) {
+        // Swiped from right to left
+        next();
+    } else if (endX - startX > threshold) {
+        // Swiped from left to right
+        prev();
+    }
+}
+
 
 IntervalID = setInterval(mainSlider, 5000);
 // slider end!

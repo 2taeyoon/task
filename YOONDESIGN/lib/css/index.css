@@ -31,9 +31,6 @@ header.active .inner .nav .fir_li:hover {
 header.active .inner .nav .fir_li:hover .fir_a {
   color: #000;
 }
-header.active .inner .nav .fir_li ul {
-  top: 85px;
-}
 header.active .inner .nav .fir_li .fir_a {
   color: #000;
 }
@@ -75,12 +72,6 @@ header .inner .nav .fir_li {
   font-weight: 600;
   cursor: pointer;
 }
-header .inner .nav .fir_li:hover ul {
-  border: 1px solid rgb(230, 230, 230);
-}
-header .inner .nav .fir_li:hover li {
-  display: block;
-}
 header .inner .nav .fir_li:hover .fir_a {
   color: #fff;
 }
@@ -89,33 +80,6 @@ header .inner .nav .fir_li .fir_a {
   font-size: 19px;
   font-weight: 600;
   line-height: 85px;
-}
-header .inner .nav .fir_li ul {
-  position: absolute;
-  top: 85px;
-  left: 27%;
-  width: 73%;
-  background: #fff;
-  color: #666;
-  font-size: 16px;
-}
-header .inner .nav .fir_li ul li {
-  display: none;
-  position: relative;
-  padding: 17px 15px;
-}
-header .inner .nav .fir_li ul li:hover::after {
-  width: 80%;
-}
-header .inner .nav .fir_li ul li::after {
-  content: "";
-  position: absolute;
-  left: 15px;
-  bottom: 9px;
-  width: 0%;
-  height: 2px;
-  background: #888;
-  transition: all 0.3s;
 }
 header .inner .ham_btn {
   position: relative;
@@ -191,7 +155,7 @@ header .ham_wrap.active {
 header .ham_wrap .ham_menu {
   display: flex;
   position: absolute;
-  top: 30%;
+  top: 45%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 40px;
@@ -200,33 +164,11 @@ header .ham_wrap .ham_menu .ham_li {
   position: relative;
   width: 100%;
   margin: 0 70px;
+  color: #ccc;
+  transition: all 0.3s;
+}
+header .ham_wrap .ham_menu .ham_li:hover {
   color: #fff;
-  transition: all 0.3s;
-}
-header .ham_wrap .ham_menu .ham_li .ham_sec_ul {
-  font-size: 24px;
-}
-header .ham_wrap .ham_menu .ham_li .ham_sec_ul li {
-  position: relative;
-  margin: 40px 0;
-  color: #aaa;
-  transition: all 0.3s;
-}
-header .ham_wrap .ham_menu .ham_li .ham_sec_ul li:hover {
-  color: #fff;
-}
-header .ham_wrap .ham_menu .ham_li .ham_sec_ul li:hover::after {
-  width: 100%;
-}
-header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
-  content: "";
-  position: absolute;
-  top: 30px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #f2f2f2;
-  transition: all 0.3s;
 }
 
 @media all and (max-width: 1024px) {
@@ -247,22 +189,11 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   header .ham_wrap .ham_menu {
     flex-direction: column;
     top: 25%;
-    left: 50px;
-    transform: translateX(0%);
     font-size: 28px;
+    text-align: center;
   }
   header .ham_wrap .ham_menu .ham_li {
     margin: 25px 0;
-  }
-  header .ham_wrap .ham_menu .ham_li .ham_sec_ul {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-    font-size: 18px;
-    height: 30px;
-  }
-  header .ham_wrap .ham_menu .ham_li .ham_sec_ul li {
-    margin: 0 25px;
   }
 }
 @media all and (max-width: 550px) {
@@ -270,14 +201,7 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
     padding: 0 30px;
   }
   header .ham_wrap .ham_menu {
-    left: 30px;
     font-size: 24px;
-  }
-  header .ham_wrap .ham_menu .ham_li .ham_sec_ul {
-    font-size: 16px;
-  }
-  header .ham_wrap .ham_menu .ham_li .ham_sec_ul li {
-    margin: 0 8px;
   }
 }
 @media all and (max-width: 480px) {
@@ -311,7 +235,16 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   color: #ccc;
 }
 .footer .inner .footer_left .footer_link li {
+  position: relative;
   margin-right: 30px;
+}
+.footer .inner .footer_left .footer_link li:first-child::after {
+  content: "";
+  position: absolute;
+  width: 1.5px;
+  height: 15px;
+  background: #999;
+  left: 65px;
 }
 .footer .inner .footer_left .footer_link li a {
   font-weight: 700;
@@ -399,6 +332,7 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
 .footer .inner .footer_right .family_site ul li:hover a {
   color: #fff;
 }
+
 @media all and (max-width: 1024px) {
   .footer .inner .footer_left {
     width: 100%;
@@ -444,6 +378,9 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   .footer .inner .footer_left .footer_link li {
     margin: 0 5px;
   }
+  .footer .inner .footer_left .footer_link li:first-child::after {
+    display: none;
+  }
   .footer .inner .footer_left .footer_bt {
     justify-content: center;
     text-align: center;
@@ -480,6 +417,9 @@ header .ham_wrap .ham_menu .ham_li .ham_sec_ul li::after {
   }
   .footer .inner .footer_right .family_site ul {
     font-size: 14px;
+  }
+  .footer .inner .footer_right .family_site ul li {
+    padding: 12px;
   }
 }
 ::-webkit-scrollbar {

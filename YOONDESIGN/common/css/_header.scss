@@ -10,9 +10,7 @@ header { position: fixed; top: 0; right: 0; left: 0; height: 85px; padding: 20px
             .nav {
                 .fir_li {
                     &:hover { background: rgba(150,150,150,.1); }
-                    &:hover .fir_a { color:#000; }
-
-                    ul { top: 85px; }
+                    &:hover .fir_a { color: #000; }
                     .fir_a { color: #000; }
                 }
             }
@@ -30,17 +28,8 @@ header { position: fixed; top: 0; right: 0; left: 0; height: 85px; padding: 20px
 
         .nav { display: flex; width: 50%; height: 100%;
             .fir_li { display: flex; justify-content: center; position: relative; width: 25%; font-size: 19px; font-weight: 600; cursor: pointer;
-                &:hover ul { border: 1px solid rgb(230 230 230); }
-                &:hover li { display: block; }
                 &:hover .fir_a { color: #fff; }
-
                 .fir_a { color: #ddd; font-size: 19px; font-weight: 600; line-height: 85px; }
-                ul { position: absolute; top: 85px; left: 27%; width: 73%; background: #fff; color: #666; font-size: 16px; //transition: all .3s;
-                    li { display: none; position: relative; padding: 17px 15px;
-                        &:hover::after { width: 80%; }
-                        &::after { content: ""; position: absolute; left: 15px; bottom: 9px; width: 0%; height: 2px; background: #888; transition: all .3s; }
-                    }
-                }
             }
         }
 
@@ -65,15 +54,9 @@ header { position: fixed; top: 0; right: 0; left: 0; height: 85px; padding: 20px
 
     .ham_wrap { visibility: hidden; position: fixed; top: 0; left: 100%; right: 0; bottom: 0; min-height: 600px; background: url('../../common/img/ham_bg.jpg') no-repeat center center / cover; opacity: 0; transition: all .5s; z-index: 20;
         &.active { visibility: visible; left: 0; opacity: 1; }
-        .ham_menu { display: flex; position: absolute; top: 30%; left: 50%; transform: translateX(-50%); font-size: 40px;
-            .ham_li { position: relative; width: 100%; margin: 0 70px; color: #fff; transition: all .3s;
-                .ham_sec_ul { font-size: 24px;
-                    li { position: relative; margin: 40px 0; color: #aaa; transition: all .3s;
-                        &:hover { color: #fff; }
-                        &:hover::after { width: 100%; }
-                        &::after { content: ''; position: absolute; top: 30px; left: 0; width: 0; height: 2px; background: #f2f2f2; transition: all .3s; }
-                    }
-                }
+        .ham_menu { display: flex; position: absolute; top: 45%; left: 50%; transform: translateX(-50%); font-size: 40px;
+            .ham_li { position: relative; width: 100%; margin: 0 70px; color: #ccc; transition: all .3s;
+                &:hover { color: #fff; }
             }
         }
     }
@@ -92,12 +75,8 @@ header { position: fixed; top: 0; right: 0; left: 0; height: 85px; padding: 20px
 @media all and (max-width:768px){
     header {
         .inner { padding: 0 50px; }
-        .ham_wrap .ham_menu { flex-direction: column; top: 25%; left: 50px; transform: translateX(0%); font-size: 28px;
-            .ham_li { margin: 25px 0;
-                .ham_sec_ul { display: flex; align-items: center; margin-top: 15px; font-size: 18px; height: 30px;
-                    li { margin: 0 25px; }
-                }
-            }
+        .ham_wrap .ham_menu { flex-direction: column; top: 25%; font-size: 28px; text-align: center;
+            .ham_li { margin: 25px 0; }
         }
 
     }
@@ -106,13 +85,7 @@ header { position: fixed; top: 0; right: 0; left: 0; height: 85px; padding: 20px
 @media all and (max-width:550px){
     header {
         .inner { padding: 0 30px; }
-        .ham_wrap .ham_menu { left: 30px; font-size: 24px;
-            .ham_li {
-                .ham_sec_ul { font-size: 16px;
-                    li { margin: 0 8px; }
-                }
-            }
-        }
+        .ham_wrap .ham_menu { font-size: 24px; }
     }
 }
 
