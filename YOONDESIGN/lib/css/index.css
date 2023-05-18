@@ -485,6 +485,10 @@ header .ham_wrap .ham_menu .ham_li:hover {
   height: 100vh;
   min-height: 600px;
   filter: brightness(0.7);
+  cursor: grab;
+}
+.slider .slider_main li .slider_img:active {
+  cursor: grabbing;
 }
 .slider .slider_dot {
   display: flex;
@@ -680,6 +684,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
     font-size: 48px;
   }
   .slider .slider_main li .text_wrap p {
+    margin-top: 20px;
     font-size: 20px;
   }
   .section .inner .section_text {
@@ -718,6 +723,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
     font-size: 42px;
   }
   .slider .slider_main li .text_wrap p {
+    margin-top: 16px;
     font-size: 18px;
   }
   .section .inner .section_text {
@@ -747,6 +753,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
   }
   .slider .slider_main li .text_wrap p {
     font-size: 16px;
+    margin-top: 12px;
   }
   .section4 .inner .partner_wrap ul li {
     width: calc(40% - 30px);

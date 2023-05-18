@@ -20,7 +20,9 @@
 
             p { margin-top: 24px; font-size: 22px; font-weight: 400; }
         }
-        .slider_img { display: block; height: 100vh; min-height: 600px; filter: brightness(0.7); }
+        .slider_img { display: block; height: 100vh; min-height: 600px; filter: brightness(0.7); cursor: grab;
+            &:active { cursor: grabbing; }
+        }
     }
 
     .slider_dot { display: flex; position: absolute; left: 50%; bottom: 101px; transform: translateX(-50%); z-index: 5;
@@ -129,7 +131,7 @@
     .slider{
         .slider_main li .text_wrap {
             h2 { font-size: 48px; }
-            p { font-size: 20px; }
+            p { margin-top: 20px; font-size: 20px; }
         }
     }
 
@@ -160,7 +162,7 @@
 
         .slider_main li .text_wrap {
             h2 { font-size: 42px; }
-            p { font-size: 18px; }
+            p { margin-top: 16px; font-size: 18px; }
         }
     }
 
@@ -186,7 +188,7 @@
 
         .slider_main li .text_wrap {
             h2 { font-size: 36px; }
-            p { font-size: 16px; }
+            p { font-size: 16px; margin-top: 12px; }
         }
     }
 
