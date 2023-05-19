@@ -28,7 +28,6 @@ const sliderClass = ()=>{
     sliderLi[count].classList.add('active');
     sliderDot[count].classList.add('active');
     textWrap[count].classList.add('active');
-
 }
 
 
@@ -65,15 +64,12 @@ next_btn.addEventListener('click', ()=>{
 
 slider.addEventListener('mousedown', (event)=>{
     dragStartX = event.clientX;
-    //console.log('dragStartX?????????', dragStartX);
 });
 
 slider.addEventListener('mouseup', (event)=>{
     dragEndX = event.clientX;
-    //console.log('mouseup에서 dragStartX 값???', dragStartX);
     
     if (dragStartX - dragEndX > 300) {
-        //console.log('300보다 크다 즉 다음 버튼', dragStartX - dragEndX);
         count++;
         if(count >= sliderLi.length) count = 0;
         clearInterval(IntervalID);
@@ -82,7 +78,6 @@ slider.addEventListener('mouseup', (event)=>{
         IntervalID = setInterval(mainSlider, 5000);
 
     } else if (dragStartX - dragEndX < -300) {
-        //console.log('300보다 작다 즉 이전 버튼', dragStartX - dragEndX);
         count--;
         if(count < 0) count = sliderLi.length -1;
         clearInterval(IntervalID);
@@ -95,12 +90,10 @@ slider.addEventListener('mouseup', (event)=>{
 
 slider.addEventListener('touchstart', (event)=>{
     touchStartX = event.touches[0].clientX;
-    //console.log('터치스타트으으', event);
 });
 
 slider.addEventListener('touchend', (event)=>{
     touchEndX = event.changedTouches[0].clientX;
-    //console.log('터치엔드', event);
     
     if (touchStartX - touchEndX > 100) {
         console.log('100보다 크다 즉 다음 버튼', touchStartX - touchEndX);
@@ -112,7 +105,6 @@ slider.addEventListener('touchend', (event)=>{
         IntervalID = setInterval(mainSlider, 5000);
 
     } else if (touchStartX - touchEndX < -100) {
-        //console.log('100보다 작다 즉 이전 버튼', touchStartX - touchEndX);
         count--;
         if(count < 0) count = sliderLi.length -1;
         clearInterval(IntervalID);

@@ -422,6 +422,62 @@ header .ham_wrap .ham_menu .ham_li:hover {
     padding: 12px;
   }
 }
+.sub_top {
+  position: relative;
+}
+.sub_top .sub_top_img {
+  width: 100%;
+  height: 40vh;
+  min-height: 300px;
+}
+.sub_top .sub_top_text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+}
+.sub_top .sub_top_text h3 {
+  font-size: 42px;
+  font-weight: 600;
+}
+.sub_top .sub_top_text p {
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.sub_section {
+  background: #1d2944;
+}
+.sub_section .sub_nav {
+  position: relative;
+  max-width: 1024px;
+  height: 60px;
+  margin: 0 auto;
+}
+.sub_section .sub_nav ul {
+  display: flex;
+  color: #fff;
+}
+.sub_section .sub_nav ul li {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  cursor: pointer;
+}
+.sub_section .sub_nav ul li:not(:last-child) {
+  border-right: 1px solid #2e3d5e;
+}
+.sub_section .sub_nav ul li:hover {
+  background: #2e3d5e;
+}
+.sub_section .sub_nav ul li span {
+  line-height: 60px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
   background: #35343f;
