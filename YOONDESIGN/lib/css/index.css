@@ -466,6 +466,9 @@ header .ham_wrap .ham_menu .ham_li:hover {
   width: 25%;
   cursor: pointer;
 }
+.sub_section .sub_nav ul li.active {
+  background: #2e3d5e;
+}
 .sub_section .sub_nav ul li:not(:last-child) {
   border-right: 1px solid #2e3d5e;
 }
@@ -476,6 +479,18 @@ header .ham_wrap .ham_menu .ham_li:hover {
   line-height: 60px;
   font-size: 18px;
   font-weight: 600;
+}
+
+.sub_section2 .sub_content {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 120px 20px;
+}
+.sub_section2 .sub_content li {
+  display: none;
+}
+.sub_section2 .sub_content li.active {
+  display: block;
 }
 
 ::-webkit-scrollbar {
