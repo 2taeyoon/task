@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="../lib/css/index.css">
 
     <script src="../lib/js/prefixfree.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=382d86f75d9f6764b7be197cbf299ad6"></script>
+    <script defer type="text/javascript" src="./js/kakao_map.js"></script>
     <script defer src="../common/js/header.js" type="text/javascript"></script>
     <script defer src="../common/js/footer.js" type="text/javascript"></script>
     <script defer src="../common/js/sub_section.js" type="text/javascript"></script>
@@ -104,7 +106,7 @@
                         <div class="sub_con_img"></div>
                     </div>
                 </li>
-                <li class="active">
+                <li>
                     <div class="sub_content_wrap sub_content_wrap3">
                         <div class="sub_con_bg">
                             <h1>Since 2000. 고객과 걸어온 길</h1>
@@ -114,15 +116,15 @@
                                     <div class="history">
                                         <div class="year">2022년</div>
                                         <div class="year_content">
+                                            <div>2022 'Website Awards' 대상 수상</div>
                                             <div>SAMSUNG, LG 등 기술 지원</div>
-                                            <div>2022 한국 'Website Awards' 대상 수상</div>
                                         </div>
                                     </div>
                                     <div class="history">
                                         <div class="year">2020년</div>
                                         <div class="year_content">
-                                            <div>COVID-19 팬데믹으로 인한 원격 근무 정책 구현</div>
                                             <div>NAVER, DAUM 기술 지원</div>
+                                            <div>COVID-19 팬데믹으로 인한 원격 근무</div>
                                         </div>
                                     </div>
                                     <div class="history">
@@ -151,7 +153,18 @@
                         </div>
                     </div>
                 </li>
-                <li>4</li>
+                <li class="active">
+                    <div class="sub_content_wrap sub_content_wrap4">
+                        <div class="sub_con_bg">
+                            <h1>본사</h1>
+                            <div id="map"></div>
+                            <div class="branch">
+                                <div id="map2"></div>
+                                <div id="map3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </section>
     </main>
@@ -186,14 +199,3 @@
     </footer>
 </body>
 </html>
-
-
-<!-- 
-<section class="section">
-    <div class="inner">
-        <div class="section_text">
-            <h2>THE SPECIAL IT GROUP</h2>
-            <p>윤디자인은 다양한 환경에 적응하며 경쟁하기 위해 IT 기술력과 디자인 역량에 집중하고 고객과의 친밀한 소통과 협력을 통해 최고의 품질을 제공하고 있습니다.</p>
-        </div>
-    </div>
-</section> -->
