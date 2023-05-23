@@ -12,8 +12,6 @@ let dragStartX, dragEndX = 0;
 let touchStartX, touchEndX = 0;
 
 
-
-
 const mainSlider = ()=>{
     if(count >= sliderLi.length) count = 0;
     sliderClass();

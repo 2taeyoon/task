@@ -3,21 +3,28 @@ var container2 = document.getElementById('map2');
 var container3 = document.getElementById('map3');
 
 var options = {
-    center: new kakao.maps.LatLng(37.3689, 127.1446),
+    center: new kakao.maps.LatLng(37.3703, 127.1431),
     level: 3
 };
 var options2 = {
-    center: new kakao.maps.LatLng(37.3689, 127.1446),
+    center: new kakao.maps.LatLng(37.3703, 127.1431),
     level: 3
 };
 var options3 = {
-    center: new kakao.maps.LatLng(37.3689, 127.1446),
+    center: new kakao.maps.LatLng(37.3703, 127.1431),
     level: 3
 };
 
 var map = new kakao.maps.Map(container, options);
 var map2 = new kakao.maps.Map(container2, options2);
 var map3 = new kakao.maps.Map(container3, options3);
+
+    var kakaoMap = document.querySelector('.kakao_map');
+    kakaoMap.addEventListener('click', function() {
+        map.relayout();
+        map2.relayout();
+        map3.relayout();
+    });
 
 // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
 var mapTypeControl = new kakao.maps.MapTypeControl();
@@ -65,4 +72,4 @@ marker.setMap(map);
 marker2.setMap(map2);
 marker3.setMap(map3);
 // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-// marker.setMap(null); 
+// marker.setMap(null);
