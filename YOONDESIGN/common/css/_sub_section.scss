@@ -21,7 +21,7 @@
 
 .sub_section2 {
     .sub_content { max-width: 1224px; margin: 0 auto;
-        li { display: none;
+        .sub_tab_list { display: none;
             &.active { display: block; }
             .sub_content_wrap { padding: 80px 20px 80px;
                 .sub_con_bg {
