@@ -840,6 +840,26 @@ header .ham_wrap .ham_menu .ham_li:hover {
     width: 130px;
   }
 }
+.sub_section_brown {
+  background: #604731;
+}
+.sub_section_brown .sub_nav ul li {
+  width: 33.33%;
+}
+.sub_section_brown .sub_nav ul li.active {
+  background: #72573f;
+}
+.sub_section_brown .sub_nav ul li:not(:last-child) {
+  border-right: 1px solid #72573f;
+}
+.sub_section_brown .sub_nav ul li:hover {
+  background: #72573f;
+}
+
+.sub_section_gray {
+  background: #1b1b1b;
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
   background: #35343f;

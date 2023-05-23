@@ -1,0 +1,7 @@
+.sub_section_brown { background: #604731;
+    .sub_nav ul li { width: 33.33%;
+        &.active { background: #72573f; }
+        &:not(:last-child) { border-right: 1px solid #72573f; }
+        &:hover { background: #72573f; }
+    }
+}

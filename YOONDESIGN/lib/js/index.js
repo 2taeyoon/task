@@ -112,10 +112,11 @@ slider.addEventListener('touchend', (event)=>{
     }
 });
 
+/*
 slider.addEventListener('touchmove', (event) => {
-    //event.preventDefault();
+    event.preventDefault();
 });
-
+*/
 IntervalID = setInterval(mainSlider, 5000);
 // slider end!
 
