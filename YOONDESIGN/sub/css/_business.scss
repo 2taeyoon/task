@@ -15,10 +15,16 @@
             .sub_portfolio { display: flex; flex-wrap: wrap;
                 li { width: calc(25% - 40px); margin: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
                     .sub_port_img { display: block; position: relative; width: 100%; padding-bottom: 100%; }
-                    .sub_port_text { display: flex; flex-direction: column; align-items: center; padding: 20px; 
-                        .sub_port_category { font-size: 17px; font-weight: 400; }
+                    .sub_port_text { display: flex; flex-direction: column; align-items: center; padding: 20px; text-align: center; line-height: 120%;
+                        .sub_port_category { color: #555; font-size: 17px; font-weight: 400; }
                         .sub_port_text_bt { margin-top: 12px; font-size: 19px; font-weight: 500; }
                     }
+                }
+            }
+            .portfolio_tabs { display: flex; justify-content: center;
+                .portfolio_tab { margin: 30px 10px 0; padding: 10px 20px; border: 1px solid #ddd; background: #fafafa;
+                    &:hover { background: #eee; }
+                    &.active { background: #333; border: none; color: #fff; }
                 }
             }
         }
@@ -29,8 +35,8 @@
     .sub_con_bg .h1_mg { padding-left: 10px; }
     .sub_content_wrap7 {
         .sub_partner { display: flex; flex-wrap: wrap; width: 100%; margin-top: 20px;
-            .sub_partner_li { display: flex; align-items: center; justify-content: center; width: calc(20% - 20px); height: 75px; margin: 10px; border: 1px solid #eee; background: #fff;
-                span { display: block; width: 85%; padding-bottom: 20%; }
+            .sub_partner_li { display: flex; align-items: center; justify-content: center; width: calc(20% - 20px); height: 90px; margin: 10px; border: 1px solid #eee; background: #fff;
+                span { display: block; width: 65%; padding-bottom: 15%; }
             }
         }
     }
@@ -50,7 +56,7 @@
 
         .sub_content_wrap7 {
             .sub_partner { justify-content: center;
-                .sub_partner_li { width: calc(25% - 20px); }
+                .sub_partner_li { width: calc(25% - 20px); height: 85px; }
             }
         }
         
@@ -65,7 +71,7 @@
                 .sub_port_text_bt { font-size: 17px; }
             }
         }
-        .sub_content_wrap7 .sub_partner .sub_partner_li { width: calc(33.33% - 20px); }
+        .sub_content_wrap7 .sub_partner .sub_partner_li { width: calc(33.33% - 20px); height: 75px; }
     }
 }
 
@@ -85,9 +91,9 @@
         .sub_content_wrap6 .sub_con_bg .sub_portfolio li {
             .sub_port_text {
                 .sub_port_category { font-size: 13px; }
-                .sub_port_text_bt { font-size: 15px; }
+                .sub_port_text_bt { margin-top: 7px; font-size: 15px; }
             }
         }
-        .sub_content_wrap7 .sub_partner .sub_partner_li { width: calc(50% - 20px); }
+        .sub_content_wrap7 .sub_partner .sub_partner_li { width: calc(50% - 20px); height: 65px; }
     }
 }

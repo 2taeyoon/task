@@ -876,8 +876,11 @@ header .ham_wrap .ham_menu .ham_li:hover {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  text-align: center;
+  line-height: 120%;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .sub_portfolio li .sub_port_text .sub_port_category {
+  color: #555;
   font-size: 17px;
   font-weight: 400;
 }
@@ -885,6 +888,24 @@ header .ham_wrap .ham_menu .ham_li:hover {
   margin-top: 12px;
   font-size: 19px;
   font-weight: 500;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .portfolio_tabs {
+  display: flex;
+  justify-content: center;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .portfolio_tabs .portfolio_tab {
+  margin: 30px 10px 0;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .portfolio_tabs .portfolio_tab:hover {
+  background: #eee;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .portfolio_tabs .portfolio_tab.active {
+  background: #333;
+  border: none;
+  color: #fff;
 }
 
 .sub_section2 .sub_content .sub_tab_list .sub_con_bg .h1_mg {
@@ -901,15 +922,15 @@ header .ham_wrap .ham_menu .ham_li:hover {
   align-items: center;
   justify-content: center;
   width: calc(20% - 20px);
-  height: 75px;
+  height: 90px;
   margin: 10px;
   border: 1px solid #eee;
   background: #fff;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap7 .sub_partner .sub_partner_li span {
   display: block;
-  width: 85%;
-  padding-bottom: 20%;
+  width: 65%;
+  padding-bottom: 15%;
 }
 
 @media all and (max-width: 1024px) {
@@ -924,6 +945,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap7 .sub_partner .sub_partner_li {
     width: calc(25% - 20px);
+    height: 85px;
   }
 }
 @media all and (max-width: 768px) {
@@ -938,6 +960,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap7 .sub_partner .sub_partner_li {
     width: calc(33.33% - 20px);
+    height: 75px;
   }
 }
 @media all and (max-width: 550px) {
@@ -956,10 +979,12 @@ header .ham_wrap .ham_menu .ham_li:hover {
     font-size: 13px;
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .sub_portfolio li .sub_port_text .sub_port_text_bt {
+    margin-top: 7px;
     font-size: 15px;
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap7 .sub_partner .sub_partner_li {
     width: calc(50% - 20px);
+    height: 65px;
   }
 }
 .sub_section_gray {

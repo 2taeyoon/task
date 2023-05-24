@@ -3,102 +3,112 @@
         {
             "img": "portfolio01.jpg",
             "text": "적응형 사이트",
-            "category": "기업"
+            "category": "[기업]"
         },
         {
             "img": "portfolio02.jpg",
             "text": "적응형 사이트",
-            "category": "유아"
+            "category": "[가전/전자]"
         },
         {
             "img": "portfolio03.jpg",
             "text": "반응형 사이트",
-            "category": "인테리어"
+            "category": "[인테리어]"
         },
         {
             "img": "portfolio04.jpg",
             "text": "적응형 사이트",
-            "category": "교육"
+            "category": "[가전/전자]"
         },
         {
             "img": "portfolio05.jpg",
             "text": "모바일 사이트",
-            "category": "식품/건강"
+            "category": "[패션/잡화]"
         },
         {
             "img": "portfolio06.jpg",
             "text": "적응형 사이트",
-            "category": "여행"
+            "category": "[패션/잡화]"
         },
         {
             "img": "portfolio07.jpg",
             "text": "적응형 사이트",
-            "category": "여행"
+            "category": "[가전/전자]"
         },
         {
             "img": "portfolio08.jpg",
             "text": "반응형 사이트",
-            "category": "인테리어"
+            "category": "[생활용품]"
         },
         {
             "img": "portfolio09.jpg",
             "text": "모바일 사이트",
-            "category": "식품/건강"
+            "category": "[패션/잡화]"
         },
         {
             "img": "portfolio10.jpg",
             "text": "적응형 사이트",
-            "category": "여행"
+            "category": "[패션/잡화]"
         },
         {
             "img": "portfolio11.jpg",
             "text": "반응형 사이트",
-            "category": "기업"
+            "category": "[기업]"
         },
         {
             "img": "portfolio12.jpg",
             "text": "적응형 적응형",
-            "category": "엔터"
+            "category": "[기업]"
         },
         {
             "img": "portfolio13.jpg",
             "text": "적응형 사이트",
-            "category": "여행"
+            "category": "[여행]"
         },
         {
             "img": "portfolio14.jpg",
             "text": "적응형 사이트",
-            "category": "유아"
+            "category": "[식품/건강]"
         },
         {
             "img": "portfolio15.jpg",
             "text": "적응형 사이트",
-            "category": "패션/잡화"
+            "category": "[기업]"
         },
         {
             "img": "portfolio16.jpg",
             "text": "반응형 사이트",
-            "category": "패션/잡화"
+            "category": "[패션/잡화]"
         },
         {
             "img": "portfolio17.jpg",
             "text": "반응형 사이트",
-            "category": "패션/잡화"
+            "category": "[패션/잡화]"
         },
         {
             "img": "portfolio18.jpg",
             "text": "반응형 사이트",
-            "category": "가전/전자"
+            "category": "[생활용품]"
         },
         {
             "img": "portfolio19.jpg",
             "text": "반응형 사이트",
-            "category": "가전/전자"
+            "category": "[반려동물]"
         },
         {
             "img": "portfolio20.jpg",
+            "text": "반응형 사이트",
+            "category": "[패션/잡화]"
+        },
+        {
+            "img": "portfolio21.jpg",
             "text": "적응형 사이트",
-            "category": "패션/잡화"
+            "category": "[인테리어]"
+        },
+        {
+            "img": "portfolio22.jpg",
+            "text": "반응형 사이트",
+            "category": "[교육]"
         }
     ],
     "partner":[
