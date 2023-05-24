@@ -1,7 +1,7 @@
 .sub_section2 {
         .sub_content {
             .sub_tab_list {
-                .sub_content_wrap1 { position: relative; padding: 80px 20px 290px;
+                .sub_content_wrap1 { position: relative; padding: 50px 20px 290px;
                         .sub_con_bg { position: absolute; left: 50%; top: 600px; width: 80%; padding: 50px 30px; transform: translateX(-50%); background: #fff; text-align: center; z-index: 1;
                             p { margin-top: 30px; color: #5a5a5a; }
                         }
@@ -19,7 +19,7 @@
                     }
                 }
 
-                .sub_content_wrap3 { padding: 50px 20px 80px;
+                .sub_content_wrap3 {
                     .sub_con_bg {
                         .since_wrap { display: flex; margin-top: 30px;
                             .history_wrap { display: flex; flex-direction: column; justify-content: center; width: 50%; margin-left: 5%;
@@ -36,9 +36,9 @@
                     }
                 }
 
-                .sub_content_wrap4 { padding: 50px 20px 80px;
+                .sub_content_wrap4 {
                     .sub_con_bg {
-                        h1 { font-size: 32px; margin-bottom: 20px; }
+                        h1 { margin-bottom: 20px; }
                         #map { width: 100%; height: 400px; }
                         #map2 { width: 95%; height: 400px; }
                         #map3 { width: 95%; height: 400px; }

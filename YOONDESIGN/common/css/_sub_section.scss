@@ -23,9 +23,9 @@
     .sub_content { max-width: 1224px; margin: 0 auto;
         .sub_tab_list { display: none;
             &.active { display: block; }
-            .sub_content_wrap { padding: 80px 20px 80px;
+            .sub_content_wrap { padding: 50px 20px 80px;
                 .sub_con_bg {
-                    h1 { font-size: 36px; font-weight: 700; line-height: 130%; }
+                    h1 { font-size: 32px; font-weight: 700; line-height: 130%; }
                     p { font-size: 17px; font-weight: 500; line-height: 170%; }
                 }
             }

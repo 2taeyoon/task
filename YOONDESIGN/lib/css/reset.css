@@ -29,7 +29,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-body { line-height: 1; }
+body { line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 ol, ul, li { list-style: none; }
 blockquote, q {	quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
