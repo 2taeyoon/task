@@ -128,6 +128,7 @@ fetch('./lib/js/data/data.json')
     .then(data => {
         indexPort(data);
         indexPart(data);
+        initializeAOS();
     })
     .catch(error => console.error(error));
 
@@ -153,3 +154,7 @@ const indexPart = (part)=>{
         partUl.append(partLi);
     });
 }
+
+const initializeAOS = () => {
+    AOS.init();
+};

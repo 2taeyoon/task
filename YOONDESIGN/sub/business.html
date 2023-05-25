@@ -26,9 +26,11 @@
 
     <link rel="stylesheet" href="../lib/css/reset.css">
     <link rel="stylesheet" href="../lib/font/pretendard.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../lib/css/index.css">
 
     <script src="../lib/js/prefixfree.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script defer src="../common/js/header.js" type="text/javascript"></script>
     <script defer src="../common/js/footer.js" type="text/javascript"></script>
     <script defer src="../common/js/sub_section.js" type="text/javascript"></script>
@@ -43,7 +45,7 @@
             <ul class="nav">
                 <li class="fir_li"><a href="./company.html" class="fir_a">회사소개</a></li>
                 <li class="fir_li"><a href="./business.html" class="fir_a">사업소개</a></li>
-                <li class="fir_li"><a href="./inquiry.html" class="fir_a">문의</a></li>
+                <li class="fir_li"><a href="./inquiry.html" class="fir_a">예약문의</a></li>
                 <li class="fir_li"><a href="https://www.saramin.co.kr/" target="_blank" class="fir_a">채용</a></li>
             </ul>
             <div class="ham_btn">
@@ -56,7 +58,7 @@
             <ul class="ham_menu">
                 <li class="ham_li"><a href="./company.html">회사소개</a></li>
                 <li class="ham_li"><a href="./business.html">사업소개</a></li>
-                <li class="ham_li"><a href="./inquiry.html">문의</a></li>
+                <li class="ham_li"><a href="./inquiry.html">예약문의</a></li>
                 <li class="ham_li"><a href="https://www.saramin.co.kr/">채용</a></li>
             </ul>
         </div>
@@ -73,23 +75,63 @@
         <section class="sub_section sub_section_brown">
             <nav class="sub_nav">
                 <ul>
-                    <li class=""><span>사업소개</span></li>
-                    <li class="active"><span>포트폴리오</span></li>
+                    <li class="active"><span>사업소개</span></li>
+                    <li><span>포트폴리오</span></li>
                     <li><span>파트너</span></li>
                 </ul>
             </nav>
         </section>
         <section class="sub_section2">
             <ul class="sub_content">
-                <li class="sub_tab_list">
+                <li class="sub_tab_list active">
                     <div class="sub_content_wrap sub_content_wrap5">
                         <div class="sub_con_bg">
-                            <h1>고객과 함께 할 수 있는 든든한 파트너</h1>
-                            <p>IT 기업으로서 고객에게 헌신하는 든든한 파트너임을 자부합니다. 우리는 강력한 관계를 구축하고 모든 단계에서 고객을 위해 존재하는 것의 중요성을 이해합니다. 초기 상담부터 솔루션 구현 및 지속적인 지원에 이르기까지 기대치를 초과하고 탁월한 서비스를 제공하기 위해 노력합니다. 숙련된 전문가 팀은 고객의 고유한 요구 사항과 목표를 이해하기 위해 최선을 다하고 있으며 협력하여 비즈니스 성장과 성공을 주도하는 맞춤형 IT 솔루션을 제공합니다.</p>
+                            <div class="company_introduce">
+                                <h1>혁신적인 반응형 웹 및 앱 개발</h1>
+                                <p>윤디자인은 최신 기술과 창의적인 접근 방식을 활용하여 혁신적이고 사용자 친화적인 반응형 웹 및 앱을 개발하는 전문 기업입니다. 우리의 목표는 고객의 비전을 현실로 만들어주는 것입니다. 우리 팀은 최고 수준의 기술 노하우와 경험을 가진 개발자들로 구성되어 있으며, 사용자 중심의 디자인과 최적화된 성능을 통해 차별화된 서비스를 제공합니다.</p>
+                            </div>
+                            <div class="company_introduce">
+                                <h1>모바일 우선 전략으로 혁신적인 사용자 경험 제공</h1>
+                                <p>사용자들은 이제 모바일 기기를 통해 웹 및 앱에 접근하는 경우가 많기 때문에, 우리는 최신의 모바일 트렌드를 반영한 반응형 웹 및 앱을 개발하여 최적화된 경험을 제공합니다. 우리의 디자인과 개발 팀은 사용자 중심의 접근 방식을 추구하며, 직관적이고 매력적인 인터페이스와 원활한 기능을 통해 사용자들이 웹 및 앱을 편리하게 이용할 수 있도록 돕습니다.</p>
+                            </div class="company_introduce">
+                            <div class="company_introduce">
+                                <h1>맞춤형 솔루션으로 다양한 업종 지원</h1>
+                                <p>고객의 비즈니스 요구 사항과 목표를 이해하고, 그에 맞게 개발된 솔루션을 제공합니다. 우리의 개발 팀은 다양한 기술과 업계 트렌드에 대한 폭넓은 이해력을 가지고 있으며, 여러 업종에서 성공적으로 적용된 프로젝트 경험을 보유하고 있습니다. 우리는 고객의 성장을 위해 혁신적이고 결과 지향적인 웹 및 앱 개발 솔루션을 제공합니다.</p>
+                            </div>
+                            <div class="business_type_wrap">
+                                <div class="business_type">
+                                    <div class="business_type_img" style="background: url('./img/business_type_img01.jpg') no-repeat center / cover;"></div>
+                                    <div class="business_type_text">
+                                        <h3>템플릿</h3>
+                                        <p>윤디자인의 템플릿은 저렴한 가격에 트렌디한 디자인과 완성도 높은 사이트를 제작합니다.</p>
+                                    </div>
+                                </div>
+                                <div class="business_type">
+                                    <div class="business_type_img" style="background: url('./img/business_type_img02.jpg') no-repeat center / cover;"></div>
+                                    <div class="business_type_text">
+                                        <h3>주문제작</h3>
+                                        <p>윤디자인의 주문제작은 고객님이 원하시는 디자인을 그대로 반영할 수 있는 타입입니다.</p>
+                                    </div>
+                                </div>
+                                <div class="business_type">
+                                    <div class="business_type_img" style="background: url('./img/business_type_img03.jpg') no-repeat center / cover;"></div>
+                                    <div class="business_type_text">
+                                        <h3>유지보수</h3>
+                                        <p>윤디자인은 고객님의 기존 개발되었던 사이트를 유지보수에 완벽 대응해드립니다.</p>
+                                    </div>
+                                </div>
+                                <div class="business_type">
+                                    <div class="business_type_img" style="background: url('./img/business_type_img04.jpg') no-repeat center / cover;"></div>
+                                    <div class="business_type_text">
+                                        <h3>호스팅&도메인</h3>
+                                        <p>윤디자인에서 호스팅과 도메인을 지속적으로 관리해드립니다.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </li>
-                <li class="sub_tab_list active">
+                <li class="sub_tab_list">
                     <div class="sub_content_wrap sub_content_wrap6">
                         <div class="sub_con_bg">
                             <div class="port_text">
@@ -99,9 +141,9 @@
                             <ul class="sub_portfolio">
                             </ul>
                             <div class="portfolio_tabs">
-                                <button class="portfolio_tab active">1</button>
-                                <button class="portfolio_tab">2</button>
-                                <button class="portfolio_tab">3</button>
+                                <button class="portfolio_tab active" data-tab="1">1</button>
+                                <button class="portfolio_tab" data-tab="2">2</button>
+                                <button class="portfolio_tab" data-tab="3">3</button>
                             </div>
                         </div>
                     </div>
@@ -124,7 +166,7 @@
                 <h1 class="footer_logo"></h1>
                 <ul class="footer_link">
                     <li><a href="./company.html">회사소개</a></li>
-                    <li><a href="./inquiry.html">문의</a></li>
+                    <li><a href="./inquiry.html">예약문의</a></li>
                 </ul>
                 <ul class="footer_bt">
                     <li>회사명 : YOONDESIGN</li>

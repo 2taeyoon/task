@@ -43,9 +43,9 @@ const createTabs = (tabBtn) => {
         });
     };
 
-    portfolioTab.forEach(( button, index ) => {
-        button.addEventListener('click', () => {
-            const tabNum = index + 1;
+    portfolioTab.forEach(( button ) => {
+        button.addEventListener('click', (event) => {
+            const tabNum = parseInt(event.target.dataset.tab);
             showTabContent(tabNum);
 
             portfolioTab.forEach(btn => {

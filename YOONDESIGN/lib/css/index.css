@@ -849,6 +849,40 @@ header .ham_wrap .ham_menu .ham_li:hover {
   background: #72573f;
 }
 
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .company_introduce:not(:first-child) {
+  padding-top: 50px;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .company_introduce {
+  padding-left: 20px;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .company_introduce h1 {
+  font-size: 26px;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .company_introduce p {
+  padding-top: 10px;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap {
+  display: flex;
+  padding-top: 50px;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type {
+  width: calc(25% - 40px);
+  margin: 0 20px;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type .business_type_img {
+  width: 100%;
+  padding-bottom: 100%;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type .business_type_text {
+  padding-top: 20px;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type .business_type_text h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type .business_type_text p {
+  margin-top: 10px;
+}
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .port_text {
   padding: 0 0 30px 20px;
 }
@@ -934,6 +968,12 @@ header .ham_wrap .ham_menu .ham_li:hover {
 }
 
 @media all and (max-width: 1024px) {
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .company_introduce h1 {
+    font-size: 24px;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type .business_type_text h3 {
+    font-size: 22px;
+  }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .sub_portfolio li .sub_port_text .sub_port_category {
     font-size: 16px;
   }
@@ -949,6 +989,20 @@ header .ham_wrap .ham_menu .ham_li:hover {
   }
 }
 @media all and (max-width: 768px) {
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .company_introduce h1 {
+    font-size: 22px;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type {
+    width: calc(50% - 40px);
+    padding-top: 50px;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type .business_type_text h3 {
+    font-size: 20px;
+  }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .sub_portfolio li {
     width: calc(50% - 40px);
   }
@@ -964,6 +1018,15 @@ header .ham_wrap .ham_menu .ham_li:hover {
   }
 }
 @media all and (max-width: 550px) {
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .company_introduce h1 {
+    font-size: 20px;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type {
+    width: calc(100% - 40px);
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type .business_type_text h3 {
+    font-size: 19px;
+  }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .sub_portfolio li {
     width: calc(50% - 40px);
   }
@@ -975,6 +1038,12 @@ header .ham_wrap .ham_menu .ham_li:hover {
   }
 }
 @media all and (max-width: 480px) {
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .company_introduce h1 {
+    font-size: 18px;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap5 .sub_con_bg .business_type_wrap .business_type .business_type_text h3 {
+    font-size: 18px;
+  }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap6 .sub_con_bg .sub_portfolio li .sub_port_text .sub_port_category {
     font-size: 13px;
   }
@@ -1166,7 +1235,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
   margin: 0 auto;
   border: 1px solid #777;
   color: #555;
-  transition: all 0.3s;
+  transition: color, background 0.3s;
 }
 .section1 .inner .more_bth:hover {
   color: #fff;

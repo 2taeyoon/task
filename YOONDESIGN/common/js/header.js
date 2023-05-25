@@ -27,3 +27,6 @@ hamBtn.addEventListener('click', ()=>{
     });
 });
 // header end!
+
+
+AOS.init();

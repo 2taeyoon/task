@@ -7,6 +7,28 @@
 }
 
 .sub_section2 .sub_content .sub_tab_list {
+
+    .sub_content_wrap5 {
+        .sub_con_bg {
+            .company_introduce:not(:first-child) { padding-top: 50px; }
+            .company_introduce { padding-left: 20px;
+                h1 { font-size: 26px; }
+                p { padding-top: 10px; }
+            }
+
+            .business_type_wrap { display: flex; padding-top: 50px;
+                .business_type { width: calc(25% - 40px); margin: 0 20px;
+                    .business_type_img { width: 100%; padding-bottom: 100%; }
+                    .business_type_text { padding-top: 20px;
+                        h3 { font-size: 24px; font-weight: 600; }
+                        p { margin-top: 10px; }
+                    }
+                }
+            }
+        }
+    }
+
+
     .sub_content_wrap6 {
         .sub_con_bg {
             .port_text { padding: 0 0 30px 20px;
@@ -47,6 +69,14 @@
 
 @media all and (max-width:1024px){
     .sub_section2 .sub_content .sub_tab_list {
+
+        .sub_content_wrap5 .sub_con_bg {
+            .company_introduce h1 { font-size: 24px; }
+            .business_type_wrap .business_type .business_type_text {
+                h3 { font-size: 22px; }
+            }
+        }
+
         .sub_content_wrap6 .sub_con_bg .sub_portfolio li {
             .sub_port_text {
                 .sub_port_category { font-size: 16px; }
@@ -65,6 +95,18 @@
 
 @media all and (max-width:768px){
     .sub_section2 .sub_content .sub_tab_list  {
+        
+        .sub_content_wrap5 .sub_con_bg {
+            .company_introduce h1 { font-size: 22px; }
+            .business_type_wrap { flex-wrap: wrap; padding: 0;
+                .business_type { width: calc(50% - 40px); padding-top: 50px;
+                    .business_type_text {
+                        h3 { font-size: 20px; }
+                    }
+                }
+            }
+        }
+
         .sub_content_wrap6 .sub_con_bg .sub_portfolio li { width: calc(50% - 40px);
             .sub_port_text {
                 .sub_port_category { font-size: 15px; }
@@ -77,6 +119,13 @@
 
 @media all and (max-width:550px){
     .sub_section2 .sub_content .sub_tab_list {
+        .sub_content_wrap5 .sub_con_bg {
+            .company_introduce h1 { font-size: 20px; }
+            .business_type_wrap .business_type { width: calc(100% - 40px);
+                .business_type_text h3 { font-size: 19px; }
+            }
+        }
+
         .sub_content_wrap6 .sub_con_bg .sub_portfolio li { width: calc(50% - 40px);
             .sub_port_text {
                 .sub_port_category { font-size: 14px; }
@@ -88,6 +137,11 @@
 
 @media all and (max-width:480px){
     .sub_section2 .sub_content .sub_tab_list {
+        .sub_content_wrap5 .sub_con_bg {
+            .company_introduce h1 { font-size: 18px; }
+            .business_type_wrap .business_type .business_type_text h3 { font-size: 18px; }
+        }
+
         .sub_content_wrap6 .sub_con_bg .sub_portfolio li {
             .sub_port_text {
                 .sub_port_category { font-size: 13px; }
