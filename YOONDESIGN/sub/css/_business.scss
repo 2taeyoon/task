@@ -51,11 +51,10 @@
             }
         }
     }
-}
 
-.sub_section2 .sub_content .sub_tab_list {
-    .sub_con_bg .h1_mg { padding-left: 10px; }
+
     .sub_content_wrap7 {
+        .sub_con_bg .h1_mg { padding-left: 10px; }
         .sub_partner { display: flex; flex-wrap: wrap; width: 100%; margin-top: 20px;
             .sub_partner_li { display: flex; align-items: center; justify-content: center; width: calc(20% - 20px); height: 90px; margin: 10px; border: 1px solid #eee; background: #fff;
                 span { display: block; width: 65%; padding-bottom: 15%; }
@@ -63,6 +62,11 @@
         }
     }
 }
+
+
+
+
+
 
 
 
