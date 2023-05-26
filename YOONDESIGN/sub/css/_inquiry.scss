@@ -3,21 +3,40 @@
 
 .sub_section2 .sub_content .sub_tab_list {
     .sub_content_wrap8 {
-        .sub_con_bg {
-            h1 {}
-            p {}
+        .sub_con_bg { display: flex; align-items: center; margin-bottom: 40px; padding: 50px; background: #ebebeb;
+            h4 { padding-right: 50px; font-size: 22px; font-weight: 600; }
+            p { color: #666; white-space: pre-line; }
         }
         .inquiry_form {
-            table {
-                tr {
-                    td {
-                        label {}
-                        input {}
-                        textarea {}
+            table { width: 100%;
+                tbody { border-top: 2px solid #1b1b1b;
+                    tr { border-top: 1px solid #ddd;
+                        td {
+                            label { vertical-align: middle; font-size: 17px; font-weight: 500; }
+                            input { width: 95%; padding: 5px; border: 1px solid #ddd; background: #F9F9F9; outline: none; font-size: 16px; }
+                            textarea { width: 95%; padding: 5px; border: 1px solid #ddd; background: #F9F9F9; outline: none; font-size: 16px; }
+                            #agree { width: auto; }
+                            #phone { width: 10%; }
+                            #submit { display: none; }
+                            .submit_btn { display: block; width: 14%; height: 60px; margin: 50px auto 0; background: #333; color: #fff; line-height: 59px; text-align: center; font-weight: 500; font-size: 18px; cursor: pointer;
+                                &:hover { background: #777; }
+                            }
+                        }
+
+                        .td_left { width: 20%; padding: 30px; background: #f5f5f5; vertical-align: middle; text-align: center; }
+                        .td_right { width: 80%; padding: 25px; }
+                        
+                        .agree_left { width: 20%; padding: 30px 30px 10px 0; }
+                        .agree_right { width: 80%; text-align: right;
+                            label { display: inline-block; width: auto; text-align: right; }
+                        }
                     }
-                    
-                    .td_left {}
-                    .td_right {}
+
+                    .form_text { border: none;
+                        td { padding: 0px 30px 30px 0px; 
+                            textarea { width: 100%; height: 200px; padding: 0px 10px; line-height: 150%; }
+                        }
+                    }
                 }
             }
         }

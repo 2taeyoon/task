@@ -33,6 +33,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script defer src="../common/js/header.js" type="text/javascript"></script>
     <script defer src="../common/js/footer.js" type="text/javascript"></script>
+    <script defer src="./js/business.js" type="text/javascript"></script>
 
     <title>YOONDESIGN</title>
 </head>
@@ -90,50 +91,61 @@
                 <li class="sub_tab_list active">
                     <div class="sub_content_wrap sub_content_wrap8">
                         <div class="sub_con_bg">
-                            <h1>고객과 함께 할 수 있는 든든한 파트너</h1>
-                            <p>IT 기업으로서 고객에게 헌신하는 든든한 파트너임을 자부합니다. 우리는 강력한 관계를 구축하고 모든 단계에서 고객을 위해 존재하는 것의 중요성을 이해합니다. 초기 상담부터 솔루션 구현 및 지속적인 지원에 이르기까지 기대치를 초과하고 탁월한 서비스를 제공하기 위해 노력합니다. 숙련된 전문가 팀은 고객의 고유한 요구 사항과 목표를 이해하기 위해 최선을 다하고 있으며 협력하여 비즈니스 성장과 성공을 주도하는 맞춤형 IT 솔루션을 제공합니다.</p>
+                            <h4>고객상담 시간안내</h4>
+                            <p>평일 09:30 ~ 17:30 / 점심시간 12:00 ~ 13:00
+                                궁금한 점을 남겨주시면 최대한 빠른 시간 내에 답변 드리겠습니다.
+                            </p>
                         </div>
-                        <form action="" method="post" class="inquiry_form">
+                        <form action="/" method="post" class="inquiry_form" onsubmit="javascript:stopSubmit()">
                             <table>
                                 <tr>
                                     <td class="td_left"><label for="name">성명</label></td>
-                                    <td class="td_right"><input type="text" id="name" name="name" required></td>
+                                    <td class="td_right"><input type="text" id="name" name="name" maxlength="10"></td>
                                 </tr>
                                 <tr>
                                     <td class="td_left"><label for="phone">전화번호</label></td>
-                                    <td class="td_right"><input type="tel" id="phone" name="phone" required></td>
-                                </tr>
-                                <tr>
-                                    <td class="td_left"><label for="email">이메일</label></td>
-                                    <td class="td_right"><input type="email" id="email" name="email" required></td>
-                                </tr>
-                                <tr>
-                                    <td class="td_left"><label for="subject">문의 제목</label></td>
-                                    <td class="td_right"><input type="text" id="subject" name="subject" required></td>
-                                </tr>
-                                <tr>
-                                    <td class="td_left"><label for="description">문의 내용</label></td>
-                                    <td class="td_right"><textarea id="description" name="description" rows="5" required></textarea></td>
-                                </tr>
-                                <tr>
-                                    <td>개인정보 수집 및 이용목적</td>
-                                    <td>
-                                        <input type="checkbox" id="agree">
-                                        <label for="agree">라벨</label>
+                                    <td class="td_right">
+                                        <input type="text" id="phone" name="phone" maxlength="4" size="4">
+                                        -
+                                        <input type="text" id="phone" name="phone" maxlength="4" size="4">
+                                        -
+                                        <input type="text" id="phone" name="phone" maxlength="4" size="4">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <textarea id="consent" name="consent" rows="5" required>
+                                    <td class="td_left"><label for="email">이메일</label></td>
+                                    <td class="td_right"><input type="text" id="email" name="email"></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_left"><label for="subject">문의 제목</label></td>
+                                    <td class="td_right"><input type="text" id="subject" name="subject"></td>
+                                </tr>
+                                <tr>
+                                    <td class="td_left"><label for="description">문의 내용</label></td>
+                                    <td class="td_right"><textarea id="description" name="description" rows="5"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td class="agree_left">· 개인정보 수집 및 이용목적</td>
+                                    <td class="agree_right">
+                                        <input type="checkbox" id="agree">
+                                        <label for="agree">
+                                            <span></span>
+                                            개인정보의 수집 및 이용목적에 동의합니다.
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr class="form_text">
+                                    <td colspan="2">
+                                        <textarea id="consent" name="consent" rows="5">
                                             ▶ 개인정보의 수집 및 이용목적
                                             - 서비스 이용에 따른 본인식별, 실명확인, 가입의사 확인, 연령제한 서비스 이용
                                             - 고지사항 전달, 불만처리 의사소통 경로 확보, 물품배송 시 정확한 배송지 정보 확보
                                             - 신규 서비스 등 최신정보 안내 및 개인맞춤서비스 제공을 위한 자료
                                             - 기타 원활한 양질의 서비스 제공 등
-
+                                            
                                             ▶ 수집하는 개인정보의 항목
                                             - 이름, 이메일, 주민등록번호, 주소, 연락처, 핸드폰번호, 그 외 선택항목
-
+                                            
                                             ▶ 개인정보의 보유 및 이용기간
                                             - 원칙적으로 개인정보의 수집 또는 제공받은 목적 달성 시 지체 없이 파기합니다.
                                             - 다만, 원활한 서비스의 상담을 위해 상담 완료 후 내용을 3개월간 보유할 수 있으며
@@ -143,7 +155,8 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <button type="submit">제출</button>
+                                        <input type="submit" id="submit">
+                                        <label class="submit_btn" for="submit">문의하기</label>
                                     </td>
                                 </tr>
                             </table>
