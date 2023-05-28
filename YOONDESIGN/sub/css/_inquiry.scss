@@ -4,7 +4,7 @@
 .sub_section2 .sub_content .sub_tab_list {
     .sub_content_wrap8 {
         .sub_con_bg { display: flex; align-items: center; margin-bottom: 40px; padding: 50px; background: #ebebeb;
-            h4 { padding-right: 50px; font-size: 22px; font-weight: 600; }
+            h4 { padding-right: 115px; font-size: 22px; font-weight: 600; }
             p { color: #666; white-space: pre-line; }
         }
         .inquiry_form {
@@ -15,10 +15,10 @@
                             label { vertical-align: middle; font-size: 17px; font-weight: 500; }
                             input { width: 100%; padding: 5px; border: 1px solid #ddd; background: #F9F9F9; outline: none; font-size: 16px; }
                             textarea { width: 100%; padding: 5px; border: 1px solid #ddd; background: #F9F9F9; outline: none; font-size: 16px; }
-                            #agree { width: auto; cursor: pointer; }
+                            #agree { display: none; }
                             #phone1,#phone2, #phone3 { width: 60px; }
                             #submit { display: none; }
-                            .submit_btn { display: block; width: 150px; height: 60px; margin: 50px auto 0; background: #333; color: #fff; line-height: 59px; text-align: center; cursor: pointer;
+                            .submit_btn { display: block; width: 150px; height: 60px; margin: 30px auto 0; background: #333; color: #fff; line-height: 59px; text-align: center; cursor: pointer;
                                 &:hover { background: #777; }
                             }
                         }
@@ -26,17 +26,24 @@
                         .td_left { width: 300px; background: #f5f5f5; vertical-align: middle; text-align: center; }
                         .td_right {  padding: 25px; }
                         
-                        .agree_left { padding: 30px 30px 10px 0; }
-                        .agree_right { display: flex; justify-content: flex-end;
-                            label { display: inline-block; width: auto; padding: 0 25px 0 1%; text-align: right; cursor: pointer; }
+                        .agree_left { padding: 30px 0 10px 0; }
+                        .agree_right { display: flex; align-items: center; justify-content: flex-end;
+                            span { display: inline-block; width: 20px; height: 20px; background: url('../../sub/img/nocheck_img.png') no-repeat center / cover;
+                                &.active { background: url('../../sub/img/check_img.png') no-repeat center / cover; }
+                            }
+                            label { display: inline-block; width: auto; text-align: right; font-size: 16px; cursor: pointer; }
                         }
                     }
 
                     .form_text { border: none;
-                        td { padding: 0px 25px 30px 0px;
+                        td { padding: 0 0 30px 0px;
                             textarea { height: 200px; padding: 20px 30px; line-height: 150%; }
                         }
                     }
+                    .g-recaptcha { display: none;
+                        &.on { display: block; }
+                        > div { margin: 30px auto 0; }
+                    } 
                 }
             }
         }
@@ -49,7 +56,7 @@
 @media all and (max-width:1024px){
     .sub_section2 .sub_content .sub_tab_list {
         .sub_content_wrap8 {
-            .sub_con_bg h4 { font-size: 20px; }
+            .sub_con_bg h4 { padding-right: 55px; font-size: 20px; }
             .inquiry_form table tbody tr {
                 td label { font-size: 16px; }
                 .td_left { width: 250px; }
@@ -67,9 +74,10 @@
             }
             .inquiry_form table tbody {
                 tr {
-                    .agree_left { font-size: 15px; }
                     td label { font-size: 15px; }
                     .td_left { width: 200px; }
+                    .agree_left { font-size: 15px; }
+                    .agree_right label { font-size: 15px; }
                 }
                 
                 .form_text td textarea { font-size: 15px; }
@@ -87,7 +95,8 @@
                 tr {
                     td .submit_btn { width: 100px; height: 40px; line-height: 40px; }
                     .agree_left { font-size: 14px; }
-                    .td_left { width: 140px; }
+                    .agree_right label { width: 140px; line-height: 130%; font-size: 14px; }
+                    .td_left { width: 180px; }
                 }
                 .form_text td textarea { font-size: 14px; }
             }
@@ -98,14 +107,19 @@
 @media all and (max-width:480px){
     .sub_section2 .sub_content .sub_tab_list {
         .sub_content_wrap8 {
-            .sub_con_bg h4 { font-size: 17px; }
-
+            .sub_con_bg {
+                h4 { font-size: 17px; }
+                p:nth-of-type(1) { width: 188px; margin: 0 auto; }
+                p:nth-of-type(2) { margin-top: 10px; }
+            }
             .inquiry_form table tbody tr {
                 td {
                     #phone1, #phone2, #phone3 { width: 27%; font-size: 14px; }
                 }
+                .td_left { width: 130px; }
                 .td_right { padding: 15px; }
-                .agree_left { padding: 30px 30px 10px 10px; line-height: 130%; text-indent: -7px; text-align: left; }
+                .agree_left { padding: 30px 0 10px 10px; line-height: 130%; text-indent: -7px; text-align: left; }
+                //.agree_right label { width: 140px; line-height: 130%; }
             }
         }
     }

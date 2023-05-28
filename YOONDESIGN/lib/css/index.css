@@ -1067,7 +1067,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
   background: #ebebeb;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg h4 {
-  padding-right: 50px;
+  padding-right: 115px;
   font-size: 22px;
   font-weight: 600;
 }
@@ -1106,8 +1106,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
   font-size: 16px;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr td #agree {
-  width: auto;
-  cursor: pointer;
+  display: none;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr td #phone1, .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr td #phone2, .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr td #phone3 {
   width: 60px;
@@ -1119,7 +1118,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
   display: block;
   width: 150px;
   height: 60px;
-  margin: 50px auto 0;
+  margin: 30px auto 0;
   background: #333;
   color: #fff;
   line-height: 59px;
@@ -1139,33 +1138,53 @@ header .ham_wrap .ham_menu .ham_li:hover {
   padding: 25px;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_left {
-  padding: 30px 30px 10px 0;
+  padding: 30px 0 10px 0;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_right {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_right span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../../sub/img/nocheck_img.png") no-repeat center/cover;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_right span.active {
+  background: url("../../sub/img/check_img.png") no-repeat center/cover;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_right label {
   display: inline-block;
   width: auto;
-  padding: 0 25px 0 1%;
   text-align: right;
+  font-size: 16px;
   cursor: pointer;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody .form_text {
   border: none;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody .form_text td {
-  padding: 0px 25px 30px 0px;
+  padding: 0 0 30px 0px;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody .form_text td textarea {
   height: 200px;
   padding: 20px 30px;
   line-height: 150%;
 }
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody .g-recaptcha {
+  display: none;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody .g-recaptcha.on {
+  display: block;
+}
+.sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody .g-recaptcha > div {
+  margin: 30px auto 0;
+}
 
 @media all and (max-width: 1024px) {
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg h4 {
+    padding-right: 55px;
     font-size: 20px;
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr td label {
@@ -1187,14 +1206,17 @@ header .ham_wrap .ham_menu .ham_li:hover {
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg p {
     text-align: center;
   }
-  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_left {
-    font-size: 15px;
-  }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr td label {
     font-size: 15px;
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .td_left {
     width: 200px;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_left {
+    font-size: 15px;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_right label {
+    font-size: 15px;
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody .form_text td textarea {
     font-size: 15px;
@@ -1212,8 +1234,13 @@ header .ham_wrap .ham_menu .ham_li:hover {
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_left {
     font-size: 14px;
   }
-  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .td_left {
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_right label {
     width: 140px;
+    line-height: 130%;
+    font-size: 14px;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .td_left {
+    width: 180px;
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody .form_text td textarea {
     font-size: 14px;
@@ -1223,15 +1250,25 @@ header .ham_wrap .ham_menu .ham_li:hover {
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg h4 {
     font-size: 17px;
   }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg p:nth-of-type(1) {
+    width: 188px;
+    margin: 0 auto;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg p:nth-of-type(2) {
+    margin-top: 10px;
+  }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr td #phone1, .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr td #phone2, .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr td #phone3 {
     width: 27%;
     font-size: 14px;
+  }
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .td_left {
+    width: 130px;
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .td_right {
     padding: 15px;
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .inquiry_form table tbody tr .agree_left {
-    padding: 30px 30px 10px 10px;
+    padding: 30px 0 10px 10px;
     line-height: 130%;
     text-indent: -7px;
     text-align: left;
