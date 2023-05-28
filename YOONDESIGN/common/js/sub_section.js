@@ -12,5 +12,6 @@ subLi.forEach((lis, index)=>{
 
         lis.classList.add('active');
         subContent[index].classList.add('active');
+
     });
 });

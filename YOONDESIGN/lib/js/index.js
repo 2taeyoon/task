@@ -112,11 +112,6 @@ slider.addEventListener('touchend', (event)=>{
     }
 });
 
-/*
-slider.addEventListener('touchmove', (event) => {
-    event.preventDefault();
-});
-*/
 IntervalID = setInterval(mainSlider, 5000);
 // slider end!
 
@@ -138,7 +133,7 @@ const indexPort = (port)=>{
     port.portfolio.slice(0, 8).forEach((portImg)=>{
         const portLi = document.createElement('li');
         portLi.innerHTML = `
-            <a href="#" style="background: url('./lib/js/data/img/${portImg.img}') no-repeat center center / cover;"></a>
+            <a href="./sub/business_2.html" style="background: url('./lib/js/data/img/${portImg.img}') no-repeat center center / cover;"></a>
         `;
         portUl.append(portLi);
     });

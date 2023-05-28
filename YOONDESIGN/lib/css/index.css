@@ -1063,7 +1063,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
   display: flex;
   align-items: center;
   margin-bottom: 40px;
-  padding: 50px;
+  padding: 50px 50px 50px 80px;
   background: #ebebeb;
 }
 .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg h4 {
@@ -1183,6 +1183,9 @@ header .ham_wrap .ham_menu .ham_li:hover {
 }
 
 @media all and (max-width: 1024px) {
+  .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg {
+    padding: 50px 0px 50px 60px;
+  }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg h4 {
     padding-right: 55px;
     font-size: 20px;
@@ -1197,6 +1200,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
 @media all and (max-width: 768px) {
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg {
     flex-direction: column;
+    padding: 50px;
   }
   .sub_section2 .sub_content .sub_tab_list .sub_content_wrap8 .sub_con_bg h4 {
     font-size: 19px;
