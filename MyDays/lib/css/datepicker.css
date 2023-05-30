@@ -71,7 +71,7 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 
 .inp:focus { outline: none; background-color: #eee; }
 
-.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year { width: 15%; border: none; appearance: none; outline: none; }
-.ui-datepicker select.ui-datepicker-year { text-align: right; }
+.ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year { width: 13%; border: none; appearance: none; outline: none; }
+.ui-datepicker select.ui-datepicker-year { width: 17%; text-align: right; }
 .ui-datepicker select.ui-datepicker-month { margin-left: 10px; }
 .ui-datepicker select.ui-datepicker-month::-webkit-scrollbar, .ui-datepicker select.ui-datepicker-year::-webkit-scrollbar { display: none; }
