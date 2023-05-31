@@ -42,7 +42,7 @@
 </head>
 <body>
     <div class="wrap">
-        <header>
+        <header class="main_header">
             <div class="inner">
                 <h2 class="header_img">
                     <a href="./index.html">
@@ -58,12 +58,15 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <ul class="inner d_day_content">
-                            <li style="background: url('./lib/img/d_day_img01.jpg') no-repeat center / cover;">
+                            <li style="background: url('./lib/img/d_day_con01.jpg') no-repeat center / cover;">
                                 <div class="d_day_text">
-                                    <h4 class="d_day_text_title">제목</h4>
-                                    <div class="d_day_text_sub">
-                                        <div class="d_day_text_sub_first">내가 설정한 날짜</div>
-                                        <div>내가 설정한 커플, 시험 등</div>
+                                    <div class="d_day_text_icon"></div>
+                                    <div class="d_day_text_wrap">
+                                        <h4 class="d_day_text_title">커플지옥</h4>
+                                        <div class="d_day_text_sub">
+                                            <div class="d_day_text_sub_first">2022년 01월 16일</div>
+                                            <div>커플</div>
+                                        </div>
                                     </div>
                                 </div>
                                 <h3 class="d_day_bottom">145일</h3>
@@ -76,9 +79,13 @@
             <div id="d_day_add"></div>
         </main>
         <footer></footer>
-        <div id="select_d_day">
+        <div id="select_d_day" class="active">
+            <header class="sub_header">
+                <h2 class="sub_header_title">어떤 <span>디데이</span>인가요?</h2>
+            </header>
             <div class="close_btn"></div>
         </div>
+        <div class="add_d_day"></div>
         <!-- <input type="text" id="datepicker" placeholder="날짜를 선택해주세요." onfocus="this.placeholder = ''" onblur="this.placeholder = '날짜를 선택해주세요.'" style="border: 1px solid red;"> -->
     </div>
 </body>

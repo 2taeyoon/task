@@ -1,10 +1,10 @@
-body { max-width: 768px; max-height: 100vh; margin: 0 auto; }
+body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
 .inner { padding: 0 25px; }
 ::-webkit-scrollbar { display: none; }
 
 .wrap { position: relative;
 
-    header { background: #17181b;
+    .main_header { background: #17181b;
         .inner {
             h2 { display: flex; align-items: center; height: 50px;
                 a { display: flex; align-items: center; 
@@ -16,15 +16,18 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; }
     }
 
     main { position: relative;
-        .content_swiper { width: 100%; height: 80vh;
+        .content_swiper { width: 100%; max-height: 700px; height: 80vh;
             .swiper-wrapper { padding-top: 35px; box-sizing: border-box;
-                .swiper-slide { background: #202226; color: #ddd; overflow-y: scroll;
+                .swiper-slide { background: #202226; overflow-y: scroll;
                     .d_day_content {
                         li { position: relative; width: 100%; height: 200px; margin: 25px 0; border-radius: 20px; cursor: pointer;
-                            .d_day_text { display: flex; flex-direction: column; position: absolute; top: 35px; left: 35px;
-                                .d_day_text_title { color: #fff; font-size: 24px; font-weight: 500; }
-                                .d_day_text_sub { display: flex; padding-top: 10px; color: #ddd; font-size: 16px;
-                                    .d_day_text_sub_first { padding-right: 15px; }
+                            .d_day_text { display: flex; align-items: center; position: absolute; top: 35px; left: 35px;
+                                .d_day_text_icon {}
+                                .d_day_text_wrap { display: flex; flex-direction: column;
+                                    .d_day_text_title { color: #fff; font-size: 24px; font-weight: 500; }
+                                    .d_day_text_sub { display: flex; padding-top: 10px; font-size: 16px;
+                                        .d_day_text_sub_first { padding-right: 15px; }
+                                    }
                                 }
                             }
                             .d_day_bottom { position: absolute; bottom: 35px; right: 40px; color: #fff; font-size: 32px; font-weight: 500; }
@@ -48,8 +51,13 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; }
 
     footer { height: 94px; background: #17181b; }
 
-    #select_d_day { position: absolute; left: 50%; top: -25%; transform: translate(-50%, -50%); width: 50%; height: 50%; background: #17181b; z-index: 10; transition: width 0.3s, height 0.3s;
-        &.active { top: 50%; width: 100%; height: 100%; }
+    #select_d_day { position: absolute; top: -100%; width: 100%; height: 100%; background: #17181b; z-index: 10; transition: 0.5s;
+        &.active { top: 0; }
+        .sub_header { display: flex; position: relative; width: 100%; height: 35px; align-items: center; justify-content: center; margin-top: 22px;
+            .sub_header_title { font-size: 16px;
+                span { color: #4ec2af; }
+            }
+        }
         .close_btn { position: absolute; top: 30px; right: 30px; width: 20px; height: 20px; background: url('../../lib/img/close_btn.svg') no-repeat center / 20px; cursor: pointer; }
     }
 }
