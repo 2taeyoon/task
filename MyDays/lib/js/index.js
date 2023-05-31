@@ -11,3 +11,15 @@ let swiper = new Swiper(".content_swiper", {
         }
     },
 });
+
+const dayAdd = document.getElementById('d_day_add');
+const selectDay = document.getElementById('select_d_day');
+const closeBtn = document.querySelector('.close_btn');
+
+dayAdd.addEventListener('click', ()=>{
+    selectDay.classList.add('active');
+});
+
+closeBtn.addEventListener('click', ()=>{
+    selectDay.classList.remove('active');
+})
