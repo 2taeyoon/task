@@ -2,8 +2,14 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
 .inner { padding: 0 25px; }
 ::-webkit-scrollbar { display: none; }
 
-.wrap { position: relative;
+@mixin sub_hide(){ position: absolute; top: -100%; width: 100%; height: 100%; background: #17181b; z-index: 10; transition: 0.5s;
+    &.active { top: 0; }
+}
+@mixin close_btn(){ position: absolute; top: 30px; right: 30px; width: 20px; height: 20px; background: url('../../lib/img/close_btn.svg') no-repeat center / 20px; cursor: pointer; }
+@mixin flex_align_justify_center(){ display: flex; align-items: center; justify-content: center; }
 
+
+.wrap { position: relative;
     .main_header { background: #17181b;
         .inner {
             h2 { display: flex; align-items: center; height: 50px;
@@ -16,13 +22,13 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
     }
 
     main { position: relative;
-        .content_swiper { width: 100%; max-height: 700px; height: 80vh;
+        .content_swiper { width: 100%; max-height: 600px; height: 70vh;
             .swiper-wrapper { padding-top: 35px; box-sizing: border-box;
                 .swiper-slide { background: #202226; overflow-y: scroll;
                     .d_day_content {
                         li { position: relative; width: 100%; height: 200px; margin: 25px 0; border-radius: 20px; cursor: pointer;
                             .d_day_text { display: flex; align-items: center; position: absolute; top: 35px; left: 35px;
-                                .d_day_text_icon {}
+                                .d_day_text_icon { width: 50px; height: 50px; margin-right: 15px; }
                                 .d_day_text_wrap { display: flex; flex-direction: column;
                                     .d_day_text_title { color: #fff; font-size: 24px; font-weight: 500; }
                                     .d_day_text_sub { display: flex; padding-top: 10px; font-size: 16px;
@@ -49,15 +55,39 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
         .swiper-pagination-bullet-active { color: #ddd; font-weight: 600; }
     }
 
-    footer { height: 94px; background: #17181b; }
+    .footer { @include flex_align_justify_center(); height: 94px; background: #17181b;
+        .ad_sense { @include flex_align_justify_center(); width: 300px; height: 40%; background: #4ec2af; }
+    }
 
-    #select_d_day { position: absolute; top: -100%; width: 100%; height: 100%; background: #17181b; z-index: 10; transition: 0.5s;
-        &.active { top: 0; }
-        .sub_header { display: flex; position: relative; width: 100%; height: 35px; align-items: center; justify-content: center; margin-top: 22px;
-            .sub_header_title { font-size: 16px;
+    #select_d_day { @include sub_hide();
+        .sub_header { @include flex_align_justify_center(); position: relative; width: 100%; height: 35px; padding: 22px 0; box-sizing: unset; border-bottom: 1px solid #333;
+            .sub_header_title { font-size: 20px;
                 span { color: #4ec2af; }
             }
+            .close_btn { @include close_btn(); }
         }
-        .close_btn { position: absolute; top: 30px; right: 30px; width: 20px; height: 20px; background: url('../../lib/img/close_btn.svg') no-repeat center / 20px; cursor: pointer; }
+        .sub_footer { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
+        .sub_content { //width: 100%; max-height: 700px; height: 80vh;
+            .which_day_content { display: flex; flex-wrap: wrap; justify-content: center; width: 100%; margin-top: 15px;
+                li { @include flex_align_justify_center(); width: 140px; height: 140px; margin: 10px; border-radius: 20px; cursor: pointer;
+                    h3 { color: #fff; font-weight: 500; font-size: 18px; }
+                }
+            }
+            .which_day_text { margin-top: 25px; text-align: center; font-size: 16px; }
+        }
+        .sub_day_list { 
+            li { @include sub_hide(); z-index: 20; }
+        }
     }
+}
+
+
+
+
+@media all and (max-width:550px){
+
+}
+
+@media all and (max-width:480px){
+
 }
