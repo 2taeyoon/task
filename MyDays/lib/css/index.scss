@@ -1,4 +1,4 @@
-body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
+body { position: relative; max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
 .inner { padding: 0 25px; }
 ::-webkit-scrollbar { display: none; }
 
@@ -7,7 +7,7 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
 }
 @mixin close_btn(){ position: absolute; top: 30px; right: 30px; width: 20px; height: 20px; background: url('../../lib/img/close_btn.svg') no-repeat center / 20px; cursor: pointer; }
 @mixin flex_align_justify_center(){ display: flex; align-items: center; justify-content: center; }
-
+@mixin position_ab_center() { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
 .wrap { position: relative;
     .main_header { background: #17181b;
@@ -15,7 +15,7 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
             h2 { display: flex; align-items: center; height: 50px;
                 a { display: flex; align-items: center; 
                     div { display: block; width: 20px; height: 20px; margin-right: 5px; background: url('../../common/img/favicon/favicon-96x96.png') no-repeat center / cover; }
-                    span { color: #4ec2af; font-weight: 600; }
+                    span { color: #288575; font-weight: 600; }
                 }
             }
         }
@@ -26,7 +26,7 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
             .swiper-wrapper { padding-top: 35px; box-sizing: border-box;
                 .swiper-slide { background: #202226; overflow-y: scroll;
                     .d_day_content {
-                        li { position: relative; width: 100%; height: 200px; margin: 25px 0; border-radius: 20px; cursor: pointer;
+                        li { position: relative; width: 100%; height: 200px; margin: 25px 0; border-radius: 20px; box-shadow: 0 0 10px 0 #000000; cursor: pointer;
                             .d_day_text { display: flex; align-items: center; position: absolute; top: 35px; left: 35px;
                                 .d_day_text_icon { width: 50px; height: 50px; margin-right: 15px; }
                                 .d_day_text_wrap { display: flex; flex-direction: column;
@@ -42,9 +42,10 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
                 }
             }
         }
-        #d_day_add { position: absolute; width: 50px; height: 50px; border-radius: 50%; background: #4ec2af; cursor: pointer; bottom: 50px; z-index: 10; right: 60px;
-            &::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 25px; height: 5px; border-radius: 999px; background: #fff; }
-            &::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 5px; height: 25px; border-radius: 999px; background: #fff; }
+        #d_day_add { position: absolute; width: 50px; height: 50px; border-radius: 50%; background: #288575; cursor: pointer; bottom: 50px; z-index: 10; right: 60px;
+            &::after { @include position_ab_center(); content: ''; width: 25px; height: 5px; border-radius: 999px; background: #ddd; }
+            &::before { @include position_ab_center(); content: ''; width: 5px; height: 25px; border-radius: 999px; background: #ddd; }
+            &:hover { background: #1a6659; }
         }
     }
 
@@ -56,7 +57,7 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
     }
 
     .footer { @include flex_align_justify_center(); height: 94px; background: #17181b;
-        .ad_sense { @include flex_align_justify_center(); width: 300px; height: 40%; background: #4ec2af; }
+        .ad_sense { @include flex_align_justify_center(); width: 300px; height: 40%; background: #288575; }
     }
 
     #select_d_day { @include sub_hide();
@@ -66,10 +67,10 @@ body { max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
             }
             .close_btn { @include close_btn(); }
         }
-        .sub_footer { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
-        .sub_content { //width: 100%; max-height: 700px; height: 80vh;
-            .which_day_content { display: flex; flex-wrap: wrap; justify-content: center; width: 100%; margin-top: 15px;
-                li { @include flex_align_justify_center(); width: 140px; height: 140px; margin: 10px; border-radius: 20px; cursor: pointer;
+        .sub_footer { position: absolute; bottom: 0; width: 100%; background: #202226; }
+        .sub_content {
+            .which_day_content { display: flex; flex-wrap: wrap; justify-content: center; width: 100%; margin-top: 30px;
+                li { @include flex_align_justify_center(); width: 140px; height: 140px; margin: 10px; border-radius: 20px; cursor: pointer; box-shadow: 0 0 10px 0 #000000;
                     h3 { color: #fff; font-weight: 500; font-size: 18px; }
                 }
             }

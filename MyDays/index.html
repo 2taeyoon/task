@@ -32,9 +32,9 @@
     <link rel="stylesheet" href="./lib/css/index.css">
 
     <!-- <script src="./common/js/prefixfree.min.js" type="text/javascript"></script> -->
-    <script defer src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" type="text/javascript"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" type="text/javascript"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" type="text/javascript"></script>
     <script defer src="./lib/js/datepicker.js" type="text/javascript"></script>
     <script defer src="./lib/js/index.js" type="text/javascript"></script>
 
@@ -42,7 +42,7 @@
 </head>
 <body>
     <div class="wrap">
-        <header class="main_header">
+        <header class="main_header"> <!-- HEADER START! -->
             <div class="inner">
                 <h2 class="header_img">
                     <a href="./index.html">
@@ -51,8 +51,8 @@
                     </a>
                 </h2>
             </div>
-        </header>
-        <main>
+        </header> <!-- HEADER END! -->
+        <main> <!-- MAIN START! -->
             <div class="swiper content_swiper">
                 <div class="swiper-pagination"></div>
                 <div class="swiper-wrapper">
@@ -77,13 +77,13 @@
                 </div>
             </div>
             <div id="d_day_add"></div>
-        </main>
-        <footer class="footer">
+        </main> <!-- MAIN END! -->
+        <footer class="footer"> <!-- FOOTER START! -->
             <div class="ad_sense">
                 <h2>구글 애드센스가 들어갈 공간입니다</h2>
             </div>
-        </footer>
-        <div id="select_d_day" class="">
+        </footer> <!-- FOOTER END! -->
+        <div id="select_d_day" class="active"> <!-- SELECT D-DAY POPUP START! -->
             <div class="sub_header">
                 <h2 class="sub_header_title">어떤 <span>디데이</span>인가요?</h2>
                 <div class="close_btn select_d_day_btn"></div>
@@ -102,12 +102,14 @@
                     <h2>구글 애드센스가 들어갈 공간입니다</h2>
                 </div>
             </div>
-            <ul class="sub_day_list">
-                <li class="">
+            <ul class="sub_day_list"> <!-- D-DAY ADD POPUP START! -->
+                <li class="active">
                     <div class="sub_header">
                         <h2 class="sub_header_title">어떤11 <span>디데이</span>인가요?</h2>
                         <div class="close_btn"></div>
                     </div>
+                    <input type="text" id="date_d_day" class="date_common" placeholder="날짜를 선택해주세요." onfocus="this.placeholder = ''" onblur="this.placeholder = '날짜를 선택해주세요.'" style="border: 1px solid red;">
+                    <input type="text" id="date" class="date_common" placeholder="test." onfocus="this.placeholder = ''" onblur="this.placeholder = '날짜를 선택해주세요.'" style="border: 1px solid red;">
                     <div class="footer sub_footer">
                         <div class="ad_sense">
                             <h2>구글 애드센스가 들어갈 공간입니다</h2>
@@ -147,10 +149,9 @@
                         </div>
                     </div>
                 </li>
-            </ul>
-        </div>
-        <div class="add_d_day"></div>
-        <!-- <input type="text" id="datepicker" placeholder="날짜를 선택해주세요." onfocus="this.placeholder = ''" onblur="this.placeholder = '날짜를 선택해주세요.'" style="border: 1px solid red;"> -->
+            </ul> <!-- D-DAY ADD POPUP END! -->
+        </div> <!-- SELECT D-DAY POPUP END! -->
+        <div class="add_d_day"></div> <!-- D-DAY BUTTON! -->
     </div>
 </body>
 </html>

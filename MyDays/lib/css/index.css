@@ -1,4 +1,5 @@
 body {
+  position: relative;
   max-width: 768px;
   max-height: 100vh;
   margin: 0 auto;
@@ -36,7 +37,7 @@ body {
   background: url("../../common/img/favicon/favicon-96x96.png") no-repeat center/cover;
 }
 .wrap .main_header .inner h2 a span {
-  color: #4ec2af;
+  color: #288575;
   font-weight: 600;
 }
 .wrap main {
@@ -61,6 +62,7 @@ body {
   height: 200px;
   margin: 25px 0;
   border-radius: 20px;
+  box-shadow: 0 0 10px 0 #000000;
   cursor: pointer;
 }
 .wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_text {
@@ -105,33 +107,36 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #4ec2af;
+  background: #288575;
   cursor: pointer;
   bottom: 50px;
   z-index: 10;
   right: 60px;
 }
 .wrap main #d_day_add::after {
-  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  content: "";
   width: 25px;
   height: 5px;
   border-radius: 999px;
-  background: #fff;
+  background: #ddd;
 }
 .wrap main #d_day_add::before {
-  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  content: "";
   width: 5px;
   height: 25px;
   border-radius: 999px;
-  background: #fff;
+  background: #ddd;
+}
+.wrap main #d_day_add:hover {
+  background: #1a6659;
 }
 .wrap .swiper-horizontal > .swiper-pagination-bullets {
   top: 0;
@@ -168,7 +173,7 @@ body {
   justify-content: center;
   width: 300px;
   height: 40%;
-  background: #4ec2af;
+  background: #288575;
 }
 .wrap #select_d_day {
   position: absolute;
@@ -211,15 +216,15 @@ body {
 .wrap #select_d_day .sub_footer {
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 100%;
+  background: #202226;
 }
 .wrap #select_d_day .sub_content .which_day_content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 .wrap #select_d_day .sub_content .which_day_content li {
   display: flex;
@@ -230,6 +235,7 @@ body {
   margin: 10px;
   border-radius: 20px;
   cursor: pointer;
+  box-shadow: 0 0 10px 0 #000000;
 }
 .wrap #select_d_day .sub_content .which_day_content li h3 {
   color: #fff;
