@@ -69,8 +69,8 @@ html .ui-button.ui-state-disabled:active { border: 0px solid #c5c5c5; background
 .ui-widget-header .ui-icon { background-image: url('../img/datepicker.png'); background-position-y: -1px; }
 .ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span { position: unset; left: unset; top: unset; margin: unset; filter: invert(0.9); }
 
-.ui-datepicker select.ui-datepicker-year, .ui-datepicker select.ui-datepicker-month { width: 30px; border: none; appearance: none; outline: none; background: #202226; color: #ddd; }
-.ui-datepicker select.ui-datepicker-year { width: 40px; text-align: right; }
+.ui-datepicker select.ui-datepicker-year, .ui-datepicker select.ui-datepicker-month { width: 40px; border: none; appearance: none; outline: none; background: #202226; color: #ddd; }
+.ui-datepicker select.ui-datepicker-year { width: 60px; text-align: right; }
 .ui-datepicker select.ui-datepicker-year option { text-align: right; }
 .ui-datepicker select.ui-datepicker-month { margin-left: 10px; }
 .ui-datepicker select.ui-datepicker-month::-webkit-scrollbar, .ui-datepicker select.ui-datepicker-year::-webkit-scrollbar { display: none; }
