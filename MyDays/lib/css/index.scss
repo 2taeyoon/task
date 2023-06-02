@@ -1,4 +1,4 @@
-body { position: relative; width: 100%; max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
+body { position: relative; width: 100%; max-width: 768px; height: 100vh; max-height: 100vh; margin: 0 auto; color: #ddd; }
 .inner { padding: 0 25px; }
 ::-webkit-scrollbar { display: none; }
 
@@ -9,7 +9,13 @@ body { position: relative; width: 100%; max-width: 768px; max-height: 100vh; mar
 @mixin flex_align_justify_center(){ display: flex; align-items: center; justify-content: center; }
 @mixin position_ab_center() { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
-.wrap { position: relative;
+.footer { @include flex_align_justify_center(); position: absolute; bottom: 0; width: 100%; height: 94px; background: #17181b;
+    .ad_sense { @include flex_align_justify_center(); width: 300px; height: 35px; background: #288575; }
+}
+.sub_footer {  background: #202226; }
+
+
+.wrap { position: relative; height: 100vh; background: #202226;
     .main_header { background: #17181b;
         .inner {
             h2 { display: flex; align-items: center; height: 50px;
@@ -22,7 +28,7 @@ body { position: relative; width: 100%; max-width: 768px; max-height: 100vh; mar
     }
 
     main { position: relative;
-        .content_swiper { width: 100%; max-height: 700px; height: 80vh;
+        .content_swiper { width: 100%; height: 80vh;
             .swiper-wrapper { padding-top: 35px; box-sizing: border-box;
                 .swiper-slide { background: #202226; overflow-y: scroll;
                     .d_day_content {
@@ -56,9 +62,7 @@ body { position: relative; width: 100%; max-width: 768px; max-height: 100vh; mar
         .swiper-pagination-bullet-active { color: #ddd; font-weight: 600; }
     }
 
-    .footer { @include flex_align_justify_center(); height: 94px; background: #17181b;
-        .ad_sense { @include flex_align_justify_center(); width: 300px; height: 35px; background: #288575; }
-    }
+
 
     #select_d_day { @include sub_hide();
         .sub_header { @include flex_align_justify_center(); position: relative; width: 100%; height: 35px; padding: 22px 0; box-sizing: unset; border-bottom: 1px solid #333;
@@ -67,7 +71,6 @@ body { position: relative; width: 100%; max-width: 768px; max-height: 100vh; mar
             }
             .close_btn { @include close_btn(); }
         }
-        .sub_footer { position: absolute; bottom: 0; width: 100%; background: #202226; }
         .sub_content {
             .which_day_content { display: flex; flex-wrap: wrap; justify-content: center; width: 100%; margin-top: 30px;
                 li { @include flex_align_justify_center(); width: 140px; height: 140px; margin: 10px; border-radius: 20px; cursor: pointer; box-shadow: 0 0 10px 0 #000000;

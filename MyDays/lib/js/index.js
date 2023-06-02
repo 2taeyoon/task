@@ -3,8 +3,8 @@ const tabList = ['디데이', '더보기'];
 let swiper = new Swiper(".content_swiper", {
     direction: 'horizontal',
     loop: true,
-    hardwareAcceleration: true,
-
+    touchRatio: 0,
+    
     pagination: {
         el: '.swiper-d-day',
         clickable: true,
