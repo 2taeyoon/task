@@ -1,5 +1,6 @@
-body {
+html {
   position: relative;
+  width: 100%;
   max-width: 768px;
   max-height: 100vh;
   margin: 0 auto;
@@ -303,7 +304,7 @@ body {
 }
 .wrap #select_d_day .sub_day_list li .d_day_select_wrap .d_day_select_bottom .inner .d_day_select_bottom_wrap .d_day_select_bottom_text_common {
   width: 50%;
-  color: #ddd;
+  color: #aaa;
   background: none;
   outline: none;
   font-size: 14px;
@@ -318,13 +319,15 @@ body {
   width: 50%;
 }
 .wrap #select_d_day .sub_day_list li .d_day_select_wrap .d_day_select_bottom .inner .d_day_select_bottom_wrap h3 {
+  color: #aaa;
   font-size: 14px;
 }
 .wrap #select_d_day .sub_day_list li .d_day_select_wrap .d_day_select_bottom .inner .d_day_select_bottom_wrap .date_common {
   width: 40%;
   outline: none;
   background: none;
-  color: #ddd;
+  color: #aaa;
   font-size: 14px;
   text-align: right;
+  cursor: pointer;
 }/*# sourceMappingURL=index.css.map */

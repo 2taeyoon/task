@@ -1,4 +1,4 @@
-body { position: relative; max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
+html { position: relative; width: 100%; max-width: 768px; max-height: 100vh; margin: 0 auto; color: #ddd; }
 .inner { padding: 0 25px; }
 ::-webkit-scrollbar { display: none; }
 
@@ -87,14 +87,14 @@ body { position: relative; max-width: 768px; max-height: 100vh; margin: 0 auto; 
                     .d_day_select_bottom {
                         .inner { display: flex; flex-direction: column; padding: 10px 35px 0;
                             .d_day_select_bottom_wrap { display: flex; justify-content: space-between; padding: 25px 0; border-bottom: 1px solid #2e3034;
-                                .d_day_select_bottom_text_common { width: 50%; color: #ddd; background: none; outline: none; font-size: 14px;
+                                .d_day_select_bottom_text_common { width: 50%; color: #aaa; background: none; outline: none; font-size: 14px;
                                     &::placeholder { color: #aaa; }
                                 }
                                 .icons_box { width: 50%;
                                     li {}
                                 }
-                                h3 { font-size: 14px; }
-                                .date_common { width: 40%; outline: none; background: none; color: #ddd; font-size: 14px; text-align: right; }
+                                h3 { color: #aaa; font-size: 14px; }
+                                .date_common { width: 40%; outline: none; background: none; color: #aaa; font-size: 14px; text-align: right; cursor: pointer; }
                             }
                         }
                     }
