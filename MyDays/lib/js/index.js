@@ -1,10 +1,12 @@
 const tabList = ['디데이', '더보기'];
 
 let swiper = new Swiper(".content_swiper", {
+    direction: 'horizontal',
     loop: true,
+    hardwareAcceleration: true,
 
     pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-d-day',
         clickable: true,
         renderBullet: function (index, className) {
             return `<span class="${className}">${ tabList[0 + index] }</span>`;
