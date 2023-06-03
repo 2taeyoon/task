@@ -32,9 +32,10 @@
     <link rel="stylesheet" href="./lib/css/index.css">
 
     <!-- <script src="./common/js/prefixfree.min.js" type="text/javascript"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
     <script defer src="./lib/js/datepicker.js" type="text/javascript"></script>
     <script defer src="./lib/js/index.js" type="text/javascript"></script>
 
@@ -59,12 +60,11 @@
                         <ul class="inner d_day_content">
                             <li style="background: url('./lib/img/d_day_con01.jpg') no-repeat center / cover;">
                                 <div class="d_day_text">
-                                    <div class="d_day_text_icon" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / 50px;"></div>
+                                    <div class="d_day_text_icon" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / 45px;"></div>
                                     <div class="d_day_text_wrap">
                                         <h4 class="d_day_text_title">커플지옥</h4>
                                         <div class="d_day_text_sub">
-                                            <div class="d_day_text_sub_first">2022년 01월 16일</div>
-                                            <div>커플</div>
+                                            <div>2022년 01월 16일</div>
                                         </div>
                                     </div>
                                 </div>
@@ -72,12 +72,23 @@
                             </li>
                             <li style="background: url('./lib/img/d_day_con01.jpg') no-repeat center / cover;">
                                 <div class="d_day_text">
-                                    <div class="d_day_text_icon" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / 50px;"></div>
+                                    <div class="d_day_text_icon" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / 45px;"></div>
                                     <div class="d_day_text_wrap">
                                         <h4 class="d_day_text_title">커플지옥</h4>
                                         <div class="d_day_text_sub">
-                                            <div class="d_day_text_sub_first">2022년 01월 16일</div>
-                                            <div>커플</div>
+                                            <div>2022년 01월 16일</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="d_day_bottom">145일</h3>
+                            </li>
+                            <li style="background: url('./lib/img/d_day_con01.jpg') no-repeat center / cover;">
+                                <div class="d_day_text">
+                                    <div class="d_day_text_icon" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / 45px;"></div>
+                                    <div class="d_day_text_wrap">
+                                        <h4 class="d_day_text_title">커플지옥</h4>
+                                        <div class="d_day_text_sub">
+                                            <div>2022년 01월 16일</div>
                                         </div>
                                     </div>
                                 </div>
@@ -117,31 +128,31 @@
             </div>
             <div class="sub_day_list"> <!-- D-DAY ADD POPUP START! -->
                 <div class="sub_day_list_wrap">
-                    <div class="sub_day_list_li active">
+                    <div class="sub_day_list_li">
                         <div class="sub_header">
                             <h2 class="sub_header_title"><span>D-DAY</span></h2>
                             <div class="close_btn"></div>
                         </div>
                         <div class="d_day_select_wrap">
-                            <div class="d_day_select_top">
-                                <h3 class="d_day_select_top_title">디데이텍스트</h3>
+                            <div class="d_day_select_top" style="background: url(./lib/img/d_day_con01.jpg) no-repeat center / cover;">
+                                <h3 class="d_day_select_top_title">D-day</h3>
                                 <div class="d_day_select_save_bth">저장</div>
-                                <input id="upload_img" class="upload_img" type="file">
-                                <label for="upload_img" class="upload_label"></label>
+                                <input id="upload_img01" class="upload_img_common" type="file">
+                                <label for="upload_img01" class="upload_label"></label>
                             </div>
                             <div class="d_day_select_bottom">
                                 <div class="inner">
                                     <div class="d_day_select_bottom_wrap">
                                         <h3>날짜를 선택해주세요.</h3>
-                                        <input type="text" id="date_d_day" class="date_common">
+                                        <input type="text" id="date_d_day1" class="date_common">
                                     </div>
                                     <div class="d_day_select_bottom_wrap">
                                         <h3>제목을 입력해주세요.</h3>
-                                        <input type="text" id="d_day_select_bottom_text" class="d_day_select_bottom_text_common" maxlength="10" placeholder="D-DAY 제목" onfocus="this.placeholder = ''" onblur="this.placeholder = 'D-DAY 제목'">
+                                        <input type="text" id="d_day_select_bottom_text1" class="d_day_select_bottom_text_common" maxlength="10" placeholder="D-DAY 제목" onfocus="this.placeholder = ''" onblur="this.placeholder = 'D-DAY 제목'">
                                     </div>
                                     <div class="d_day_select_bottom_wrap">
                                         <h3>아이콘을 선택해주세요.</h3>
-                                        <div class="icons_box">ICON</div>
+                                        <div class="icons_box" style="background: url('./lib/img/d_day_icon01.png') center center / cover no-repeat;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -154,17 +165,18 @@
                     </div>
                     <div class="icon_list_wrap">
                         <ul class="icon_list">
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon01.png" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon02.png" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon03.png" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon04.png" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon05.png" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon06.png" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon07.png" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon08.png" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon09.png" style="background: url('./lib/img/d_day_icon09.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon10.png" style="background: url('./lib/img/d_day_icon10.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon11.png" style="background: url('./lib/img/d_day_icon11.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon12.png" style="background: url('./lib/img/d_day_icon12.png') no-repeat center / cover;"></li>
                         </ul>
                     </div>
                 </div>
@@ -175,16 +187,16 @@
                             <div class="close_btn"></div>
                         </div>
                         <div class="d_day_select_wrap">
-                            <div class="d_day_select_top">
-                                <h3 class="d_day_select_top_title">디데이텍스트</h3>
+                            <div class="d_day_select_top" style="background: url(./lib/img/d_day_con02.jpg) no-repeat center / cover;">
+                                <h3 class="d_day_select_top_title">만 0살</h3>
                                 <div class="d_day_select_save_bth">저장</div>
-                                <input id="upload_img2" class="upload_img" type="file">
-                                <label for="upload_img2" class="upload_label"></label>
+                                <input id="upload_img02" class="upload_img_common" type="file">
+                                <label for="upload_img02" class="upload_label"></label>
                             </div>
                             <div class="d_day_select_bottom">
                                 <div class="inner">
                                     <div class="d_day_select_bottom_wrap">
-                                        <h3>날짜를 선택해주세요.</h3>
+                                        <h3>태어난 날짜를 선택해주세요.</h3>
                                         <input type="text" id="date_d_day2" class="date_common">
                                     </div>
                                     <div class="d_day_select_bottom_wrap">
@@ -193,7 +205,7 @@
                                     </div>
                                     <div class="d_day_select_bottom_wrap">
                                         <h3>아이콘을 선택해주세요.</h3>
-                                        <div class="icons_box">ICON</div>
+                                        <div class="icons_box" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -206,32 +218,33 @@
                     </div>
                     <div class="icon_list_wrap">
                         <ul class="icon_list">
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon01.png" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon02.png" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon03.png" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon04.png" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon05.png" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon06.png" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon07.png" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon08.png" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon09.png" style="background: url('./lib/img/d_day_icon09.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon10.png" style="background: url('./lib/img/d_day_icon10.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon11.png" style="background: url('./lib/img/d_day_icon11.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon12.png" style="background: url('./lib/img/d_day_icon12.png') no-repeat center / cover;"></li>
                         </ul>
                     </div>
                 </div>
                 <div class="sub_day_list_wrap">
-                    <div class="sub_day_list_li active">
+                    <div class="sub_day_list_li">
                         <div class="sub_header">
                             <h2 class="sub_header_title"><span>D-DAY</span></h2>
                             <div class="close_btn"></div>
                         </div>
                         <div class="d_day_select_wrap">
-                            <div class="d_day_select_top">
-                                <h3 class="d_day_select_top_title">디데이텍스트</h3>
+                            <div class="d_day_select_top" style="background: url(./lib/img/d_day_con03.jpg) no-repeat center / cover;">
+                                <h3 class="d_day_select_top_title">D-day</h3>
                                 <div class="d_day_select_save_bth">저장</div>
-                                <input id="upload_img3" class="upload_img" type="file">
-                                <label for="upload_img3" class="upload_label"></label>
+                                <input id="upload_img03" class="upload_img_common" type="file">
+                                <label for="upload_img03" class="upload_label"></label>
                             </div>
                             <div class="d_day_select_bottom">
                                 <div class="inner">
@@ -245,7 +258,7 @@
                                     </div>
                                     <div class="d_day_select_bottom_wrap">
                                         <h3>아이콘을 선택해주세요.</h3>
-                                        <div class="icons_box">ICON</div>
+                                        <div class="icons_box" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -258,32 +271,33 @@
                     </div>
                     <div class="icon_list_wrap">
                         <ul class="icon_list">
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon01.png" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon02.png" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon03.png" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon04.png" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon05.png" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon06.png" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon07.png" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon08.png" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon09.png" style="background: url('./lib/img/d_day_icon09.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon10.png" style="background: url('./lib/img/d_day_icon10.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon11.png" style="background: url('./lib/img/d_day_icon11.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon12.png" style="background: url('./lib/img/d_day_icon12.png') no-repeat center / cover;"></li>
                         </ul>
                     </div>
                 </div>
                 <div class="sub_day_list_wrap">
-                    <div class="sub_day_list_li active">
+                    <div class="sub_day_list_li">
                         <div class="sub_header">
                             <h2 class="sub_header_title"><span>D-DAY</span></h2>
                             <div class="close_btn"></div>
                         </div>
                         <div class="d_day_select_wrap">
-                            <div class="d_day_select_top">
-                                <h3 class="d_day_select_top_title">디데이텍스트</h3>
+                            <div class="d_day_select_top" style="background: url(./lib/img/d_day_con04.jpg) no-repeat center / cover;">
+                                <h3 class="d_day_select_top_title">D-day</h3>
                                 <div class="d_day_select_save_bth">저장</div>
-                                <input id="upload_img4" class="upload_img" type="file">
-                                <label for="upload_img4" class="upload_label"></label>
+                                <input id="upload_img04" class="upload_img_common" type="file">
+                                <label for="upload_img04" class="upload_label"></label>
                             </div>
                             <div class="d_day_select_bottom">
                                 <div class="inner">
@@ -297,7 +311,7 @@
                                     </div>
                                     <div class="d_day_select_bottom_wrap">
                                         <h3>아이콘을 선택해주세요.</h3>
-                                        <div class="icons_box">ICON</div>
+                                        <div class="icons_box" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></div>
                                     </div>
                                 </div>
                             </div>
@@ -310,17 +324,18 @@
                     </div>
                     <div class="icon_list_wrap">
                         <ul class="icon_list">
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
-                            <li class="icon_list_li" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon01.png" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon02.png" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon03.png" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon04.png" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon05.png" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon06.png" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon07.png" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon08.png" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon09.png" style="background: url('./lib/img/d_day_icon09.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon10.png" style="background: url('./lib/img/d_day_icon10.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon11.png" style="background: url('./lib/img/d_day_icon11.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon12.png" style="background: url('./lib/img/d_day_icon12.png') no-repeat center / cover;"></li>
                         </ul>
                     </div>
                 </div>
