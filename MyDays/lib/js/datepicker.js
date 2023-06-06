@@ -1,4 +1,4 @@
-// Calendar D-Day Jquery Code Start! 
+// CALENDAR D-DAY JQUERY CODE START!
 const dDayTopTitle = document.querySelectorAll('.d_day_select_top_title');
 const currentYear = new Date().getFullYear();
 
@@ -48,15 +48,16 @@ $(function() {
             if (yearsDifference < 0) {
                 dDayTopTitle[1].innerHTML = '만 0살';
             } else {
-                dDayTopTitle[1].innerHTML = `만 ${yearsDifference}살`;
+                dDayTopTitle[1].innerHTML = `만 ${yearsDifference.toString()}살`;
             }
         }
     });
 });
-// Calendar D-Day Jquery Code End!
+// CALENDAR D-DAY JQUERY CODE END!
 
 
-// Calendar Common Jquery Code Start!
+
+// CALENDAR COMMON JQUERY CODE START!
 $(function() {
     $(".date_common").on("focus", function() {
         $(this).datepicker("widget").css({
@@ -86,11 +87,7 @@ $.datepicker.setDefaults({
     changeYear: true,
     changeMonth: true,
 });
-// Calendar Common Jquery Code End!
-
-
-
-
+// CALENDAR COMMON JQUERY CODE END!
 
 
 
@@ -109,10 +106,13 @@ selectDayBtn.addEventListener('click', ()=>{
 // SELECT D-DAY POPUP END!
 
 
+
 // SUBDAYLIST POPUP START!
 const whichDayContent = document.querySelectorAll('.which_day_content > li');
 const subDayList = document.querySelectorAll('.sub_day_list .sub_day_list_li');
 const closeBtn = document.querySelectorAll('.sub_day_list .close_btn');
+const dDaySelectTop = document.querySelectorAll('.d_day_select_top');
+const dDaySelectBottomTextCommon = document.querySelectorAll('.d_day_select_bottom_text_common');
 
 whichDayContent.forEach((selectList, index)=>{
     selectList.addEventListener('click',() => {
@@ -123,40 +123,42 @@ whichDayContent.forEach((selectList, index)=>{
     });
 });
 
-closeBtn.forEach((dayBtn)=>{
+// SUBDAYLIST POPUP창에서 
+closeBtn.forEach((dayBtn, index)=>{
     dayBtn.addEventListener('click',()=>{
         subDayList.forEach((dayList)=>{
             dayList.classList.remove('active');
         });
+        // SUBDAYLIST POPUP창에서 closeBtn 클릭 시 입력 초기화
+        dDaySelectTop[index].style.background = `url('./lib/img/d_day_con0${index + 1}.jpg') no-repeat center / cover`;
+        dDaySelectBottomTextCommon[index].value = '';
+        iconsBox[index].style.background = `url('./lib/img/d_day_icon01.png') no-repeat center / cover`;
+        dDayTopTitle[0].innerHTML = 'D-day';
+        dDayTopTitle[1].innerHTML = '만 0살';
+        $(".date_common").datepicker('setDate', 'today');
     });
 });
 // SUBDAYLIST POPUP END!
+
+
 
 // ICON POPUP START!
 const subDayListWraps = document.querySelectorAll('.sub_day_list_wrap');
 const iconsBox = document.querySelectorAll('.icons_box');
 const iconListWrap = document.querySelectorAll('.icon_list_wrap');
-const iconListLi = document.querySelectorAll('.icon_list_li');
 const dDaySave = document.querySelectorAll('.d_day_select_save_bth');
-
-dDaySave.forEach((saveBtn) => {
-    saveBtn.addEventListener('click', () => {
-        subDayList.forEach((dayList) => {
-            dayList.classList.remove('active');
-        });
-        selectDay.classList.remove('active');
-    });
-});
 
 subDayListWraps.forEach((subDayListWrap) => {
     const iconList = subDayListWrap.querySelector('.icon_list');
     const iconListLis = subDayListWrap.querySelectorAll('.icon_list_li');
-    const iconsBox = subDayListWrap.querySelector('.icons_box');
+    const wrapIconsBox = subDayListWrap.querySelector('.icons_box');
+    const iconListWrap = subDayListWrap.querySelector('.icon_list_wrap');
 
     iconListLis.forEach((iconListLi) => {
         iconListLi.addEventListener('click', () => {
             const dataImage = iconListLi.getAttribute('data-image');
-            iconsBox.style.background = `url('./lib/img/${dataImage}') center center / cover no-repeat `;
+            wrapIconsBox.style.background = `url('./lib/img/${dataImage}') center center / cover no-repeat `;
+            iconListWrap.classList.remove('active');
         });
     });
 
@@ -179,7 +181,18 @@ iconListWrap.forEach((iconWrap) => {
         iconWrap.classList.remove('active');
     });
 });
+
+// 저장 클릭시 SUBDAYLIST와 SELECT POPUP창 제거
+dDaySave.forEach((saveBtn) => {
+    saveBtn.addEventListener('click', () => {
+        subDayList.forEach((dayList) => {
+            dayList.classList.remove('active');
+        });
+        selectDay.classList.remove('active');
+    });
+});
 // ICON POPUP END!
+
 
 
 // INPUT FILE SRC IMPORT START!
