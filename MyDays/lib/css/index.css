@@ -59,7 +59,7 @@ body {
   background: #202226;
   overflow-y: scroll;
 }
-.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li {
+.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_content_bg {
   position: relative;
   width: 100%;
   height: 200px;
@@ -68,33 +68,33 @@ body {
   box-shadow: 0 0 10px 0 #000000;
   cursor: pointer;
 }
-.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_text {
+.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_content_bg .d_day_text {
   display: flex;
   align-items: center;
   position: absolute;
   top: 35px;
   left: 35px;
 }
-.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_text .d_day_text_icon {
+.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_content_bg .d_day_text .d_day_text_icon {
   width: 45px;
   height: 45px;
   margin-right: 15px;
 }
-.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_text .d_day_text_wrap {
+.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_content_bg .d_day_text .d_day_text_wrap {
   display: flex;
   flex-direction: column;
 }
-.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_text .d_day_text_wrap .d_day_text_title {
+.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_content_bg .d_day_text .d_day_text_wrap .d_day_text_title {
   color: #fff;
   font-size: 24px;
   font-weight: 500;
 }
-.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_text .d_day_text_wrap .d_day_text_sub {
+.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_content_bg .d_day_text .d_day_text_wrap .d_day_text_sub {
   display: flex;
   padding-top: 10px;
   font-size: 16px;
 }
-.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_bottom {
+.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_content_bg .d_day_bottom {
   position: absolute;
   bottom: 35px;
   right: 40px;

@@ -1,13 +1,15 @@
 // CALENDAR D-DAY JQUERY CODE START!
 const dDayTopTitle = document.querySelectorAll('.d_day_select_top_title');
 const currentYear = new Date().getFullYear();
-let selecData;
+let selectedDayData;
 
 $(function() {
     $("#date_d_day1").datepicker({
-        yearRange: `2000:${currentYear}`,
+        yearRange: `2010:${currentYear}`,
         onSelect: function() {
             let selectedDate = $("#date_d_day1").datepicker('getDate');
+            let selectedDatePrint = new Date($("#date_d_day1").datepicker('getDate'));
+            
             let currentDate = new Date();
 
             selectedDate.setHours(0, 0, 0, 0);
@@ -23,6 +25,8 @@ $(function() {
             } else if (daysDifference < 0) {
                 dDayTopTitle[0].innerHTML = `D${daysDifference.toString()}`;
             }
+
+            selectedDayData = selectedDatePrint;
         }
     });
 });
@@ -32,6 +36,7 @@ $(function() {
         yearRange: `1900:${currentYear}`,
         onSelect: function() {
             let selectedDate = $("#date_d_day2").datepicker('getDate');
+            let selectedDatePrint = new Date($("#date_d_day2").datepicker('getDate'));
             let currentDate = new Date();
 
             selectedDate.setHours(0, 0, 0, 0);
@@ -51,6 +56,8 @@ $(function() {
             } else {
                 dDayTopTitle[1].innerHTML = `만 ${yearsDifference.toString()}살`;
             }
+
+            selectedDayData = selectedDatePrint;
         }
     });
 });
@@ -60,6 +67,7 @@ $(function() {
         yearRange: `2020:${currentYear}`,
         onSelect: function() {
             let selectedDate = $("#date_d_day3").datepicker('getDate');
+            let selectedDatePrint = new Date($("#date_d_day3").datepicker('getDate'));
             let currentDate = new Date();
 
             selectedDate.setHours(0, 0, 0, 0);
@@ -75,10 +83,8 @@ $(function() {
             } else {
                 dDayTopTitle[2].innerHTML = `${monthsDifference.toString()}개월`;
             }
-            console.log('sdadsasdasdsa',monthsDifference);
-            selecData = `${selectedDate}`
-            console.log('slsectDate',selecData);
 
+            selectedDayData = selectedDatePrint;
         }
     });
 });
@@ -88,6 +94,7 @@ $(function() {
         yearRange: `1950:${currentYear}`,
         onSelect: function() {
             let selectedDate = $("#date_d_day4").datepicker('getDate');
+            let selectedDatePrint = new Date($("#date_d_day4").datepicker('getDate'));
             let currentDate = new Date();
 
             selectedDate.setHours(0, 0, 0, 0);
@@ -120,6 +127,8 @@ $(function() {
                 }
                 dDayTopTitle[3].innerHTML = `${yearsDifference}주년<span>(${monthsDifference}개월)</span>`;
             }
+
+            selectedDayData = selectedDatePrint;
         }
     });
 }); 
@@ -207,7 +216,7 @@ closeBtn.forEach((dayBtn, index)=>{
         dDayTopTitle[0].innerHTML = 'D-day';
         dDayTopTitle[1].innerHTML = '만 0살';
         dDayTopTitle[2].innerHTML = '0 개월';
-        dDayTopTitle[3].innerHTML = '0주년 <span>(0개월)</span>';
+        dDayTopTitle[3].innerHTML = '0주년<span>(0개월)</span>';
         $(".date_common").datepicker('setDate', 'today');
     });
 });
@@ -220,6 +229,57 @@ const subDayListWraps = document.querySelectorAll('.sub_day_list_wrap');
 const iconsBox = document.querySelectorAll('.icons_box');
 const iconListWrap = document.querySelectorAll('.icon_list_wrap');
 const dDaySave = document.querySelectorAll('.d_day_select_save_bth');
+
+dDaySave.forEach((saveBtn, index) => {
+    saveBtn.addEventListener('click', () => {
+        if(selectedDayData == undefined && dDaySelectBottomTextCommon[index].value == ''){
+            return alert('날짜를 선택하고 디데이 제목을 입력해주세요.');
+        } else if(selectedDayData == undefined) {
+            return alert('날짜를 선택해주세요.');
+        } else if(dDaySelectBottomTextCommon[index].value == '') {
+            return alert('디데이 제목을 입력해주세요');
+        } else {
+            subDayList.forEach((dayList) => {
+                dayList.classList.remove('active');
+            });
+            selectDay.classList.remove('active');
+        }
+
+        const dDayContent = document.querySelector('.d_day_content');
+        const newDayLi = document.createElement('li');
+        
+        const backgroundImage = getComputedStyle(dDayTopImages[index]).backgroundImage;
+        const imageUrl = backgroundImage.match(/url\(["']?([^"']+)["']?\)/)[1];
+
+        const iconImage = getComputedStyle(iconsBox[index]).backgroundImage;
+        const iconUrl = iconImage.match(/url\(["']?([^"']+)["']?\)/)[1];
+
+        const year = selectedDayData.getFullYear();
+        const month = selectedDayData.getMonth() + 1; // getMonth()는 0부터 시작해서 +1
+        const day = selectedDayData.getDate();
+        const formattedDate = `${year}년 ${month < 10 ? '0' + month : month}월 ${day < 10 ? '0' + day : day}일`;
+
+        newDayLi.innerHTML = `
+            <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
+                <div class="d_day_text">
+                    <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
+                    <div class="d_day_text_wrap">
+                        <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[index].value}</h4>
+                        <div class="d_day_text_sub">
+                            <div>${formattedDate}</div>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="d_day_bottom"></h3>
+            </div>
+        `;
+        
+        const aa = newDayLi.querySelector('.d_day_text_sub > div');
+        console.log('aaaaaaa',aa)
+
+        dDayContent.prepend(newDayLi);
+    });
+});
 
 subDayListWraps.forEach((subDayListWrap) => {
     const iconList = subDayListWrap.querySelector('.icon_list');
@@ -252,16 +312,6 @@ iconsBox.forEach((boxList, index) => {
 iconListWrap.forEach((iconWrap) => {
     iconWrap.addEventListener('click', () => {
         iconWrap.classList.remove('active');
-    });
-});
-
-// 저장 클릭시 SUBDAYLIST와 SELECT POPUP창 제거
-dDaySave.forEach((saveBtn) => {
-    saveBtn.addEventListener('click', () => {
-        subDayList.forEach((dayList) => {
-            dayList.classList.remove('active');
-        });
-        selectDay.classList.remove('active');
     });
 });
 // ICON POPUP END!
