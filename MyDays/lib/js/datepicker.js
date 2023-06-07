@@ -1,6 +1,7 @@
 // CALENDAR D-DAY JQUERY CODE START!
 const dDayTopTitle = document.querySelectorAll('.d_day_select_top_title');
 const currentYear = new Date().getFullYear();
+let selecData;
 
 $(function() {
     $("#date_d_day1").datepicker({
@@ -53,6 +54,76 @@ $(function() {
         }
     });
 });
+
+$(function() {
+    $("#date_d_day3").datepicker({
+        yearRange: `2020:${currentYear}`,
+        onSelect: function() {
+            let selectedDate = $("#date_d_day3").datepicker('getDate');
+            let currentDate = new Date();
+
+            selectedDate.setHours(0, 0, 0, 0);
+            currentDate.setHours(0, 0, 0, 0);
+            
+            let timeDifference = currentDate.getTime() - selectedDate.getTime();
+            let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+            let monthsDifference = Math.floor(daysDifference / 30);
+            
+            if (monthsDifference < 0) {
+                dDayTopTitle[2].innerHTML = '0개월';
+            } else {
+                dDayTopTitle[2].innerHTML = `${monthsDifference.toString()}개월`;
+            }
+            console.log('sdadsasdasdsa',monthsDifference);
+            selecData = `${selectedDate}`
+            console.log('slsectDate',selecData);
+
+        }
+    });
+});
+
+$(function() {
+    $("#date_d_day4").datepicker({
+        yearRange: `1950:${currentYear}`,
+        onSelect: function() {
+            let selectedDate = $("#date_d_day4").datepicker('getDate');
+            let currentDate = new Date();
+
+            selectedDate.setHours(0, 0, 0, 0);
+            currentDate.setHours(0, 0, 0, 0);
+            
+            let timeDifference = currentDate.getTime() - selectedDate.getTime();
+            let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+            let yearsDifference = Math.floor(daysDifference / 365);
+            let monthsDifference = Math.floor((daysDifference % 365) / 30);
+
+            let isYearsdayPassed = (selectedDate.getMonth() <= currentDate.getMonth()) && (selectedDate.getDate() <= currentDate.getDate());
+            if (!isYearsdayPassed) yearsDifference -= 1;
+
+            let isMonthsdayPassed = (selectedDate.getMonth() <= currentDate.getMonth()) && (selectedDate.getDate() <= currentDate.getDate());
+            if (!isMonthsdayPassed) monthsDifference -= 1;
+
+            //console.log('yearsDifference??', yearsDifference);
+            //console.log('monthsDifference??', monthsDifference);
+            
+            if (yearsDifference < 1 && monthsDifference < 1) {
+                dDayTopTitle[3].innerHTML = `0주년<span>(0개월)</span>`;
+            } else if(monthsDifference > 0) {
+                dDayTopTitle[3].innerHTML = `0주년<span>(${monthsDifference}개월)</span>`;
+            } else {
+                // 12개월 이상일 경우 yearsDifference를 증가시키고 monthsDifference를 0으로 초기화
+                if (monthsDifference >= 12) {
+                    yearsDifference += 1;
+                    monthsDifference = 0;
+                }
+                dDayTopTitle[3].innerHTML = `${yearsDifference}주년<span>(${monthsDifference}개월)</span>`;
+            }
+        }
+    });
+}); 
+
 // CALENDAR D-DAY JQUERY CODE END!
 
 
@@ -135,6 +206,8 @@ closeBtn.forEach((dayBtn, index)=>{
         iconsBox[index].style.background = `url('./lib/img/d_day_icon01.png') no-repeat center / cover`;
         dDayTopTitle[0].innerHTML = 'D-day';
         dDayTopTitle[1].innerHTML = '만 0살';
+        dDayTopTitle[2].innerHTML = '0 개월';
+        dDayTopTitle[3].innerHTML = '0주년 <span>(0개월)</span>';
         $(".date_common").datepicker('setDate', 'today');
     });
 });

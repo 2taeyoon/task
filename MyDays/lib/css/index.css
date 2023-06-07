@@ -272,6 +272,9 @@ body {
   font-size: 32px;
   font-weight: 600;
 }
+.wrap #select_d_day .sub_day_list .sub_day_list_wrap .sub_day_list_li .d_day_select_wrap .d_day_select_top .d_day_select_top_title span {
+  font-size: 24px;
+}
 .wrap #select_d_day .sub_day_list .sub_day_list_wrap .sub_day_list_li .d_day_select_wrap .d_day_select_top .d_day_select_save_bth {
   position: absolute;
   right: 30px;

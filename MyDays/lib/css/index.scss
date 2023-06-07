@@ -81,7 +81,9 @@ body { position: relative; width: 100%; max-width: 768px; height: 100vh; max-hei
                 .sub_day_list_li { @include sub_hide(); z-index: 20;
                     .d_day_select_wrap {
                         .d_day_select_top { position: relative; width: 100%; height: 25vh; max-height: 200px;
-                            .d_day_select_top_title { @include position_ab_center(); color: #fff; font-size: 32px; font-weight: 600; }
+                            .d_day_select_top_title { @include position_ab_center(); color: #fff; font-size: 32px; font-weight: 600;
+                                span { font-size: 24px; }
+                            }
                             .d_day_select_save_bth { position: absolute; right: 30px; top: 35px; background: none; color: #fff; font-weight: 500; font-size: 18px; cursor: pointer; }
                             .upload_img_common { display: none; }
                             .upload_label { position: absolute; right: 30px; bottom: 35px; width: 30px; height: 30px; border-radius: 50%; background: #202226 url('../img/upload_img.png') no-repeat center 8px / 13px; cursor: pointer; }
