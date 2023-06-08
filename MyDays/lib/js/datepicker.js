@@ -51,8 +51,8 @@ $(function() {
 
             let yearsDifference = Math.floor(daysDifference / 365);
             
-            // 선택한 날짜의 달이 현재 날짜의 달보다 작거나 같을 경우 && 선택한 날짜의 일이 현재 날짜의 일보다 작거나 같을 경우
-            let isBirthdayPassed = (selectedDate.getMonth() <= currentDate.getMonth()) && (selectedDate.getDate() <= currentDate.getDate());
+            // 현재 날짜의 달이 선택한 날짜의 달보다 크거나 같을 경우 && 현재 날짜의 일이 선택한 날짜의 일보다 크거나 같을 경우
+            let isBirthdayPassed = (currentDate.getMonth() >= selectedDate.getMonth()) && (currentDate.getDate() >= selectedDate.getDate());
             if (!isBirthdayPassed) yearsDifference -= 1;
 
             if (yearsDifference < 0) {
@@ -108,35 +108,20 @@ $(function() {
             let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
 
             let yearsDifference = Math.floor(daysDifference / 365);
-            let monthsDifference = Math.floor((daysDifference % 365) / 30);
 
-            let isYearsdayPassed = (selectedDate.getMonth() <= currentDate.getMonth()) && (selectedDate.getDate() <= currentDate.getDate());
+            let isYearsdayPassed = (currentDate.getMonth() >= selectedDate.getMonth()) && (currentDate.getDate() >= selectedDate.getDate());
             if (!isYearsdayPassed) yearsDifference -= 1;
 
-            let isMonthsdayPassed = (selectedDate.getMonth() <= currentDate.getMonth()) && (selectedDate.getDate() <= currentDate.getDate());
-            if (!isMonthsdayPassed) monthsDifference -= 1;
-
-            //console.log('yearsDifference??', yearsDifference);
-            //console.log('monthsDifference??', monthsDifference);
-            
-            if (yearsDifference < 1 && monthsDifference < 1) {
-                dDayTopTitle[3].innerHTML = `0주년<span>(0개월)</span>`;
-            } else if(monthsDifference > 0) {
-                dDayTopTitle[3].innerHTML = `0주년<span>(${monthsDifference}개월)</span>`;
+            if (yearsDifference < 1) {
+                dDayTopTitle[3].innerHTML = `0주년`;
             } else {
-                // 12개월 이상일 경우 yearsDifference를 증가시키고 monthsDifference를 0으로 초기화
-                if (monthsDifference >= 12) {
-                    yearsDifference += 1;
-                    monthsDifference = 0;
-                }
-                dDayTopTitle[3].innerHTML = `${yearsDifference}주년<span>(${monthsDifference}개월)</span>`;
+                dDayTopTitle[3].innerHTML = `${yearsDifference}주년`;
             }
             selectedDayData = selectedDatePrint;
             selectedDayData4 = selectedDatePrint;
         }
     });
 }); 
-
 // CALENDAR D-DAY JQUERY CODE END!
 
 
@@ -336,6 +321,7 @@ dDaySave.forEach((saveBtn, index) => {
             dDayContent.prepend(newDayLi);
 
         } else if(index === 2){
+
             let currentDate = new Date();
 
             selectedDayData3.setHours(0, 0, 0, 0);
@@ -363,7 +349,44 @@ dDaySave.forEach((saveBtn, index) => {
                             </div>
                         </div>
                     </div>
-                    <h3 class="d_day_bottom">만 ${monthsDifference}개월</h3>
+                    <h3 class="d_day_bottom">${monthsDifference}개월</h3>
+                </div>
+            `;
+            dDayContent.prepend(newDayLi);
+            
+        } else if(index === 3){
+
+            let currentDate = new Date();
+
+            selectedDayData4.setHours(0, 0, 0, 0);
+            currentDate.setHours(0, 0, 0, 0);
+            
+            let timeDifference = currentDate.getTime() - selectedDayData4.getTime();
+            let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+            let yearsDifference = Math.floor(daysDifference / 365);
+
+            let isYearsdayPassed = (currentDate.getMonth() >= selectedDayData4.getMonth()) && (currentDate.getDate() >= selectedDayData4.getDate());
+            if (!isYearsdayPassed) yearsDifference -= 1;
+
+            if (yearsDifference < 1) {
+                `0주년`;
+            } else {
+                `${yearsDifference}주년`;
+            }
+
+            newDayLi.innerHTML = `
+                <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
+                    <div class="d_day_text">
+                        <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
+                        <div class="d_day_text_wrap">
+                            <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[3].value}</h4>
+                            <div class="d_day_text_sub">
+                                <div>${formattedDate}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="d_day_bottom">${yearsDifference}주년</h3>
                 </div>
             `;
             dDayContent.prepend(newDayLi);
