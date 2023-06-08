@@ -1,7 +1,11 @@
 // CALENDAR D-DAY JQUERY CODE START!
 const dDayTopTitle = document.querySelectorAll('.d_day_select_top_title');
 const currentYear = new Date().getFullYear();
-let selectedDayData;
+let selectedDayData; // 공통된 selectedDayData 값
+let selectedDayData1;
+let selectedDayData2;
+let selectedDayData3;
+let selectedDayData4;
 
 $(function() {
     $("#date_d_day1").datepicker({
@@ -25,8 +29,8 @@ $(function() {
             } else if (daysDifference < 0) {
                 dDayTopTitle[0].innerHTML = `D${daysDifference.toString()}`;
             }
-
             selectedDayData = selectedDatePrint;
+            selectedDayData1 = selectedDatePrint;
         }
     });
 });
@@ -56,8 +60,8 @@ $(function() {
             } else {
                 dDayTopTitle[1].innerHTML = `만 ${yearsDifference.toString()}살`;
             }
-
             selectedDayData = selectedDatePrint;
+            selectedDayData2 = selectedDatePrint;
         }
     });
 });
@@ -83,8 +87,8 @@ $(function() {
             } else {
                 dDayTopTitle[2].innerHTML = `${monthsDifference.toString()}개월`;
             }
-
             selectedDayData = selectedDatePrint;
+            selectedDayData3 = selectedDatePrint;
         }
     });
 });
@@ -127,8 +131,8 @@ $(function() {
                 }
                 dDayTopTitle[3].innerHTML = `${yearsDifference}주년<span>(${monthsDifference}개월)</span>`;
             }
-
             selectedDayData = selectedDatePrint;
+            selectedDayData4 = selectedDatePrint;
         }
     });
 }); 
@@ -259,25 +263,111 @@ dDaySave.forEach((saveBtn, index) => {
         const day = selectedDayData.getDate();
         const formattedDate = `${year}년 ${month < 10 ? '0' + month : month}월 ${day < 10 ? '0' + day : day}일`;
 
-        newDayLi.innerHTML = `
-            <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
-                <div class="d_day_text">
-                    <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
-                    <div class="d_day_text_wrap">
-                        <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[index].value}</h4>
-                        <div class="d_day_text_sub">
-                            <div>${formattedDate}</div>
+        
+        //console.log('selectedDayData1',selectedDayData1);
+        if(index === 0){
+            let currentDate1 = new Date();
+
+            selectedDayData1.setHours(0, 0, 0, 0);
+            currentDate1.setHours(0, 0, 0, 0);
+            
+            let timeDifference = currentDate1.getTime() - selectedDayData1.getTime();
+            let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+            if (daysDifference == 0) {
+                `D-Day`;
+            } else if (daysDifference > 0) {
+                `${daysDifference.toString()}일`;
+            } else if (daysDifference < 0) {
+                `D${daysDifference.toString()}`;
+            }
+
+            newDayLi.innerHTML = `
+                <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
+                    <div class="d_day_text">
+                        <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
+                        <div class="d_day_text_wrap">
+                            <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[0].value}</h4>
+                            <div class="d_day_text_sub">
+                                <div>${formattedDate}</div>
+                            </div>
                         </div>
                     </div>
+                    <h3 class="d_day_bottom">${daysDifference}일</h3>
                 </div>
-                <h3 class="d_day_bottom"></h3>
-            </div>
-        `;
-        
-        const aa = newDayLi.querySelector('.d_day_text_sub > div');
-        console.log('aaaaaaa',aa)
+            `;
+            dDayContent.prepend(newDayLi);
+            
+        } else if(index === 1){
+            let currentDate = new Date();
 
-        dDayContent.prepend(newDayLi);
+            selectedDayData2.setHours(0, 0, 0, 0);
+            currentDate.setHours(0, 0, 0, 0);
+            
+            let timeDifference = currentDate.getTime() - selectedDayData2.getTime();
+            let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+            let yearsDifference = Math.floor(daysDifference / 365);
+            
+            // 선택한 날짜의 달이 현재 날짜의 달보다 작거나 같을 경우 && 선택한 날짜의 일이 현재 날짜의 일보다 작거나 같을 경우
+            let isBirthdayPassed = (selectedDayData2.getMonth() <= currentDate.getMonth()) && (selectedDayData2.getDate() <= currentDate.getDate());
+            if (!isBirthdayPassed) yearsDifference -= 1;
+
+            if (yearsDifference < 0) {
+                '만 0살';
+            } else {
+                `만 ${yearsDifference.toString()}살`;
+            }
+
+            newDayLi.innerHTML = `
+                <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
+                    <div class="d_day_text">
+                        <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
+                        <div class="d_day_text_wrap">
+                            <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[1].value}</h4>
+                            <div class="d_day_text_sub">
+                                <div>${formattedDate}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="d_day_bottom">만 ${yearsDifference}살</h3>
+                </div>
+            `;
+            dDayContent.prepend(newDayLi);
+
+        } else if(index === 2){
+            let currentDate = new Date();
+
+            selectedDayData3.setHours(0, 0, 0, 0);
+            currentDate.setHours(0, 0, 0, 0);
+            
+            let timeDifference = currentDate.getTime() - selectedDayData3.getTime();
+            let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+            let monthsDifference = Math.floor(daysDifference / 30);
+            
+            if (monthsDifference < 0) {
+                '0개월';
+            } else {
+                `${monthsDifference.toString()}개월`;
+            }
+
+            newDayLi.innerHTML = `
+                <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
+                    <div class="d_day_text">
+                        <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
+                        <div class="d_day_text_wrap">
+                            <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[2].value}</h4>
+                            <div class="d_day_text_sub">
+                                <div>${formattedDate}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="d_day_bottom">만 ${monthsDifference}개월</h3>
+                </div>
+            `;
+            dDayContent.prepend(newDayLi);
+        }
     });
 });
 
