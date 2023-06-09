@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script defer src="./lib/js/firebase.js" type="module"></script>
+    <script defer src="./lib/js/login.js" type="text/javascript"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="buttons">이메일 로그인
+        <button id="signin">signin</button>
+        <button id="signup">signup</button>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBCm61JzZJansIuyg35MWcqfrlqP8iQXvE",
+            authDomain: "mydays-portfolio.firebaseapp.com",
+            projectId: "mydays-portfolio",
+            storageBucket: "mydays-portfolio.appspot.com",
+            messagingSenderId: "825574572940",
+            appId: "1:825574572940:web:f3383cf02cbb2e9526cca9"
+        };
+
+        const app = initializeApp(firebaseConfig);
+    </script>
+</body>
+
+</html>
