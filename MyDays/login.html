@@ -12,24 +12,32 @@
 </head>
 
 <body>
-    <div id="buttons">이메일 로그인
-        <button id="signin">signin</button>
-        <button id="signup">signup</button>
-    </div>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+    <h1>회원가입</h1>
+    <form id="signupForm">
+        <div>
+            <label for="email">이메일:</label>
+            <input type="text" id="email" name="email">
+        </div>
+        <div>
+            <label for="password">비밀번호:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <button type="submit">가입하기</button>
+    </form>
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyBCm61JzZJansIuyg35MWcqfrlqP8iQXvE",
-            authDomain: "mydays-portfolio.firebaseapp.com",
-            projectId: "mydays-portfolio",
-            storageBucket: "mydays-portfolio.appspot.com",
-            messagingSenderId: "825574572940",
-            appId: "1:825574572940:web:f3383cf02cbb2e9526cca9"
-        };
-
-        const app = initializeApp(firebaseConfig);
-    </script>
+    <h1>로그인</h1>
+    <form id="loginForm">
+        <div>
+            <label for="loginEmail">이메일:</label>
+            <input type="text" id="loginEmail" name="loginEmail">
+        </div>
+        <div>
+            <label for="loginPassword">비밀번호:</label>
+            <input type="password" id="loginPassword" name="loginPassword">
+        </div>
+        <button type="submit">로그인</button>
+    </form>
 </body>
+
 
 </html>
