@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./common/img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="./common/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./common/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./common/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./common/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./common/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./common/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./common/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./common/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./common/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./common/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./common/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./common/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./common/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./common/img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./common/img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="./common/css/reset.css">
+    <link rel="stylesheet" href="./common/font/pretendard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="./lib/css/datepicker.css">
+    <link rel="stylesheet" href="./lib/css/Mydays.css">
+
+    <!-- <script src="./common/js/prefixfree.min.js" type="text/javascript"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    
+    <script defer src="./lib/js/datepicker.js" type="text/javascript"></script>
+    <script defer src="./lib/js/firebase.js" type="module"></script>
+    <script defer src="./lib/js/index.js" type="text/javascript"></script>
+
+    <title>My Days</title>
+</head>
+<body>
+    <div class="wrap">
+        <header class="main_header"> <!-- HEADER START! -->
+            <div class="inner">
+                <h2 class="header_img">
+                    <div>
+                        <div></div>
+                        <span>My Days</span>
+                    </div>
+                    <span id="user_nickname">OO님 환영합니다.</span>
+                </h2>
+            </div>
+        </header> <!-- HEADER END! -->
+        <main> <!-- MAIN START! -->
+            <div class="swiper content_swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <ul class="inner d_day_content">
+                        </ul>
+                    </div>
+                    <div class="swiper-slide">콘텐츠22</div>
+                </div>
+                <div class="swiper-pagination swiper-d-day"></div>
+            </div>
+            <div id="d_day_add"></div>
+        </main> <!-- MAIN END! -->
+        <footer class="footer"> <!-- FOOTER START! -->
+            <div class="ad_sense">
+                <h2>구글 애드센스가 들어갈 공간입니다</h2>
+            </div>
+        </footer> <!-- FOOTER END! -->
+        <div id="select_d_day"> <!-- SELECT D-DAY POPUP START! -->
+            <div class="sub_header">
+                <h2 class="sub_header_title">어떤 <span>디데이</span>인가요?</h2>
+                <div class="close_btn select_d_day_btn"></div>
+            </div>
+            <section class="sub_content">
+                <h3 class="which_day_text">D-Day를 선택해 보세요 📆</h3>
+                <ul class="which_day_content">
+                    <li style="background: url('./lib/img/d_day_con01.jpg') no-repeat center / cover;"><h3>D-Day</h3></li>
+                    <li style="background: url('./lib/img/d_day_con02.jpg') no-repeat center / cover;"><h3>만 나이</h3></li>
+                    <li style="background: url('./lib/img/d_day_con03.jpg') no-repeat center / cover;"><h3>아기 개월수</h3></li>
+                    <li style="background: url('./lib/img/d_day_con04.jpg') no-repeat center / cover;"><h3>결혼 기념일</h3></li>
+                </ul>
+            </section>
+            <div class="footer sub_footer">
+                <div class="ad_sense">
+                    <h2>구글 애드센스가 들어갈 공간입니다</h2>
+                </div>
+            </div>
+            <div class="sub_day_list"> <!-- D-DAY ADD POPUP START! -->
+                <div class="sub_day_list_wrap">
+                    <div class="sub_day_list_li">
+                        <div class="sub_header">
+                            <h2 class="sub_header_title"><span>D-DAY</span></h2>
+                            <div class="close_btn"></div>
+                        </div>
+                        <div class="d_day_select_wrap">
+                            <div class="d_day_select_top" style="background: url(./lib/img/d_day_con01.jpg) no-repeat center / cover;">
+                                <h3 class="d_day_select_top_title">D-day</h3>
+                                <div class="d_day_select_save_bth">저장</div>
+                                <input id="upload_img01" class="upload_img_common" type="file">
+                                <label for="upload_img01" class="upload_label"></label>
+                            </div>
+                            <div class="d_day_select_bottom">
+                                <div class="inner">
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>날짜를 선택해주세요.</h3>
+                                        <input type="text" id="date_d_day1" class="date_common">
+                                    </div>
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>제목을 입력해주세요.</h3>
+                                        <input type="text" id="d_day_select_bottom_text1" class="d_day_select_bottom_text_common" maxlength="10" placeholder="D-DAY 제목" onfocus="this.placeholder = ''" onblur="this.placeholder = 'D-DAY 제목'">
+                                    </div>
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>아이콘을 선택해주세요.</h3>
+                                        <div class="icons_box" style="background: url('./lib/img/d_day_icon01.png') center center / cover no-repeat;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer sub_footer">
+                            <div class="ad_sense">
+                                <h2>구글 애드센스가 들어갈 공간입니다</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon_list_wrap">
+                        <ul class="icon_list">
+                            <li class="icon_list_li" data-image="d_day_icon01.png" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon02.png" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon03.png" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon04.png" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon05.png" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon06.png" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon07.png" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon08.png" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon09.png" style="background: url('./lib/img/d_day_icon09.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon10.png" style="background: url('./lib/img/d_day_icon10.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon11.png" style="background: url('./lib/img/d_day_icon11.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon12.png" style="background: url('./lib/img/d_day_icon12.png') no-repeat center / cover;"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub_day_list_wrap">
+                    <div class="sub_day_list_li">
+                        <div class="sub_header">
+                            <h2 class="sub_header_title"><span>만 나이</span></h2>
+                            <div class="close_btn"></div>
+                        </div>
+                        <div class="d_day_select_wrap">
+                            <div class="d_day_select_top" style="background: url(./lib/img/d_day_con02.jpg) no-repeat center / cover;">
+                                <h3 class="d_day_select_top_title">만 0살</h3>
+                                <div class="d_day_select_save_bth">저장</div>
+                                <input id="upload_img02" class="upload_img_common" type="file">
+                                <label for="upload_img02" class="upload_label"></label>
+                            </div>
+                            <div class="d_day_select_bottom">
+                                <div class="inner">
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>태어난 날짜를 선택해주세요.</h3>
+                                        <input type="text" id="date_d_day2" class="date_common">
+                                    </div>
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>제목을 입력해주세요.</h3>
+                                        <input type="text" id="d_day_select_bottom_text2" class="d_day_select_bottom_text_common" maxlength="10" placeholder="D-DAY 제목" onfocus="this.placeholder = ''" onblur="this.placeholder = 'D-DAY 제목'">
+                                    </div>
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>아이콘을 선택해주세요.</h3>
+                                        <div class="icons_box" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer sub_footer">
+                            <div class="ad_sense">
+                                <h2>구글 애드센스가 들어갈 공간입니다</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon_list_wrap">
+                        <ul class="icon_list">
+                            <li class="icon_list_li" data-image="d_day_icon01.png" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon02.png" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon03.png" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon04.png" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon05.png" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon06.png" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon07.png" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon08.png" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon09.png" style="background: url('./lib/img/d_day_icon09.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon10.png" style="background: url('./lib/img/d_day_icon10.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon11.png" style="background: url('./lib/img/d_day_icon11.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon12.png" style="background: url('./lib/img/d_day_icon12.png') no-repeat center / cover;"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub_day_list_wrap">
+                    <div class="sub_day_list_li">
+                        <div class="sub_header">
+                            <h2 class="sub_header_title"><span>아기 개월수</span></h2>
+                            <div class="close_btn"></div>
+                        </div>
+                        <div class="d_day_select_wrap">
+                            <div class="d_day_select_top" style="background: url(./lib/img/d_day_con03.jpg) no-repeat center / cover;">
+                                <h3 class="d_day_select_top_title">0개월</h3>
+                                <div class="d_day_select_save_bth">저장</div>
+                                <input id="upload_img03" class="upload_img_common" type="file">
+                                <label for="upload_img03" class="upload_label"></label>
+                            </div>
+                            <div class="d_day_select_bottom">
+                                <div class="inner">
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>날짜를 선택해주세요.</h3>
+                                        <input type="text" id="date_d_day3" class="date_common">
+                                    </div>
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>제목을 입력해주세요.</h3>
+                                        <input type="text" id="d_day_select_bottom_text3" class="d_day_select_bottom_text_common" maxlength="10" placeholder="D-DAY 제목" onfocus="this.placeholder = ''" onblur="this.placeholder = 'D-DAY 제목'">
+                                    </div>
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>아이콘을 선택해주세요.</h3>
+                                        <div class="icons_box" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer sub_footer">
+                            <div class="ad_sense">
+                                <h2>구글 애드센스가 들어갈 공간입니다</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon_list_wrap">
+                        <ul class="icon_list">
+                            <li class="icon_list_li" data-image="d_day_icon01.png" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon02.png" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon03.png" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon04.png" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon05.png" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon06.png" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon07.png" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon08.png" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon09.png" style="background: url('./lib/img/d_day_icon09.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon10.png" style="background: url('./lib/img/d_day_icon10.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon11.png" style="background: url('./lib/img/d_day_icon11.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon12.png" style="background: url('./lib/img/d_day_icon12.png') no-repeat center / cover;"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sub_day_list_wrap">
+                    <div class="sub_day_list_li">
+                        <div class="sub_header">
+                            <h2 class="sub_header_title"><span>결혼 기념일</span></h2>
+                            <div class="close_btn"></div>
+                        </div>
+                        <div class="d_day_select_wrap">
+                            <div class="d_day_select_top" style="background: url(./lib/img/d_day_con04.jpg) no-repeat center / cover;">
+                                <h3 class="d_day_select_top_title">0주년</h3>
+                                <div class="d_day_select_save_bth">저장</div>
+                                <input id="upload_img04" class="upload_img_common" type="file">
+                                <label for="upload_img04" class="upload_label"></label>
+                            </div>
+                            <div class="d_day_select_bottom">
+                                <div class="inner">
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>날짜를 선택해주세요.</h3>
+                                        <input type="text" id="date_d_day4" class="date_common">
+                                    </div>
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>제목을 입력해주세요.</h3>
+                                        <input type="text" id="d_day_select_bottom_text4" class="d_day_select_bottom_text_common" maxlength="10" placeholder="D-DAY 제목" onfocus="this.placeholder = ''" onblur="this.placeholder = 'D-DAY 제목'">
+                                    </div>
+                                    <div class="d_day_select_bottom_wrap">
+                                        <h3>아이콘을 선택해주세요.</h3>
+                                        <div class="icons_box" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer sub_footer">
+                            <div class="ad_sense">
+                                <h2>구글 애드센스가 들어갈 공간입니다</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon_list_wrap">
+                        <ul class="icon_list">
+                            <li class="icon_list_li" data-image="d_day_icon01.png" style="background: url('./lib/img/d_day_icon01.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon02.png" style="background: url('./lib/img/d_day_icon02.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon03.png" style="background: url('./lib/img/d_day_icon03.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon04.png" style="background: url('./lib/img/d_day_icon04.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon05.png" style="background: url('./lib/img/d_day_icon05.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon06.png" style="background: url('./lib/img/d_day_icon06.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon07.png" style="background: url('./lib/img/d_day_icon07.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon08.png" style="background: url('./lib/img/d_day_icon08.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon09.png" style="background: url('./lib/img/d_day_icon09.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon10.png" style="background: url('./lib/img/d_day_icon10.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon11.png" style="background: url('./lib/img/d_day_icon11.png') no-repeat center / cover;"></li>
+                            <li class="icon_list_li" data-image="d_day_icon12.png" style="background: url('./lib/img/d_day_icon12.png') no-repeat center / cover;"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> <!-- D-DAY ADD POPUP END! -->
+        </div> <!-- SELECT D-DAY POPUP END! -->
+        <div class="add_d_day"></div> <!-- D-DAY BUTTON! -->
+    </div>
+</body>
+</html>
+
+

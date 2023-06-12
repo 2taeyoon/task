@@ -1,3 +1,5 @@
+@import '../../common/css/index.scss';
+
 body { position: relative; width: 100%; max-width: 768px; height: 100vh; max-height: 100vh; margin: 0 auto; color: #ddd; }
 .inner { padding: 0 25px; }
 ::-webkit-scrollbar { display: none; }
@@ -15,11 +17,12 @@ body { position: relative; width: 100%; max-width: 768px; height: 100vh; max-hei
 .wrap { position: relative; height: 100vh; background: #202226;
     .main_header { background: #17181b;
         .inner {
-            h2 { display: flex; align-items: center; height: 50px;
-                a { display: flex; align-items: center; 
+            h2 { display: flex; align-items: center; justify-content: space-between; height: 50px;
+                > div { display: flex; align-items: center; 
                     div { display: block; width: 20px; height: 20px; margin-right: 5px; background: url('../../common/img/favicon/favicon-96x96.png') no-repeat center / cover; }
                     span { color: #288575; font-weight: 600; }
                 }
+                span { color: #999; }
             }
         }
     }

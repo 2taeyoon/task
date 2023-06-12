@@ -1,0 +1,19 @@
+.common_wrap { position: relative; height: 100vh; background: #17181b;
+    .form_wrap { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        h1 { margin-bottom: 20px; font-size: 32px; text-align: center; font-weight: 600; }
+        .form_common {
+            div { margin: 25px 0;
+                input { padding: 15px; outline: none; background: #555; color: #ddd; }
+                label { display: block; margin: 5px 0; }
+            }
+
+            .btn_wrap { display: flex; width: 100%;
+                button { width: calc(50% - 5px); padding: 10px; margin: 0; background: #555; font-size: 14px; color: #ddd;
+                    &:first-child { margin-right: 5px; }
+                    &:last-child { margin-left: 5px; }
+                    &:hover { background: #333; }
+                }
+            }
+        }
+    }
+}

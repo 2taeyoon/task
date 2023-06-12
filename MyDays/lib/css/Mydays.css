@@ -1,3 +1,55 @@
+.common_wrap {
+  position: relative;
+  height: 100vh;
+  background: #17181b;
+}
+.common_wrap .form_wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.common_wrap .form_wrap h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 600;
+}
+.common_wrap .form_wrap .form_common div {
+  margin: 25px 0;
+}
+.common_wrap .form_wrap .form_common div input {
+  padding: 15px;
+  outline: none;
+  background: #555;
+  color: #ddd;
+}
+.common_wrap .form_wrap .form_common div label {
+  display: block;
+  margin: 5px 0;
+}
+.common_wrap .form_wrap .form_common .btn_wrap {
+  display: flex;
+  width: 100%;
+}
+.common_wrap .form_wrap .form_common .btn_wrap button {
+  width: calc(50% - 5px);
+  padding: 10px;
+  margin: 0;
+  background: #555;
+  font-size: 14px;
+  color: #ddd;
+}
+.common_wrap .form_wrap .form_common .btn_wrap button:first-child {
+  margin-right: 5px;
+}
+.common_wrap .form_wrap .form_common .btn_wrap button:last-child {
+  margin-left: 5px;
+}
+.common_wrap .form_wrap .form_common .btn_wrap button:hover {
+  background: #333;
+}
+
 body {
   position: relative;
   width: 100%;
@@ -27,22 +79,26 @@ body {
 .wrap .main_header .inner h2 {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 50px;
 }
-.wrap .main_header .inner h2 a {
+.wrap .main_header .inner h2 > div {
   display: flex;
   align-items: center;
 }
-.wrap .main_header .inner h2 a div {
+.wrap .main_header .inner h2 > div div {
   display: block;
   width: 20px;
   height: 20px;
   margin-right: 5px;
   background: url("../../common/img/favicon/favicon-96x96.png") no-repeat center/cover;
 }
-.wrap .main_header .inner h2 a span {
+.wrap .main_header .inner h2 > div span {
   color: #288575;
   font-weight: 600;
+}
+.wrap .main_header .inner h2 span {
+  color: #999;
 }
 .wrap main {
   position: relative;
@@ -392,4 +448,4 @@ body {
 @media all and (max-width:480px){
 
 }
-*//*# sourceMappingURL=index.css.map */
+*//*# sourceMappingURL=Mydays.css.map */
