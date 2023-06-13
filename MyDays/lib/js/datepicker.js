@@ -1,11 +1,11 @@
-// CALENDAR D-DAY JQUERY CODE START!
+// Calendar D-Day jquery code start!
 const dDayTopTitle = document.querySelectorAll('.d_day_select_top_title');
 const currentYear = new Date().getFullYear();
-let selectedDayData; // 공통된 selectedDayData 값
-let selectedDayData1;
-let selectedDayData2;
-let selectedDayData3;
-let selectedDayData4;
+let selectedDayData; // Common selectedDayData value
+let selectedDayData1; // Each selectedDayData value
+let selectedDayData2; // Each selectedDayData value
+let selectedDayData3; // Each selectedDayData value
+let selectedDayData4; // Each selectedDayData value
 
 $(function() {
     $("#date_d_day1").datepicker({
@@ -122,10 +122,10 @@ $(function() {
         }
     });
 }); 
-// CALENDAR D-DAY JQUERY CODE END!
+// Calendar D-Day jquery code end!
 
 
-// CALENDAR COMMON JQUERY CODE START!
+// Calendar common jquery code start!
 $(function() {
     $(".date_common").on("focus", function() {
         $(this).datepicker("widget").css({
@@ -155,11 +155,11 @@ $.datepicker.setDefaults({
     changeYear: true,
     changeMonth: true,
 });
-// CALENDAR COMMON JQUERY CODE END!
+// Calendar common jquery code end!
 
 
 
-// SELECT D-DAY POPUP START!
+// Select D-Day Popup start!
 const dayAdd = document.getElementById('d_day_add');
 const selectDay = document.getElementById('select_d_day');
 const selectDayBtn = document.querySelector('.select_d_day_btn');
@@ -171,11 +171,11 @@ dayAdd.addEventListener('click', ()=>{
 selectDayBtn.addEventListener('click', ()=>{
     selectDay.classList.remove('active');
 })
-// SELECT D-DAY POPUP END!
+// Select D-Day Popup end!
 
 
 
-// SUBDAYLIST POPUP START!
+// SubDayList popup start!
 const whichDayContent = document.querySelectorAll('.which_day_content > li');
 const subDayList = document.querySelectorAll('.sub_day_list .sub_day_list_li');
 const closeBtn = document.querySelectorAll('.sub_day_list .close_btn');
@@ -192,28 +192,19 @@ whichDayContent.forEach((selectList, index)=>{
 });
 
 
-// SUBDAYLIST POPUP창에서 
+// SubDayList popup window
 closeBtn.forEach((dayBtn, index)=>{
     dayBtn.addEventListener('click',()=>{
         subDayList.forEach((dayList)=>{
             dayList.classList.remove('active');
         });
-        // SUBDAYLIST POPUP창에서 closeBtn 클릭 시 입력 초기화
-        initialDDay(index);
+        initialDDay(index); // SubDayList Popup Window CloseBtn Click Input Initialize
     });
 });
-// SUBDAYLIST POPUP END!
+// SubDayList popup end!
 
 
-
-// ICON POPUP START!
-const subDayListWraps = document.querySelectorAll('.sub_day_list_wrap');
-const iconsBox = document.querySelectorAll('.icons_box');
-const iconListWrap = document.querySelectorAll('.icon_list_wrap');
-const dDaySave = document.querySelectorAll('.d_day_select_save_bth');
-
-
-// VALIDATE ON SAVE START!
+// Validate on save start!
 const validation = (index)=>{
     if(selectedDayData == undefined && dDaySelectBottomTextCommon[index].value == ''){
         return alert('날짜를 선택하고 디데이 제목을 입력해주세요.');
@@ -228,10 +219,10 @@ const validation = (index)=>{
         selectDay.classList.remove('active');
     }
 }
-// VALIDATE ON SAVE END!
+// Validate on save end!
 
 
-//INITIALIZE THE D-DAY WINDOW START!
+//Initialize the D-Day window start!
 const initialDDay = (index)=>{
     dDaySelectTop[index].style.background = `url('./lib/img/d_day_con0${index + 1}.jpg') no-repeat center / cover`;
     dDaySelectBottomTextCommon[index].value = '';
@@ -239,13 +230,13 @@ const initialDDay = (index)=>{
     dDayTopTitle[0].innerHTML = 'D-day';
     dDayTopTitle[1].innerHTML = '만 0살';
     dDayTopTitle[2].innerHTML = '0 개월';
-    dDayTopTitle[3].innerHTML = '0주년<span>(0개월)</span>';
+    dDayTopTitle[3].innerHTML = '0주년';
     $(".date_common").datepicker('setDate', 'today');
 }
-//INITIALIZE THE D-DAY WINDOW END!
+//Initialize the D-Day window end!
 
 
-// INPUT FILE SRC IMPORT START!
+// Input file src import start!
 const dDdayUploads = document.querySelectorAll('.upload_img_common');
 const dDayTopImages = document.querySelectorAll('.d_day_select_top');
 
@@ -261,10 +252,15 @@ dDdayUploads.forEach((upload, index)=>{
         fileReader.readAsDataURL(file); // 내가 선택한 첫번째 파일의 객체의 Url을 문자열로 읽어라
     });
 });
-// INPUT FILE SRC IMPORT END!
+// Input file src import end!
 
 
-// ICON POPUP START!
+// Icon popup start!
+const subDayListWraps = document.querySelectorAll('.sub_day_list_wrap');
+const iconsBox = document.querySelectorAll('.icons_box');
+const iconListWrap = document.querySelectorAll('.icon_list_wrap');
+const dDaySave = document.querySelectorAll('.d_day_select_save_bth');
+
 subDayListWraps.forEach((subDayListWrap) => {
     const iconList = subDayListWrap.querySelector('.icon_list');
     const iconListLis = subDayListWrap.querySelectorAll('.icon_list_li');
@@ -298,13 +294,12 @@ iconListWrap.forEach((iconWrap) => {
         iconWrap.classList.remove('active');
     });
 });
-// ICON POPUP END!
+// Icon popup end!
 
 
-// CLICK THE SAVE BUTTON START!
+// Click the save button start!
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+import { getDatabase, ref, get, push, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBCm61JzZJansIuyg35MWcqfrlqP8iQXvE",
@@ -315,9 +310,16 @@ const firebaseConfig = {
     appId: "1:825574572940:web:f3383cf02cbb2e9526cca9"
 };
 
-const app = initializeApp(firebaseConfig); // Firebase 초기화
-const auth = getAuth(); // 사용자 인증 정보 가져오기
-const database = getDatabase(app, 'https://mydays-portfolio-default-rtdb.asia-southeast1.firebasedatabase.app/'); // FIREBASE REALTIME DATABASE
+const app = initializeApp(firebaseConfig); // Firebase Initialize
+const database = getDatabase(app, 'https://mydays-portfolio-default-rtdb.asia-southeast1.firebasedatabase.app/'); // Firebase Realtime Database
+
+const uidUserJSON = localStorage.getItem('loginUserUid');
+const uidUser = JSON.parse(uidUserJSON);
+
+const dDayListRef1 = ref(database, `users/${uidUser}/DDayList1`);
+const dDayListRef2 = ref(database, `users/${uidUser}/DDayList2`);
+const dDayListRef3 = ref(database, `users/${uidUser}/DDayList3`);
+const dDayListRef4 = ref(database, `users/${uidUser}/DDayList4`);
 
 
 dDaySave.forEach((saveBtn, index) => {
@@ -325,9 +327,6 @@ dDaySave.forEach((saveBtn, index) => {
 
         validation(index);
 
-        const dDayContent = document.querySelector('.d_day_content');
-        const newDayLi = document.createElement('li');
-        
         const backgroundImage = getComputedStyle(dDayTopImages[index]).backgroundImage;
         const imageUrl = backgroundImage.match(/url\(["']?([^"']+)["']?\)/)[1];
 
@@ -335,12 +334,13 @@ dDaySave.forEach((saveBtn, index) => {
         const iconUrl = iconImage.match(/url\(["']?([^"']+)["']?\)/)[1];
 
         const year = selectedDayData.getFullYear();
-        const month = selectedDayData.getMonth() + 1; // getMonth()는 0부터 시작해서 +1
+        const month = selectedDayData.getMonth() + 1; // getMonth()는 0에서 시작하므로 + 1
         const day = selectedDayData.getDate();
         const formattedDate = `${year}년 ${month < 10 ? '0' + month : month}월 ${day < 10 ? '0' + day : day}일`;
+        const value = dDaySelectBottomTextCommon[index].value;
 
-        
-        //console.log('selectedDayData1',selectedDayData1);
+
+
         if(index === 0){
 
             let currentDate = new Date();
@@ -350,7 +350,7 @@ dDaySave.forEach((saveBtn, index) => {
             
             let timeDifference = currentDate.getTime() - selectedDayData1.getTime();
             let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-
+            
             if (daysDifference == 0) {
                 `D-Day`;
             } else if (daysDifference > 0) {
@@ -359,22 +359,8 @@ dDaySave.forEach((saveBtn, index) => {
                 daysDifference = `D${daysDifference.toString()}`;
             }
 
-            newDayLi.innerHTML = `
-                <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
-                    <div class="d_day_text">
-                        <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
-                        <div class="d_day_text_wrap">
-                            <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[0].value}</h4>
-                            <div class="d_day_text_sub">
-                                <div>${formattedDate}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="d_day_bottom">${daysDifference}</h3>
-                </div>
-            `;
-            dDayContent.prepend(newDayLi);
-            
+            push(dDayListRef1, { imageUrl: imageUrl, iconUrl: iconUrl, formattedDate: formattedDate, daysDifference: daysDifference, value: value });
+
         } else if(index === 1){
 
             let currentDate = new Date();
@@ -397,21 +383,23 @@ dDaySave.forEach((saveBtn, index) => {
                 yearsDifference = `만 ${yearsDifference.toString()}살`;
             }
 
-            newDayLi.innerHTML = `
-                <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
-                    <div class="d_day_text">
-                        <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
-                        <div class="d_day_text_wrap">
-                            <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[1].value}</h4>
-                            <div class="d_day_text_sub">
-                                <div>${formattedDate}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="d_day_bottom">${yearsDifference}</h3>
-                </div>
-            `;
-            dDayContent.prepend(newDayLi);
+            push(dDayListRef2, { imageUrl: imageUrl, iconUrl: iconUrl, formattedDate: formattedDate, yearsDifference: yearsDifference, value: value });
+
+            // newDayLi.innerHTML = `
+            //     <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
+            //         <div class="d_day_text">
+            //             <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
+            //             <div class="d_day_text_wrap">
+            //                 <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[1].value}</h4>
+            //                 <div class="d_day_text_sub">
+            //                     <div>${formattedDate}</div>
+            //                 </div>
+            //             </div>
+            //         </div>
+            //         <h3 class="d_day_bottom">${yearsDifference}</h3>
+            //     </div>
+            // `;
+            // dDayContent.prepend(newDayLi);
 
         } else if(index === 2){
 
@@ -431,21 +419,22 @@ dDaySave.forEach((saveBtn, index) => {
                 monthsDifference = `${monthsDifference.toString()}개월`;
             }
 
-            newDayLi.innerHTML = `
-                <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
-                    <div class="d_day_text">
-                        <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
-                        <div class="d_day_text_wrap">
-                            <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[2].value}</h4>
-                            <div class="d_day_text_sub">
-                                <div>${formattedDate}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="d_day_bottom">${monthsDifference}</h3>
-                </div>
-            `;
-            dDayContent.prepend(newDayLi);
+            push(dDayListRef3, { imageUrl: imageUrl, iconUrl: iconUrl, formattedDate: formattedDate, monthsDifference: monthsDifference, value: value });
+            // newDayLi.innerHTML = `
+            //     <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
+            //         <div class="d_day_text">
+            //             <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
+            //             <div class="d_day_text_wrap">
+            //                 <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[2].value}</h4>
+            //                 <div class="d_day_text_sub">
+            //                     <div>${formattedDate}</div>
+            //                 </div>
+            //             </div>
+            //         </div>
+            //         <h3 class="d_day_bottom">${monthsDifference}</h3>
+            //     </div>
+            // `;
+            // dDayContent.prepend(newDayLi);
             
         } else if(index === 3){
 
@@ -468,23 +457,79 @@ dDaySave.forEach((saveBtn, index) => {
                 yearsDifference = `${yearsDifference}주년`;
             }
 
+            push(dDayListRef4, { imageUrl: imageUrl, iconUrl: iconUrl, formattedDate: formattedDate, yearsDifference: yearsDifference, value: value });
+            // newDayLi.innerHTML = `
+            //     <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
+            //         <div class="d_day_text">
+            //             <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
+            //             <div class="d_day_text_wrap">
+            //                 <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[3].value}</h4>
+            //                 <div class="d_day_text_sub">
+            //                     <div>${formattedDate}</div>
+            //                 </div>
+            //             </div>
+            //         </div>
+            //         <h3 class="d_day_bottom">${yearsDifference}</h3>
+            //     </div>
+            // `;
+            // dDayContent.prepend(newDayLi);
+        }
+        initialDDay(index);
+    });
+});
+// Click the save button end!
+
+
+// Firebase d-day rendering start!
+const dDayContent = document.querySelector('.d_day_content');
+const scrollInitial = document.querySelector('.wrap main .content_swiper .swiper-wrapper .swiper-slide');
+
+onValue(dDayListRef1, (snapshot) => {
+    const dDayDataList = snapshot.val();
+
+    if (dDayDataList) {
+
+        dDayContent.innerHTML = '';
+
+        Object.keys(dDayDataList).forEach((key) => {
+            const dDayData = dDayDataList[key];
+
+            const imageUrl = dDayData.imageUrl;
+            const iconUrl = dDayData.iconUrl;
+            const formattedDate = dDayData.formattedDate;
+            const daysDifference = dDayData.daysDifference;
+            const value = dDayData.value;
+
+            const newDayLi = document.createElement('li');
             newDayLi.innerHTML = `
                 <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
                     <div class="d_day_text">
                         <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
                         <div class="d_day_text_wrap">
-                            <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[3].value}</h4>
+                            <h4 class="d_day_text_title">${value}</h4>
                             <div class="d_day_text_sub">
                                 <div>${formattedDate}</div>
                             </div>
                         </div>
                     </div>
-                    <h3 class="d_day_bottom">${yearsDifference}</h3>
+                    <h3 class="d_day_bottom">${daysDifference}</h3>
                 </div>
             `;
             dDayContent.prepend(newDayLi);
-        }
-        initialDDay(index);
-    });
+            scrollInitial.scrollTop = 0;
+        });
+    }
 });
-// CLICK THE SAVE BUTTON END!
+
+
+
+
+
+
+
+
+
+
+
+
+// Firebase d-day rendering end!

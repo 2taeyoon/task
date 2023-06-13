@@ -11,16 +11,16 @@ const firebaseConfig = {
     appId: "1:825574572940:web:f3383cf02cbb2e9526cca9"
 };
 
-const app = initializeApp(firebaseConfig); // Firebase를 사용하기 위한 초기화
-const auth = getAuth(); // 사용자 인증 정보 가져오기
-const database = getDatabase(app, 'https://mydays-portfolio-default-rtdb.asia-southeast1.firebasedatabase.app/'); // FIREBASE REALTIME DATABASE
+const app = initializeApp(firebaseConfig); // Firebase initialize
+const auth = getAuth(); // User authentication information
+const database = getDatabase(app, 'https://mydays-portfolio-default-rtdb.asia-southeast1.firebasedatabase.app/'); // Firebase realtime database
 
 
-// SIGNUP FORM EVENT START!
+// Signup form eevent start!
 const signupForm = document.getElementById("signupForm");
 if(signupForm){
     signupForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // REFRESH PREVENT
+        event.preventDefault(); // Refresh prevent
     
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
@@ -28,7 +28,7 @@ if(signupForm){
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // SIGNUP FORM SUCCESS
+                // Signup form success
                 const user = userCredential.user;
                 const nickNameRef = ref(database, `users/${user.uid}/nickName`);
                 set(nickNameRef, nickName);
@@ -36,7 +36,7 @@ if(signupForm){
                 const emailRef = ref(database, `users/${user.uid}/email`);
                 set(emailRef, user.email);
 
-                // SEND EMAIL AUTHENTICATION CODE
+                // Send email authentication code
                 sendEmailVerification(user)
                     .then(() => {
                         alert("이메일 인증을 진행해주세요.");
@@ -46,7 +46,7 @@ if(signupForm){
                     });
             })
             .catch((error) => {
-                // FAILED TO SIGNUP
+                // Failed to signup
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log('errorMessage',errorMessage);
@@ -68,34 +68,34 @@ if(signupForm){
             });
     });
 }
-// SIGNUP FORM EVENT END!
+// Signup form eevent end!
 
 
-// LOGIN FORM EVENT START!
+// Login form event start!
 const loginForm = document.getElementById("loginForm");
 if(loginForm){
     loginForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // REFRESH PREVENT
+        event.preventDefault(); // Refresh prevent
     
         const loginEmail = document.getElementById("loginEmail").value;
         const loginPassword = document.getElementById("loginPassword").value;
     
         signInWithEmailAndPassword(auth, loginEmail, loginPassword)
             .then((userCredential) => {
-                // LOGIN FORM SUCCESS
+                // Login form success
                 const user = userCredential.user;
                 
                 if(user.emailVerified === false){
                     return alert("이메일 인증을 진행해주세요.");
                 } else {
-                    // COMPLETION OF EMAIL AUTHENTICATION
+                    // Email authentication success
                     const userListRef = ref(database, 'users');
                     get(userListRef)
                         .then((userCredential) => {
                             if (userCredential.exists()) {
                                 // const userList = userCredential.val();
                                 // const aaa = user;
-                                const loginUserUid = user.uid; // LOGIN USER FIREBASE UID
+                                const loginUserUid = user.uid; // Login user firebase UID
                                 localStorage.setItem('loginUserUid', JSON.stringify(loginUserUid));
                                 location.replace('./MyDays.html');
                             } else {
@@ -110,7 +110,7 @@ if(loginForm){
                 }
             })
             .catch((error) => {
-                // FAILED TO LOGIN
+                // Failed to login
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 //alert(`로그인에 실패했습니다. 오류: ${errorCode}`);
@@ -131,10 +131,10 @@ if(loginForm){
             });
     });
 }
-// LOGIN FORM EVENT END!
+// Login form event end!
 
 
-// SIGNUP BUTTON START!
+// Signup button start!
 const signupBtn = document.getElementById('signup_btn');
 if(signupBtn){
     signupBtn.addEventListener('click', ()=>{
@@ -147,4 +147,4 @@ if(signupBack){
         location.href = './index.html';
     });
 }
-// SIGNUP BUTTON END!
+// Signup button end!
