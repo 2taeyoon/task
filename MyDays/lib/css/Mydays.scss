@@ -17,12 +17,28 @@ body { position: relative; width: 100%; max-width: 768px; height: 100vh; max-hei
 .wrap { position: relative; height: 100vh; background: #202226;
     .main_header { background: #17181b;
         .inner {
-            h2 { display: flex; align-items: center; justify-content: space-between; height: 50px;
+            .header_img { display: flex; align-items: center; justify-content: space-between; height: 50px;
                 > div { display: flex; align-items: center; 
-                    div { display: block; width: 20px; height: 20px; margin-right: 5px; background: url('../../common/img/favicon/favicon-96x96.png') no-repeat center / cover; }
+                    .logo { display: block; width: 20px; height: 20px; margin-right: 5px; background: url('../../common/img/favicon/favicon-96x96.png') no-repeat center / cover; }
                     span { color: #288575; font-weight: 600; }
                 }
-                span { color: #999; }
+                #user_nickname { color: #288575; font-weight: 600; cursor: pointer; }
+            }
+        }
+    }
+
+    .logout_bg { visibility: hidden; position: absolute; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,.5); z-index: 5;
+        &.active { visibility: visible; }
+        .logout_wrap { @include position_ab_center(); @include flex_align_justify_center(); top: 45%; width: 300px; height: 150px; background: #555555; z-index: 5;
+
+            h2 { margin-bottom: 35px; }
+            .logout_btn { display: flex; position: absolute; bottom: 0; width: 100%; left: 0; border-top: 1px solid #4d4d4d; text-align: center;
+                .logout { width: 50%; padding: 15px 0; cursor: pointer; border-right: 1px solid #4d4d4d;
+                    &:hover { background: #444; color: #eee; }
+                }
+                .logout_cancel { width: 50%; padding: 15px 0; cursor: pointer;
+                    &:hover { background: #444; color: #eee; }
+                }
             }
         }
     }

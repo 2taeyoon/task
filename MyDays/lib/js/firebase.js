@@ -13,13 +13,14 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig); // Firebase를 사용하기 위한 초기화
 const auth = getAuth(); // 사용자 인증 정보 가져오기
-const database = getDatabase(app, 'https://mydays-portfolio-default-rtdb.asia-southeast1.firebasedatabase.app/'); // Firebase Realtime Database
+const database = getDatabase(app, 'https://mydays-portfolio-default-rtdb.asia-southeast1.firebasedatabase.app/'); // FIREBASE REALTIME DATABASE
 
-// 회원가입 폼 제출 시 이벤트 처리
+
+// SIGNUP FORM EVENT START!
 const signupForm = document.getElementById("signupForm");
 if(signupForm){
     signupForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // 폼 제출 시 새로고침 방지
+        event.preventDefault(); // REFRESH PREVENT
     
         const email = document.getElementById("email").value;
         const password = document.getElementById("password").value;
@@ -27,7 +28,7 @@ if(signupForm){
 
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                // 회원가입 성공 시 처리
+                // SIGNUP FORM SUCCESS
                 const user = userCredential.user;
                 const nickNameRef = ref(database, `users/${user.uid}/nickName`);
                 set(nickNameRef, nickName);
@@ -35,18 +36,17 @@ if(signupForm){
                 const emailRef = ref(database, `users/${user.uid}/email`);
                 set(emailRef, user.email);
 
-                // 이메일 인증 코드 발송
+                // SEND EMAIL AUTHENTICATION CODE
                 sendEmailVerification(user)
                     .then(() => {
                         alert("이메일 인증을 진행해주세요.");
-                        location.href = './index.html';
                     })
                     .catch(() => {
                         alert("이메일 인증 발송에 실패하였습니다.");
                     });
             })
             .catch((error) => {
-                // 회원가입 실패 시 처리
+                // FAILED TO SIGNUP
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log('errorMessage',errorMessage);
@@ -68,30 +68,49 @@ if(signupForm){
             });
     });
 }
+// SIGNUP FORM EVENT END!
 
 
-// 로그인 폼 제출 시 이벤트 처리
+// LOGIN FORM EVENT START!
 const loginForm = document.getElementById("loginForm");
 if(loginForm){
     loginForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // 폼 제출 시 새로고침 방지
+        event.preventDefault(); // REFRESH PREVENT
     
         const loginEmail = document.getElementById("loginEmail").value;
         const loginPassword = document.getElementById("loginPassword").value;
     
         signInWithEmailAndPassword(auth, loginEmail, loginPassword)
             .then((userCredential) => {
-                // 로그인 성공 시 처리
+                // LOGIN FORM SUCCESS
                 const user = userCredential.user;
-    
+                
                 if(user.emailVerified === false){
                     return alert("이메일 인증을 진행해주세요.");
                 } else {
-                    location.href = './MyDays.html';
+                    // COMPLETION OF EMAIL AUTHENTICATION
+                    const userListRef = ref(database, 'users');
+                    get(userListRef)
+                        .then((userCredential) => {
+                            if (userCredential.exists()) {
+                                // const userList = userCredential.val();
+                                // const aaa = user;
+                                const loginUserUid = user.uid; // LOGIN USER FIREBASE UID
+                                localStorage.setItem('loginUserUid', JSON.stringify(loginUserUid));
+                                location.replace('./MyDays.html');
+                            } else {
+                                console.log("사용자 리스트가 존재하지 않습니다.");
+                            }
+                        })
+                        .catch((error) => {
+                            console.error("사용자 리스트를 가져오는 도중 오류가 발생했습니다.", error);
+                        });
+                        
+
                 }
             })
             .catch((error) => {
-                // 로그인 실패 시 처리
+                // FAILED TO LOGIN
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 //alert(`로그인에 실패했습니다. 오류: ${errorCode}`);
@@ -112,9 +131,10 @@ if(loginForm){
             });
     });
 }
+// LOGIN FORM EVENT END!
 
 
-
+// SIGNUP BUTTON START!
 const signupBtn = document.getElementById('signup_btn');
 if(signupBtn){
     signupBtn.addEventListener('click', ()=>{
@@ -127,19 +147,4 @@ if(signupBack){
         location.href = './index.html';
     });
 }
-
-
-const userListRef = ref(database, 'users');
-get(userListRef)
-    .then((snapshot) => {
-        if (snapshot.exists()) {
-            const userList = snapshot.val();
-            // userList에 대한 작업 수행
-            console.log(userList);
-        } else {
-            console.log("사용자 리스트가 존재하지 않습니다.");
-        }
-    })
-    .catch((error) => {
-        console.error("사용자 리스트를 가져오는 도중 오류가 발생했습니다.", error);
-    });
+// SIGNUP BUTTON END!

@@ -36,9 +36,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     
-    <script defer src="./lib/js/datepicker.js" type="text/javascript"></script>
+    <script defer src="./lib/js/MyDays.js" type="text/javascript"></script>
+    <script defer src="./lib/js/datepicker.js" type="module"></script>
     <script defer src="./lib/js/firebase.js" type="module"></script>
-    <script defer src="./lib/js/index.js" type="text/javascript"></script>
+    <script defer src="./lib/js/MyDaysFirebase.js" type="module"></script>
 
     <title>My Days</title>
 </head>
@@ -48,13 +49,22 @@
             <div class="inner">
                 <h2 class="header_img">
                     <div>
-                        <div></div>
+                        <div class="logo"></div>
                         <span>My Days</span>
                     </div>
-                    <span id="user_nickname">OO님 환영합니다.</span>
+                    <div id="user_nickname"></div>
                 </h2>
             </div>
         </header> <!-- HEADER END! -->
+        <div class="logout_bg">
+            <div class="logout_wrap">
+                <h2>로그아웃하시겠습니까?</h2>
+                <div class="logout_btn">
+                    <div class="logout">로그아웃</div>
+                    <div class="logout_cancel">취소</div>
+                </div>
+            </div>
+        </div>
         <main> <!-- MAIN START! -->
             <div class="swiper content_swiper">
                 <div class="swiper-wrapper">
