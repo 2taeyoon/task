@@ -181,7 +181,6 @@ body {
   margin: 25px 0;
   border-radius: 20px;
   box-shadow: 0 0 10px 0 #000000;
-  cursor: pointer;
 }
 .wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_content_bg .d_day_text {
   display: flex;
@@ -208,6 +207,16 @@ body {
   display: flex;
   padding-top: 10px;
   font-size: 16px;
+}
+.wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_content_bg .d_day_remove_btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  background: url("../../lib/img/close_btn.svg") no-repeat center/20px;
+  cursor: pointer;
+  right: 40px;
 }
 .wrap main .content_swiper .swiper-wrapper .swiper-slide .d_day_content li .d_day_content_bg .d_day_bottom {
   position: absolute;

@@ -227,7 +227,7 @@ const initialDDay = (index)=>{
     dDaySelectTop[index].style.background = `url('./lib/img/d_day_con0${index + 1}.jpg') no-repeat center / cover`;
     dDaySelectBottomTextCommon[index].value = '';
     iconsBox[index].style.background = `url('./lib/img/d_day_icon01.png') no-repeat center / cover`;
-    dDayTopTitle[0].innerHTML = 'D-day';
+    dDayTopTitle[0].innerHTML = 'D-Day';
     dDayTopTitle[1].innerHTML = '만 0살';
     dDayTopTitle[2].innerHTML = '0 개월';
     dDayTopTitle[3].innerHTML = '0주년';
@@ -297,9 +297,9 @@ iconListWrap.forEach((iconWrap) => {
 // Icon popup end!
 
 
-// Click the save button start!
+// Click the firebase save button start!
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getDatabase, ref, get, push, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+import { getDatabase, ref, push, onValue, set } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBCm61JzZJansIuyg35MWcqfrlqP8iQXvE",
@@ -315,17 +315,13 @@ const database = getDatabase(app, 'https://mydays-portfolio-default-rtdb.asia-so
 
 const uidUserJSON = localStorage.getItem('loginUserUid');
 const uidUser = JSON.parse(uidUserJSON);
-
-const dDayListRef1 = ref(database, `users/${uidUser}/DDayList1`);
-const dDayListRef2 = ref(database, `users/${uidUser}/DDayList2`);
-const dDayListRef3 = ref(database, `users/${uidUser}/DDayList3`);
-const dDayListRef4 = ref(database, `users/${uidUser}/DDayList4`);
+const dDayListRef = ref(database, `users/${uidUser}/DDayList`);
 
 
 dDaySave.forEach((saveBtn, index) => {
     saveBtn.addEventListener('click', () => {
 
-        validation(index);
+        validation(index); // 유효성 검사
 
         const backgroundImage = getComputedStyle(dDayTopImages[index]).backgroundImage;
         const imageUrl = backgroundImage.match(/url\(["']?([^"']+)["']?\)/)[1];
@@ -339,8 +335,6 @@ dDaySave.forEach((saveBtn, index) => {
         const formattedDate = `${year}년 ${month < 10 ? '0' + month : month}월 ${day < 10 ? '0' + day : day}일`;
         const value = dDaySelectBottomTextCommon[index].value;
 
-
-
         if(index === 0){
 
             let currentDate = new Date();
@@ -348,9 +342,10 @@ dDaySave.forEach((saveBtn, index) => {
             selectedDayData1.setHours(0, 0, 0, 0);
             currentDate.setHours(0, 0, 0, 0);
             
+            let lodingOldDay1 = selectedDayData1.toString(); // 나중에 랜더링시 현재 데이트와 값을 비교해서 날자를 다시 출력하기 위한 변수
             let timeDifference = currentDate.getTime() - selectedDayData1.getTime();
             let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-            
+
             if (daysDifference == 0) {
                 `D-Day`;
             } else if (daysDifference > 0) {
@@ -359,7 +354,9 @@ dDaySave.forEach((saveBtn, index) => {
                 daysDifference = `D${daysDifference.toString()}`;
             }
 
-            push(dDayListRef1, { imageUrl: imageUrl, iconUrl: iconUrl, formattedDate: formattedDate, daysDifference: daysDifference, value: value });
+            let printDayDifference = daysDifference; // 공통으로 Firebase에 넣어주기 위해 맞춘 변수
+
+            push(dDayListRef, { imageUrl, iconUrl, formattedDate, printDayDifference, value, lodingOldDay1 }); // key와 value가 같으면 하나로 생략 가능
 
         } else if(index === 1){
 
@@ -368,6 +365,7 @@ dDaySave.forEach((saveBtn, index) => {
             selectedDayData2.setHours(0, 0, 0, 0);
             currentDate.setHours(0, 0, 0, 0);
             
+            let lodingOldDay2 = selectedDayData2.toString(); // 나중에 랜더링시 현재 데이트와 값을 비교해서 날자를 다시 출력하기 위한 변수
             let timeDifference = currentDate.getTime() - selectedDayData2.getTime();
             let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
 
@@ -383,23 +381,9 @@ dDaySave.forEach((saveBtn, index) => {
                 yearsDifference = `만 ${yearsDifference.toString()}살`;
             }
 
-            push(dDayListRef2, { imageUrl: imageUrl, iconUrl: iconUrl, formattedDate: formattedDate, yearsDifference: yearsDifference, value: value });
+            let printDayDifference = yearsDifference; // 공통으로 Firebase에 넣어주기 위해 맞춘 변수
 
-            // newDayLi.innerHTML = `
-            //     <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
-            //         <div class="d_day_text">
-            //             <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
-            //             <div class="d_day_text_wrap">
-            //                 <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[1].value}</h4>
-            //                 <div class="d_day_text_sub">
-            //                     <div>${formattedDate}</div>
-            //                 </div>
-            //             </div>
-            //         </div>
-            //         <h3 class="d_day_bottom">${yearsDifference}</h3>
-            //     </div>
-            // `;
-            // dDayContent.prepend(newDayLi);
+            push(dDayListRef, { imageUrl, iconUrl, formattedDate, printDayDifference, value, lodingOldDay2 }); // key와 value가 같으면 하나로 생략 가능
 
         } else if(index === 2){
 
@@ -408,6 +392,7 @@ dDaySave.forEach((saveBtn, index) => {
             selectedDayData3.setHours(0, 0, 0, 0);
             currentDate.setHours(0, 0, 0, 0);
             
+            let lodingOldDay3 = selectedDayData3.toString();; // 나중에 랜더링시 현재 데이트와 값을 비교해서 날자를 다시 출력하기 위한 변수
             let timeDifference = currentDate.getTime() - selectedDayData3.getTime();
             let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
 
@@ -419,22 +404,9 @@ dDaySave.forEach((saveBtn, index) => {
                 monthsDifference = `${monthsDifference.toString()}개월`;
             }
 
-            push(dDayListRef3, { imageUrl: imageUrl, iconUrl: iconUrl, formattedDate: formattedDate, monthsDifference: monthsDifference, value: value });
-            // newDayLi.innerHTML = `
-            //     <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
-            //         <div class="d_day_text">
-            //             <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
-            //             <div class="d_day_text_wrap">
-            //                 <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[2].value}</h4>
-            //                 <div class="d_day_text_sub">
-            //                     <div>${formattedDate}</div>
-            //                 </div>
-            //             </div>
-            //         </div>
-            //         <h3 class="d_day_bottom">${monthsDifference}</h3>
-            //     </div>
-            // `;
-            // dDayContent.prepend(newDayLi);
+            let printDayDifference = monthsDifference; // 공통으로 Firebase에 넣어주기 위해 맞춘 변수
+
+            push(dDayListRef, { imageUrl, iconUrl, formattedDate, printDayDifference, value, lodingOldDay3 }); // key와 value가 같으면 하나로 생략 가능
             
         } else if(index === 3){
 
@@ -443,6 +415,7 @@ dDaySave.forEach((saveBtn, index) => {
             selectedDayData4.setHours(0, 0, 0, 0);
             currentDate.setHours(0, 0, 0, 0);
             
+            let lodingOldDay4 = selectedDayData4.toString(); // 나중에 랜더링시 현재 데이트와 값을 비교해서 날자를 다시 출력하기 위한 변수
             let timeDifference = currentDate.getTime() - selectedDayData4.getTime();
             let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
 
@@ -456,80 +429,102 @@ dDaySave.forEach((saveBtn, index) => {
             } else {
                 yearsDifference = `${yearsDifference}주년`;
             }
+            
+            let printDayDifference = yearsDifference; // 공통으로 Firebase에 넣어주기 위해 맞춘 변수
 
-            push(dDayListRef4, { imageUrl: imageUrl, iconUrl: iconUrl, formattedDate: formattedDate, yearsDifference: yearsDifference, value: value });
-            // newDayLi.innerHTML = `
-            //     <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
-            //         <div class="d_day_text">
-            //             <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
-            //             <div class="d_day_text_wrap">
-            //                 <h4 class="d_day_text_title">${dDaySelectBottomTextCommon[3].value}</h4>
-            //                 <div class="d_day_text_sub">
-            //                     <div>${formattedDate}</div>
-            //                 </div>
-            //             </div>
-            //         </div>
-            //         <h3 class="d_day_bottom">${yearsDifference}</h3>
-            //     </div>
-            // `;
-            // dDayContent.prepend(newDayLi);
+            push(dDayListRef, { imageUrl, iconUrl, formattedDate, printDayDifference, value, lodingOldDay4 }); // key와 value가 같으면 하나로 생략 가능
+
         }
         initialDDay(index);
     });
 });
-// Click the save button end!
+// Click the firebase save button end!
 
 
 // Firebase d-day rendering start!
 const dDayContent = document.querySelector('.d_day_content');
-const scrollInitial = document.querySelector('.wrap main .content_swiper .swiper-wrapper .swiper-slide');
+const scrollInitial = document.querySelector('.wrap main .content_swiper .swiper-wrapper .main_content01');
 
-onValue(dDayListRef1, (snapshot) => {
-    const dDayDataList = snapshot.val();
 
-    if (dDayDataList) {
+const reRendering = () => {
+    onValue(dDayListRef, (snapshot) => {
+        const dDayDataList = snapshot.val(); // dDayListRef에 존재하는 모든 데이터에 접근
 
-        dDayContent.innerHTML = '';
+        dDayContent.innerHTML = ''; // 처음에 초기화를 해주고 랜더링해야 중복 추가가 이루어지지 않음
 
-        Object.keys(dDayDataList).forEach((key) => {
-            const dDayData = dDayDataList[key];
+        if (dDayDataList) { // 데이터가 존재하는 경우에만 실행 되도록
+            Object.keys(dDayDataList).forEach((key) => {
+                const dDayData = dDayDataList[key]; // 각각의 리스트
 
-            const imageUrl = dDayData.imageUrl;
-            const iconUrl = dDayData.iconUrl;
-            const formattedDate = dDayData.formattedDate;
-            const daysDifference = dDayData.daysDifference;
-            const value = dDayData.value;
+                const imageUrl = dDayData.imageUrl;
+                const iconUrl = dDayData.iconUrl;
+                const formattedDate = dDayData.formattedDate;
+                const printDayDifference = dDayData.printDayDifference;
+                const value = dDayData.value;
 
-            const newDayLi = document.createElement('li');
-            newDayLi.innerHTML = `
-                <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
-                    <div class="d_day_text">
-                        <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
-                        <div class="d_day_text_wrap">
-                            <h4 class="d_day_text_title">${value}</h4>
-                            <div class="d_day_text_sub">
-                                <div>${formattedDate}</div>
+                const lodingOldDay1 = dDayData.lodingOldDay1; // 1번째 디데이 만들 때 선택한 날짜 값
+                const lodingOldDay2 = dDayData.lodingOldDay2; // 2번째 디데이 만들 때 선택한 날짜 값
+                const lodingOldDay3 = dDayData.lodingOldDay3; // 3번째 디데이 만들 때 선택한 날짜 값
+                const lodingOldDay4 = dDayData.lodingOldDay4; // 4번째 디데이 만들 때 선택한 날짜 값
+
+                // 문자열로 저장된 디데이를 디데이 객체로 변환
+                const lodingOldDayDate1 = new Date(lodingOldDay1);
+                const lodingOldDayDate2 = new Date(lodingOldDay2);
+                const lodingOldDayDate3 = new Date(lodingOldDay3);
+                const lodingOldDayDate4 = new Date(lodingOldDay4);
+
+                const currentDate = new Date(); // 로컬 현재 날짜
+                
+                const newDayLi = document.createElement('li');
+                newDayLi.innerHTML = `
+                    <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
+                        <div class="d_day_text">
+                            <div class="d_day_text_icon" style="background: url(${iconUrl}) no-repeat center / 45px;"></div>
+                            <div class="d_day_text_wrap">
+                                <h4 class="d_day_text_title">${value}</h4>
+                                <div class="d_day_text_sub">
+                                    <div>${formattedDate}</div>
+                                </div>
                             </div>
                         </div>
+                        <div class="d_day_remove_btn"></div>
+                        <h3 class="d_day_bottom">${printDayDifference}</h3>
                     </div>
-                    <h3 class="d_day_bottom">${daysDifference}</h3>
-                </div>
-            `;
-            dDayContent.prepend(newDayLi);
-            scrollInitial.scrollTop = 0;
-        });
-    }
-});
+                `;
 
+                const removeBtn = newDayLi.querySelector('.d_day_remove_btn');
+                removeBtn.addEventListener('click', () => {
+                    // 데이터 베이스에 저장된 선택된 Realtime Database 삭제
+                    const dataRef = ref(database, `users/${uidUser}/DDayList/${key}`);
+                    set(dataRef, null)
+                        .then(() => {
+                            reRendering(); // 데이터가 존재할 때 아이템이 삭제되면 reRendering 실행
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
+                });
 
+                dDayContent.prepend(newDayLi);
+                scrollInitial.scrollTop = 0;
+            });
+        } else { // 데이터가 없을 경우에도 삭제 버튼 이벤트 등록(이걸 안하면 데이터가 1개 남았을 때 삭제하면 reRendering 되지 않음)
+            const removeBtn = document.createElement('div');
+            removeBtn.classList.add('d_day_remove_btn');
+            removeBtn.addEventListener('click', () => {
+                // 데이터 베이스에 저장된 선택된 Realtime Database 삭제
+                const dataRef = ref(database, `users/${uidUser}/DDayList/${key}`);
+                set(dataRef, null)
+                    .then(() => {
+                        reRendering(); // 데이터가 없을 경우에도 reRendering 실행
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            });
+        }
+    });
+};
 
-
-
-
-
-
-
-
-
-
-// Firebase d-day rendering end!
+reRendering(); // 최초에 Firebase Realtime Database 랜더링
+// // Firebase d-day rendering end!

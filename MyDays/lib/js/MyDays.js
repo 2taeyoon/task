@@ -1,4 +1,4 @@
-// MAIN SWIPER START!
+// Main swiper start!
 const tabList = ['디데이', '더보기'];
 
 let swiper = new Swiper(".content_swiper", {
@@ -14,10 +14,10 @@ let swiper = new Swiper(".content_swiper", {
         }
     },
 });
-// MAIN SWIPER END!
+// Main swiper end!
 
 
-// LOGOUT START!
+// Logout start!
 const userNickname = document.getElementById('user_nickname');
 const logout = document.querySelector('.logout');
 const logoutBg = document.querySelector('.logout_bg');
@@ -44,13 +44,21 @@ logoutCancel.addEventListener('click', ()=>{
 logoutWrap.addEventListener('click', (event)=>{
     event.stopPropagation();
 });
-// LOGOUT END!
+// Logout end!
 
 
-// NO UNIQUE UID VALUE START!
+// No unique UID value start!
 const uidLocalStorage = localStorage.getItem('loginUserUid');
 if(uidLocalStorage === null){
     alert('로그인 후에 이용해주세요.');
     location.replace('./index.html');
 }
-// NO UNIQUE UID VALUE END!
+// No unique UID value end!
+
+
+//Back button disable Start!
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+    history.go(1);
+};
+//Back button disable End!

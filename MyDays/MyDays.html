@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="./common/img/favicon/favicon.ico">
+
     <link rel="apple-touch-icon" sizes="57x57" href="./common/img/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./common/img/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./common/img/favicon/apple-icon-72x72.png">
@@ -15,11 +16,14 @@
     <link rel="apple-touch-icon" sizes="144x144" href="./common/img/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="./common/img/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="./common/img/favicon/apple-icon-180x180.png">
+
     <link rel="icon" type="image/png" sizes="192x192"  href="./common/img/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./common/img/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="./common/img/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./common/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./common/img/favicon/manifest.json">
+
+    <link rel="manifest" href="./manifest.json"/>
+
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="./common/img/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -31,14 +35,13 @@
     <link rel="stylesheet" href="./lib/css/datepicker.css">
     <link rel="stylesheet" href="./lib/css/Mydays.css">
 
-    <!-- <script src="./common/js/prefixfree.min.js" type="text/javascript"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     
     <script defer src="./lib/js/MyDays.js" type="text/javascript"></script>
-    <script defer src="./lib/js/datepicker.js" type="module"></script>
-    <script defer src="./lib/js/firebase.js" type="module"></script>
+    <script defer src="./lib/js/Datepicker.js" type="module"></script>
+    <script defer src="./lib/js/SignupFirebase.js" type="module"></script>
     <script defer src="./lib/js/MyDaysFirebase.js" type="module"></script>
 
     <title>My Days</title>
@@ -68,11 +71,15 @@
         <main> <!-- MAIN START! -->
             <div class="swiper content_swiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <ul class="inner d_day_content">
-                        </ul>
+                    <div class="swiper-slide main_content01">
+                        <ul class="inner d_day_content"> <!-- D-DAY CONTENT START! -->
+                        </ul> <!-- D-DAY CONTENT END! -->
                     </div>
-                    <div class="swiper-slide">콘텐츠22</div>
+                    <div class="swiper-slide main_content02">
+                        <ul class="inner more_content"> <!-- MORE CONTENT START! -->
+                            <li>콘텐츠 222</li>
+                        </ul> <!-- MORE CONTENT END! -->
+                    </div>
                 </div>
                 <div class="swiper-pagination swiper-d-day"></div>
             </div>
@@ -111,7 +118,7 @@
                         </div>
                         <div class="d_day_select_wrap">
                             <div class="d_day_select_top" style="background: url(./lib/img/d_day_con01.jpg) no-repeat center / cover;">
-                                <h3 class="d_day_select_top_title">D-day</h3>
+                                <h3 class="d_day_select_top_title">D-Day</h3>
                                 <div class="d_day_select_save_bth">저장</div>
                                 <input id="upload_img01" class="upload_img_common" type="file">
                                 <label for="upload_img01" class="upload_label"></label>
