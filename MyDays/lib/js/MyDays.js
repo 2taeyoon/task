@@ -62,3 +62,39 @@ window.onpopstate = function () {
     history.go(1);
 };
 //Back button disable End!
+
+
+//D-DAY add button visible, hidden start!
+const dDayAdd = document.getElementById('d_day_add');
+const pagination = document.querySelectorAll('.swiper-pagination-bullet');
+
+pagination[0].addEventListener('click', ()=>{
+    dDayAdd.style.visibility = 'visible';
+});
+
+pagination[1].addEventListener('click', ()=>{
+    dDayAdd.style.visibility = 'hidden';
+});
+//D-DAY add button visible, hidden end!
+
+
+//More content popup start!
+const moreCloseBtn = document.querySelector('.more_close_btn');
+const moreAnnouncementsMore = document.querySelector('.more_announcements_more');
+const moreAnnouncementsContent = document.querySelectorAll('.more_announcements_content');
+const moreAnnouncementsTopMore = document.querySelector('.more_announcements_top_more');
+
+moreAnnouncementsContent.forEach((content)=>{
+    content.addEventListener('click', ()=>{
+        moreAnnouncementsMore.classList.add('active')
+    });
+});
+
+moreAnnouncementsTopMore.addEventListener('click', ()=>{
+    moreAnnouncementsMore.classList.add('active');
+});
+
+moreCloseBtn.addEventListener('click', ()=>{
+    moreAnnouncementsMore.classList.remove('active');
+});
+//More content popup end!

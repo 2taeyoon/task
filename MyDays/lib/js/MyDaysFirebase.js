@@ -16,7 +16,8 @@ const database = getDatabase(app, 'https://mydays-portfolio-default-rtdb.asia-so
 const uidUserJSON = localStorage.getItem('loginUserUid');
 const uidUser = JSON.parse(uidUserJSON);
 const userNickname = document.getElementById('user_nickname');
-
+const moreNickname = document.getElementById('more_nickname');
+const moreEmail = document.getElementById('more_email');
 
 console.log('localStorage users uid value',uidUser);
 
@@ -29,6 +30,8 @@ get(userListRef)
         console.log('Full users in Firebase', userList);
         console.log('Firebase user in signin', userList[uidUser]);
         userNickname.innerHTML = `${userList[uidUser].nickName}님 환영합니다`;
+        moreNickname.innerHTML = `${userList[uidUser].nickName}`;
+        moreEmail.innerHTML = `${userList[uidUser].email}`;
     })
     .catch((error) => {
         console.error("사용자 리스트를 가져오는 도중 오류가 발생했습니다.", error);

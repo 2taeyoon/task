@@ -7,10 +7,11 @@ body { position: relative; width: 100%; max-width: 768px; height: 100vh; max-hei
 @mixin sub_hide(){ position: absolute; top: -100%; width: 100%; height: 100%; background: #17181b; z-index: 10; transition: 0.5s;
     &.active { top: 0; }
 }
+@mixin sub_header(){ position: relative; width: 100%; height: 35px; padding: 22px 0; box-sizing: unset; border-bottom: 1px solid #333; }
 @mixin close_btn(){ position: absolute; top: 30px; right: 30px; width: 20px; height: 20px; background: url('../../lib/img/close_btn.svg') no-repeat center / 20px; cursor: pointer; }
 @mixin flex_align_justify_center(){ display: flex; align-items: center; justify-content: center; }
 @mixin position_ab_center() { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-
+@mixin d_day_content() { position: relative; width: 100%; height: 200px; margin: 25px 0; border-radius: 20px; box-shadow: 0 0 10px 0 #000000; }
 
 
 
@@ -49,7 +50,7 @@ body { position: relative; width: 100%; max-width: 768px; height: 100vh; max-hei
                 .swiper-slide { background: #202226; overflow-y: scroll;
                     .d_day_content {
                         li {
-                            .d_day_content_bg { position: relative; width: 100%; height: 200px; margin: 25px 0; border-radius: 20px; box-shadow: 0 0 10px 0 #000000;
+                            .d_day_content_bg { @include d_day_content();
                                 .d_day_text { display: flex; align-items: center; position: absolute; top: 35px; left: 35px;
                                     .d_day_text_icon { width: 45px; height: 45px; margin-right: 15px; }
                                     .d_day_text_wrap { display: flex; flex-direction: column;
@@ -59,6 +60,29 @@ body { position: relative; width: 100%; max-width: 768px; height: 100vh; max-hei
                                 }
                                 .d_day_remove_btn { @include close_btn(); right: 40px; }
                                 .d_day_bottom { position: absolute; bottom: 35px; right: 40px; color: #fff; font-size: 28px; font-weight: 500; }
+                            }
+                        }
+                    }
+
+                    .more_content {
+                        li {
+                            .more_bg { @include d_day_content(); display: flex; align-items: center; height: 100px; box-shadow: 0 0 5px 0 #17181b; background: #17181b;
+                                .more_top_text_wrap { display: flex; flex-direction: column; margin-left: 35px;
+                                    #more_nickname { font-size: 18px; }
+                                    #more_email { margin-top: 5px; color: #777; font-size: 14px; font-weight: 400; }
+                                }
+                            }
+                            .more_announcements { @include d_day_content(); height: 220px; padding: 35px; box-shadow: 0 0 5px 0 #17181b; background: #17181b;
+                                .more_announcements_top { display: flex; justify-content: space-between; align-items: center; padding-bottom: 15px; border-bottom: 1px solid #777;
+                                    div:first-child { font-size: 16px; }
+                                    div:last-child { color: #777; font-size: 14px; cursor: pointer; }
+                                }
+                                .more_announcements_bottom {
+                                    .more_announcements_content { margin: 25px 0; cursor: pointer;
+                                        div:first-child { font-size: 15px; }
+                                        div:last-child { color: #777; font-size: 14px; padding-top: 5px; }
+                                    }
+                                }
                             }
                         }
                     }
@@ -84,7 +108,7 @@ body { position: relative; width: 100%; max-width: 768px; height: 100vh; max-hei
     }
 
     #select_d_day { @include sub_hide();
-        .sub_header { @include flex_align_justify_center(); position: relative; width: 100%; height: 35px; padding: 22px 0; box-sizing: unset; border-bottom: 1px solid #333;
+        .sub_header { @include flex_align_justify_center(); @include sub_header();
             .sub_header_title { font-size: 20px;
                 span { color: #4ec2af; }
             }
@@ -131,15 +155,12 @@ body { position: relative; width: 100%; max-width: 768px; height: 100vh; max-hei
             }
         }
     }
+    .more_announcements_more { @include sub_hide();
+        .sub_header { @include flex_align_justify_center(); @include sub_header();
+            .sub_header_title { font-size: 20px;
+                span { color: #4ec2af; }
+            }
+            .more_close_btn { @include close_btn(); }
+        }
+    }
 }
-
-
-/*
-@media all and (max-width:550px){
-
-}
-
-@media all and (max-width:480px){
-
-}
-*/

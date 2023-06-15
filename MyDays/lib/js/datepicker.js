@@ -337,102 +337,27 @@ dDaySave.forEach((saveBtn, index) => {
 
         if(index === 0){
 
-            let currentDate = new Date();
-
             selectedDayData1.setHours(0, 0, 0, 0);
-            currentDate.setHours(0, 0, 0, 0);
-            
-            let lodingOldDay1 = selectedDayData1.toString(); // 나중에 랜더링시 현재 데이트와 값을 비교해서 날자를 다시 출력하기 위한 변수
-            let timeDifference = currentDate.getTime() - selectedDayData1.getTime();
-            let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-
-            if (daysDifference == 0) {
-                `D-Day`;
-            } else if (daysDifference > 0) {
-                daysDifference = `${daysDifference.toString()}일`;
-            } else if (daysDifference < 0) {
-                daysDifference = `D${daysDifference.toString()}`;
-            }
-
-            let printDayDifference = daysDifference; // 공통으로 Firebase에 넣어주기 위해 맞춘 변수
-
-            push(dDayListRef, { imageUrl, iconUrl, formattedDate, printDayDifference, value, lodingOldDay1 }); // key와 value가 같으면 하나로 생략 가능
+            let saveDDay1 = selectedDayData1.toString(); // 나중에 랜더링시 현재 데이트와 값을 비교해서 날짜를 다시 출력하기 위한 변수
+            push(dDayListRef, { imageUrl, iconUrl, formattedDate, value, saveDDay1 }); // key와 value가 같으면 하나로 생략 가능
 
         } else if(index === 1){
 
-            let currentDate = new Date();
-
             selectedDayData2.setHours(0, 0, 0, 0);
-            currentDate.setHours(0, 0, 0, 0);
-            
-            let lodingOldDay2 = selectedDayData2.toString(); // 나중에 랜더링시 현재 데이트와 값을 비교해서 날자를 다시 출력하기 위한 변수
-            let timeDifference = currentDate.getTime() - selectedDayData2.getTime();
-            let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-
-            let yearsDifference = Math.floor(daysDifference / 365);
-            
-            // 선택한 날짜의 달이 현재 날짜의 달보다 작거나 같을 경우 && 선택한 날짜의 일이 현재 날짜의 일보다 작거나 같을 경우
-            let isBirthdayPassed = (selectedDayData2.getMonth() <= currentDate.getMonth()) && (selectedDayData2.getDate() <= currentDate.getDate());
-            if (!isBirthdayPassed) yearsDifference -= 1;
-
-            if (yearsDifference < 0) {
-                yearsDifference = '만 0살';
-            } else {
-                yearsDifference = `만 ${yearsDifference.toString()}살`;
-            }
-
-            let printDayDifference = yearsDifference; // 공통으로 Firebase에 넣어주기 위해 맞춘 변수
-
-            push(dDayListRef, { imageUrl, iconUrl, formattedDate, printDayDifference, value, lodingOldDay2 }); // key와 value가 같으면 하나로 생략 가능
+            let saveDDay2 = selectedDayData2.toString(); // 나중에 랜더링시 현재 데이트와 값을 비교해서 날짜를 다시 출력하기 위한 변수
+            push(dDayListRef, { imageUrl, iconUrl, formattedDate, value, saveDDay2 }); // key와 value가 같으면 하나로 생략 가능
 
         } else if(index === 2){
 
-            let currentDate = new Date();
-
             selectedDayData3.setHours(0, 0, 0, 0);
-            currentDate.setHours(0, 0, 0, 0);
-            
-            let lodingOldDay3 = selectedDayData3.toString();; // 나중에 랜더링시 현재 데이트와 값을 비교해서 날자를 다시 출력하기 위한 변수
-            let timeDifference = currentDate.getTime() - selectedDayData3.getTime();
-            let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-
-            let monthsDifference = Math.floor(daysDifference / 30);
-            
-            if (monthsDifference < 0) {
-                monthsDifference = '0개월';
-            } else {
-                monthsDifference = `${monthsDifference.toString()}개월`;
-            }
-
-            let printDayDifference = monthsDifference; // 공통으로 Firebase에 넣어주기 위해 맞춘 변수
-
-            push(dDayListRef, { imageUrl, iconUrl, formattedDate, printDayDifference, value, lodingOldDay3 }); // key와 value가 같으면 하나로 생략 가능
+            let saveDDay3 = selectedDayData3.toString();; // 나중에 랜더링시 현재 데이트와 값을 비교해서 날짜를 다시 출력하기 위한 변수
+            push(dDayListRef, { imageUrl, iconUrl, formattedDate, value, saveDDay3 }); // key와 value가 같으면 하나로 생략 가능
             
         } else if(index === 3){
 
-            let currentDate = new Date();
-
             selectedDayData4.setHours(0, 0, 0, 0);
-            currentDate.setHours(0, 0, 0, 0);
-            
-            let lodingOldDay4 = selectedDayData4.toString(); // 나중에 랜더링시 현재 데이트와 값을 비교해서 날자를 다시 출력하기 위한 변수
-            let timeDifference = currentDate.getTime() - selectedDayData4.getTime();
-            let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
-
-            let yearsDifference = Math.floor(daysDifference / 365);
-
-            let isYearsdayPassed = (currentDate.getMonth() >= selectedDayData4.getMonth()) && (currentDate.getDate() >= selectedDayData4.getDate());
-            if (!isYearsdayPassed) yearsDifference -= 1;
-
-            if (yearsDifference < 1) {
-                yearsDifference = `0주년`;
-            } else {
-                yearsDifference = `${yearsDifference}주년`;
-            }
-            
-            let printDayDifference = yearsDifference; // 공통으로 Firebase에 넣어주기 위해 맞춘 변수
-
-            push(dDayListRef, { imageUrl, iconUrl, formattedDate, printDayDifference, value, lodingOldDay4 }); // key와 value가 같으면 하나로 생략 가능
+            let saveDDay4 = selectedDayData4.toString(); // 나중에 랜더링시 현재 데이트와 값을 비교해서 날짜를 다시 출력하기 위한 변수
+            push(dDayListRef, { imageUrl, iconUrl, formattedDate, value, saveDDay4 }); // key와 value가 같으면 하나로 생략 가능
 
         }
         initialDDay(index);
@@ -459,22 +384,94 @@ const reRendering = () => {
                 const imageUrl = dDayData.imageUrl;
                 const iconUrl = dDayData.iconUrl;
                 const formattedDate = dDayData.formattedDate;
-                const printDayDifference = dDayData.printDayDifference;
                 const value = dDayData.value;
 
-                const lodingOldDay1 = dDayData.lodingOldDay1; // 1번째 디데이 만들 때 선택한 날짜 값
-                const lodingOldDay2 = dDayData.lodingOldDay2; // 2번째 디데이 만들 때 선택한 날짜 값
-                const lodingOldDay3 = dDayData.lodingOldDay3; // 3번째 디데이 만들 때 선택한 날짜 값
-                const lodingOldDay4 = dDayData.lodingOldDay4; // 4번째 디데이 만들 때 선택한 날짜 값
+                const saveCompairing1 = dDayData.saveDDay1; // 1번째 디데이 만들 때 선택한 날짜 값
+                const saveCompairing2 = dDayData.saveDDay2; // 2번째 디데이 만들 때 선택한 날짜 값
+                const saveCompairing3 = dDayData.saveDDay3; // 3번째 디데이 만들 때 선택한 날짜 값
+                const saveCompairing4 = dDayData.saveDDay4; // 4번째 디데이 만들 때 선택한 날짜 값
 
-                // 문자열로 저장된 디데이를 디데이 객체로 변환
-                const lodingOldDayDate1 = new Date(lodingOldDay1);
-                const lodingOldDayDate2 = new Date(lodingOldDay2);
-                const lodingOldDayDate3 = new Date(lodingOldDay3);
-                const lodingOldDayDate4 = new Date(lodingOldDay4);
+                let printDayDifference; // 실제로 출력할 변수
+                let currentDate = new Date(); // 로컬 현재 날짜
+                currentDate.setHours(0, 0, 0, 0); // 로컬 시간 초기화
 
-                const currentDate = new Date(); // 로컬 현재 날짜
-                
+                if(saveCompairing1){
+
+                    let printDDay1 = new Date(saveCompairing1); // 선택 날짜를 계산할 변수
+                    printDDay1.setHours(0, 0, 0, 0);
+
+                    let timeDifference = currentDate.getTime() - printDDay1.getTime();
+                    let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+        
+                    if (daysDifference == 0) {
+                        daysDifference = `D-Day`;
+                    } else if (daysDifference > 0) {
+                        daysDifference = `${daysDifference.toString()}일`;
+                    } else if (daysDifference < 0) {
+                        daysDifference = `D${daysDifference.toString()}`;
+                    }
+                    printDayDifference = daysDifference; // 실제 출력될 값
+
+                } else if(saveCompairing2){
+
+                    let printDDay2 = new Date(saveCompairing2); // 선택 날짜를 계산할 변수
+                    printDDay2.setHours(0, 0, 0, 0);
+
+                    let timeDifference = currentDate.getTime() - printDDay2.getTime();
+                    let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+                    let yearsDifference = Math.floor(daysDifference / 365);
+                    
+                    // 선택한 날짜의 달이 현재 날짜의 달보다 작거나 같을 경우 && 선택한 날짜의 일이 현재 날짜의 일보다 작거나 같을 경우
+                    let isBirthdayPassed = (printDDay2.getMonth() <= currentDate.getMonth()) && (printDDay2.getDate() <= currentDate.getDate());
+
+                    if (!isBirthdayPassed) yearsDifference -= 1;
+
+                    if (yearsDifference < 0) {
+                        yearsDifference = '만 0살';
+                    } else {
+                        yearsDifference = `만 ${yearsDifference.toString()}살`;
+                    }
+                    printDayDifference = yearsDifference; // 실제 출력될 값
+
+                } else if(saveCompairing3){
+
+                    let printDDay3 = new Date(saveCompairing3); // 선택 날짜를 계산할 변수
+                    printDDay3.setHours(0, 0, 0, 0);
+
+                    let timeDifference = currentDate.getTime() - printDDay3.getTime();
+                    let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+        
+                    let monthsDifference = Math.floor(daysDifference / 30);
+                    
+                    if (monthsDifference < 0) {
+                        monthsDifference = '0개월';
+                    } else {
+                        monthsDifference = `${monthsDifference.toString()}개월`;
+                    }
+                    printDayDifference = monthsDifference; // 실제 출력될 값
+
+                } else if(saveCompairing4){
+
+                    let printDDay4 = new Date(saveCompairing4); // 선택 날짜를 계산할 변수
+                    printDDay4.setHours(0, 0, 0, 0);
+
+                    let timeDifference = currentDate.getTime() - printDDay4.getTime();
+                    let daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+                    let yearsDifference = Math.floor(daysDifference / 365);
+
+                    let isYearsdayPassed = (currentDate.getMonth() >= printDDay4.getMonth()) && (currentDate.getDate() >= printDDay4.getDate());
+                    if (!isYearsdayPassed) yearsDifference -= 1;
+
+                    if (yearsDifference < 1) {
+                        yearsDifference = `0주년`;
+                    } else {
+                        yearsDifference = `${yearsDifference}주년`;
+                    }
+                    printDayDifference = yearsDifference; // 실제 출력될 값
+                }
+
                 const newDayLi = document.createElement('li');
                 newDayLi.innerHTML = `
                     <div class="d_day_content_bg" style="background: url(${imageUrl}) no-repeat center / cover;">
@@ -491,6 +488,8 @@ const reRendering = () => {
                         <h3 class="d_day_bottom">${printDayDifference}</h3>
                     </div>
                 `;
+                dDayContent.prepend(newDayLi);
+                scrollInitial.scrollTop = 0;
 
                 const removeBtn = newDayLi.querySelector('.d_day_remove_btn');
                 removeBtn.addEventListener('click', () => {
@@ -507,6 +506,7 @@ const reRendering = () => {
 
                 dDayContent.prepend(newDayLi);
                 scrollInitial.scrollTop = 0;
+                
             });
         } else { // 데이터가 없을 경우에도 삭제 버튼 이벤트 등록(이걸 안하면 데이터가 1개 남았을 때 삭제하면 reRendering 되지 않음)
             const removeBtn = document.createElement('div');
