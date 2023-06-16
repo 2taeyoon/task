@@ -610,4 +610,36 @@ body {
   height: 20px;
   background: url("../../lib/img/close_btn.svg") no-repeat center/20px;
   cursor: pointer;
+}
+.wrap .more_announcements_more .more_announcements_more_content_wrap {
+  padding-top: 25px;
+}
+.wrap .more_announcements_more .more_announcements_more_content_wrap .more_announcements_more_text h3 {
+  position: relative;
+  cursor: pointer;
+}
+.wrap .more_announcements_more .more_announcements_more_content_wrap .more_announcements_more_text h3::after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  width: 10px;
+  height: 2px;
+  background: #999;
+  transform: rotate(45deg);
+  right: 6px;
+}
+.wrap .more_announcements_more .more_announcements_more_content_wrap .more_announcements_more_text h3::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  width: 10px;
+  height: 2px;
+  background: #999;
+  transform: rotate(-45deg);
+  right: 0;
+}
+.wrap .more_announcements_more .more_announcements_more_content_wrap .more_announcements_more_text h4 {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #999;
 }/*# sourceMappingURL=Mydays.css.map */
