@@ -98,3 +98,16 @@ moreCloseBtn.addEventListener('click', ()=>{
     moreAnnouncementsMore.classList.remove('active');
 });
 //More content popup end!
+
+
+//More announcements more popup window start!
+const moreAnnouncementsMoreContentWrap = document.querySelectorAll('.more_announcements_more_content_wrap');
+const moreAnnouncementsMoreContentImg = document.querySelectorAll('.more_announcements_more_content_img');
+
+moreAnnouncementsMoreContentWrap.forEach((texts)=>{
+    texts.addEventListener('click', ()=>{
+        texts.classList.toggle('active');
+    });
+    
+});
+//More announcements more popup window end!
