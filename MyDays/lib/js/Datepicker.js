@@ -9,7 +9,7 @@ let selectedDayData4; // Each selectedDayData value
 
 $(function() {
     $("#date_d_day1").datepicker({
-        yearRange: `2010:${currentYear}`,
+        yearRange: `2010:2025`,
         onSelect: function() {
             let selectedDate = $("#date_d_day1").datepicker('getDate');
             let selectedDatePrint = new Date($("#date_d_day1").datepicker('getDate'));
