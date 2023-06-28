@@ -1487,7 +1487,7 @@ header .ham_wrap .ham_menu .ham_li:hover {
 }
 
 .section3 {
-  animation: backPosition 10s linear infinite;
+  animation: backPosition 10s linear infinite alternate;
 }
 .section3 .inner .section_text h2 {
   color: #fff;

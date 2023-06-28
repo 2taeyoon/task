@@ -89,7 +89,7 @@
     }
 }
 
-.section3 { animation: backPosition 10s linear infinite;
+.section3 { animation: backPosition 10s linear infinite alternate;
     .inner {
         .section_text { 
             h2 { color: #fff; }
