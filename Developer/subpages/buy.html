@@ -1,0 +1,234 @@
+<!--
+    작성자 : 서범규
+    작성일 : 2023-04-17
+    수정일 : 
+-->
+
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="../lib/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../lib/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../lib/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../lib/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../lib/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../lib/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../lib/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../lib/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../lib/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../lib/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../lib/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../lib/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../lib/images/favicon/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../lib/css/defalut.css">
+    <link rel="stylesheet" href="../lib/css/common.css">
+    <link rel="stylesheet" href="./lib/css/style.css">
+    <link rel="stylesheet" href="./lib/css/response.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../lib/javascript/common.js"></script> 
+    <script defer src="./lib/javascript/beomkyu.js"></script> 
+    <script defer src="./lib/javascript/taeyoon.js"></script> 
+    <script defer src="./data/taeyoon_data.js" type="module"></script>
+    <title>Developer</title>
+</head>
+<body>
+    <!-- header 영역입니다. (혜민님) -->
+    <header class="pc">
+        <div class="inner">
+            <h1 class="main_logo"><a href="../index.html"></a></h1>
+            <ul class="gnb">
+                <li><a href="../index.html">About</a></li>
+                <li>
+                    <a href="./developer_1.html">Developer</a>
+                    <ul>
+                        <li class="mb20 txt_c"><a href="./developer_1.html">SEO BEOM KYU</a></li>
+                        <li class="mb20 txt_c"><a href="./developer_2.html">CHO HYE MIN</a></li>
+                        <li class="txt_c"><a href="./developer_3.html">LEE TAE YOON</a></li>
+                    </ul>
+                </li>
+                <li><a href="./buy.html">Buy</a></li>
+                <li><a href="./FAQ.html">FAQ</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- //모바일용 header 마크업 (768px부터 적용)-->
+    <header class="mobile pd20">
+        <div class="mobile_inner flex">
+            <h1 class="main_logo_mobile"><a href="#"></a></h1>
+            <div class="gnb_btn">
+                <span></span>
+            </div>
+        </div>
+        <div class="gnb_open">
+            <div class="gnb_open_inner pd20">
+                <div class="mobile_inner flex">
+                    <h1 class="main_logo_mobile"><a href="../../index.html"></a></h1>
+                    <div class="gnb_btn">
+                        <span></span>
+                    </div>
+                </div>
+                <ul class="gnb_open_menu">
+                    <li><a href="../index.html">About</a></li>
+                    <li><a href="./developer_1.html">Developer</a>
+                        <ul class="gnb_sub pd20">
+                            <li><a href="./developer_1.html">SEO BEOM KYU</a></li>
+                            <li><a href="./developer_2.html">CHO HYE MIN</a></li>
+                            <li><a href="./developer_3.html">LEE TAE YOON</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./buy.html">Buy</a></li>
+                    <li><a href="./FAQ.html">FAQ</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- content_wrap -->
+    <div class="content_wrap">
+        <section>
+            <div class="inner mb100">
+                <h3 class="con_tit pt30 pb80 txt_c">Buy</h3>
+                <ul class="buy_list hori row3 gap45 not_scale">
+                    
+                </ul>
+                <div class="btn_wrap flex gap25">
+                    <p class="buy_btn_wrap"><span class="buy_btn">구매하기</span></p>
+                    <p class="order_btn_wrap"><span class="order_btn">구매내역</span></p>
+                </div>
+                
+                <!--- 영수증 작업 -->
+                <div class="modal pd30"> 
+                    <div class="bg_line"></div>
+                    <h3 class="txt_c pb30">Reciept</h3>
+                    <div class="modal_btn">
+                        <img src="./lib/images/receipt_close_icon.png" alt="receipt_close">
+                    </div>
+                    <ul class="modal_img_wrap flex space_around txt_c">
+                    </ul>
+
+                    <ul class="modal_info pt50">
+                        <li>
+                            <span>주문번호</span>
+                            <span id="ordernumber"></span>
+                        </li>
+                        <li>
+                            <span>거래일시</span>
+                            <span id="date"></span>
+                        </li>
+                        <li>
+                            <span>상품명</span>
+                            <span id="name"></span>
+                        </li>
+                        <li>
+                            <span>키워드</span>
+                            <span id="keyword"></span>
+                        </li>
+                        <li>
+                            <span>회사명</span>
+                            <span>&#60;/DEVELOPER&#62;</span>
+                        </li>
+                    </ul>
+                    <div class="modal_txt txt_c pt50 pb80">
+                        <p>구매가 성공적으로 완료되었습니다.</p>
+                    </div>
+                </div>
+                <!-- 구매내역 -->
+                <div class="order_list pd30">
+                        <div class="bg_line"></div>
+                        <h3 class="txt_c pb30">Order List</h3>
+                        <div class="order_list_btn">
+                            <img src="./lib/images/receipt_close_icon.png" alt="receipt_close">
+                        </div>
+                        <ul class="order_img_wrap flex space_around txt_c">
+                    
+                        </ul>
+                            <ul class="order_info pt50">
+                                <li>
+                                    <span>주문번호</span>
+                                    <span id="ordernumber_order"></span>
+                                </li>
+                                <li>
+                                    <span>거래일시</span>
+                                    <span id="date_order"></span>
+                                </li>
+                                <li>
+                                    <span>상품명</span>
+                                    <span id="name_order"></span>
+                                </li>
+                                <li>
+                                    <span>키워드</span>
+                                    <span id="keyword_order"></span>
+                                </li>
+                                <li>
+                                    <span>회사명</span>
+                                    <span>&#60;/DEVELOPER&#62;</span>
+                                </li>
+                            </ul>
+                        <div class="txt_c pt50 pb30">
+                            <p>구매내역을 확인해 보세요!</p>
+                        </div>
+                </div>
+                <!-- 구매내역 없는 경우 -->
+                <div class="order_empty flex f_center">
+                    <div class="order_empty_btn">
+                        <img src="./lib/images/receipt_close_icon.png" alt="receipt_close">
+                    </div>
+                    <div class="order_empty_inner txt_c">
+                        <p>아직 구매한 상품이 없습니다.</p>
+                        <p>원하는 개발자를 구매해 보세요!</p>
+                        <p class="empty_bg"><img src="./lib/images/shopping_remove_ic_icon.png" alt=""></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inner">
+                <h3 class="con_tit review_space pt10 pb10 mb50 txt_c">Review</h3>
+                <div class="review_wrap">
+                    <div class="review review_pre">
+                        <div class="review_mg">
+                            <div class="review_top">
+                                <div class="review_img"></div>
+                                <textarea class="review_name" maxlength="20" placeholder="닉네임을 입력해주세요." onfocus="this.placeholder = ''" onblur="this.placeholder = '닉네임을 입력해주세요.'"></textarea>
+                            </div>
+                            <div class="review_bt">
+                                <textarea class="review_text" placeholder="프로젝트와 관련된 리뷰를 작성해주세요." onfocus="this.placeholder = ''" onblur="this.placeholder = '프로젝트와 관련된 리뷰를 작성해주세요.'"></textarea>
+                                <div class="review_add">등록</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="json_sel"></div> <!-- 넣기 위한 용도 -->
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <!-- //content_wrap -->
+    <!-- footer 영역입니다. (태윤님) -->
+    <footer>
+        <div class="inner">
+            <div class="card_style">
+                <div class="developer mb15">&#60;DEVELOPER&#62;</div>
+                <div class="circle mb15">
+                    <span class="c1"></span>
+                    <span class="c2"></span>
+                    <span class="c3"></span>
+                    <span class="c4"></span>
+                </div>
+                <div class="front mb05">FRONT-END DEVELOPERS</div>
+                <div class="team_pj">TEAM PROJECT</div>
+                <div class="developer mt20">&#60;/DEVELOPER&#62;</div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer -->
+</body>
+</html>

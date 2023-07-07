@@ -1,0 +1,16 @@
+/*.txt_gradient { background: linear-gradient(45deg, #A8C8EA , #7B53A2); color: transparent; -webkit-background-clip: text; }*/
+
+.gradient { background-image: linear-gradient(to right, #A8C8EA, #7B53A2); background-size: 200% auto; color: transparent; -webkit-background-clip: text; /*animation: gradient 5s ease infinite;*/ color:#FFF; }
+.sec_1 { position: relative; background: url('../images/img_main.png') center no-repeat; }
+.sec_1 > img { position: absolute; top:50%; left: 50%; transform:translate(-50%, -50%); }
+
+.skill_list > li { text-align: center; }
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @media screen {
+    
+  }
