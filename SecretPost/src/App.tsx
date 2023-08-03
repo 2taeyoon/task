@@ -1,10 +1,17 @@
 import React from 'react';
 import './App.css';
+import { Outlet, useLocation } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
 
-const App = () => {
+
+const App:React.FC = () => {
+    const location = useLocation();
+    const showFooter:boolean = location.pathname !== '/';
+
     return (
         <div className="App">
-            안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요 안녕하세요안녕하세요 안녕하세요 안녕하세요 안녕하세요
+            <Outlet/>
+            { showFooter && <Footer/> }
         </div>
     );
 }

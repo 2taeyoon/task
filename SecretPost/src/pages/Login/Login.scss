@@ -1,0 +1,18 @@
+@import '../mixin.scss';
+
+.login_wrap { @include flexColumnCenter; @include position50(45%); }
+
+// LoginIcon component start!
+.login_icon { display: flex; align-items: center; @include wH(300px, 50px); margin: 10px 0; padding: 0 15px; cursor: pointer;
+    .login_logo { @include wH(25px, 25px); }
+    .login_text { display: flex; justify-content: center; width: calc(100% - 25px); font-weight: 600; }
+}
+// LoginIcon component end!
+
+// SecretLogo component start!
+.secret_logo { @include flexColumnCenter; padding-bottom: 15px;
+    div { margin: 5px 0; }
+    .secret_post_image { @include wH(150px, 150px); @include bgRPS; background-image: url('../../../public/image/secret_post_image_logo.png'); }
+    .secret_post_text { @include wH(236px, 33px); @include bgRPS; background-image: url('../../../public/image/secret_post_text_logo.png'); }
+}
+// SecretLogo component end!
