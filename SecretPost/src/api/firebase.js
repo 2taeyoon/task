@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -12,26 +12,35 @@ const firebaseConfig = {
 };
 
 initializeApp(firebaseConfig);
-const provider = new GoogleAuthProvider();
+
+
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 const auth = getAuth();
 
-export const googleLogin = async (homeLocation) => {
-    return signInWithPopup(auth, provider)
+export const googleLogin = async (/*homeLocation*/) => {
+    return signInWithPopup(auth, googleProvider)
         .then((result) => {
             // 구글 Access Token을 가져올 수 있습니다. 이를 사용하여 구글 API에 접근할 수 있습니다.
             // const credential = GoogleAuthProvider.credentialFromResult(result);
             // const token = credential.accessToken;
-            homeLocation('/home');
-
-            // 로그인된 사용자 정보
-            //const user = result.user;
+            //window.location.replace('/home');
+            //window.history.replaceState(null, '', '/home');
+            
+            const userUid = result.user.uid; // firebase user uid
+            const userPhotoURL = result.user.photoURL; // firebase user photoURL
+            const user = {
+                userUid,
+                userPhotoURL
+            }
+            localStorage.setItem('user', JSON.stringify(user)); // 로컬스토리지에 넣겠다 문자열로
+            window.location.replace('/home');
         })
         .catch((error) => {
-            // 에러 처리
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log('errorCode',errorCode);
-            console.log('errorMessage',errorMessage);
+            console.log('에러 코드',errorCode);
+            console.log('에러 메시지',errorMessage);
             // 사용된 계정의 이메일
             //const email = error.customData.email;
             //console.log('email',email);
@@ -40,3 +49,22 @@ export const googleLogin = async (homeLocation) => {
             //console.log('credential',credential)
         });
 };
+
+export const githubLogin = async () => {
+    return signInWithPopup(auth, githubProvider)
+        .then((result) => {
+            window.location.replace('/home');
+            const user = result.user;
+            console.log('user',user)
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log('에러 코드', errorCode);
+            console.log('에러 메시지', errorMessage);
+        });
+}
+
+
+
+//localStorage.removeItem('user');

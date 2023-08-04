@@ -58,3 +58,4 @@ textarea { border: unset; resize: none; }
 textarea:focus { outline: none; }
 
 p { letter-spacing: 0.5px; line-height: 130%; }
+body { background: #171717; }
