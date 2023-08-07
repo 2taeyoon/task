@@ -5,6 +5,10 @@ import { googleLogin, githubLogin } from '../../api/firebase';
 
 
 const LoginWrap = () => {
+    const stringUser: string | null = localStorage.getItem('user');
+    const user = stringUser ? JSON.parse(stringUser) : null
+    console.log('user',user);
+
     return (
         <div className='login_wrap'>
             <SecretLogo />
