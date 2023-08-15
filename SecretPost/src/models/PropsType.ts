@@ -1,9 +1,9 @@
 // Login component start!
 export type LoginIconProps = {
+    text: string;
     bgStyle: React.CSSProperties;
     logoStyle: React.CSSProperties;
     colorStyle?: React.CSSProperties;
-    text: string;
     googleLoginHandler?: () => void;
     githubLoginHandler?: () => void;
 };

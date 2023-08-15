@@ -27,13 +27,13 @@ export const googleLogin = async (/*homeLocation*/) => {
             //window.location.replace('/home');
             //window.history.replaceState(null, '', '/home');
             
-            const userUid = result.user; // firebase user uid
-            //const userPhotoURL = result.user.photoURL; // firebase user photoURL
-            // const user = {
-            //     userUid,
-            //     userPhotoURL
-            // }
-            localStorage.setItem('user', JSON.stringify(userUid)); // 로컬스토리지에 넣겠다 문자열로
+            const userUid = result.user.uid; // firebase user uid
+            const userPhotoURL = result.user.photoURL; // firebase user photoURL
+            const user = {
+                userUid,
+                userPhotoURL
+            }
+            localStorage.setItem('user', JSON.stringify(user)); // 로컬스토리지에 넣겠다 문자열로
             window.location.replace('/home');
         })
         .catch((error) => {
@@ -53,13 +53,13 @@ export const googleLogin = async (/*homeLocation*/) => {
 export const githubLogin = async () => {
     return signInWithPopup(auth, githubProvider)
         .then((result) => {
-            const userUid = result.user; // firebase user uid
-            //const userPhotoURL = result.user.photoURL; // firebase user photoURL
-            // const user = {
-            //     userUid,
-            //     userPhotoURL
-            // }
-            localStorage.setItem('user', JSON.stringify(userUid)); // 로컬스토리지에 넣겠다 문자열로
+            const userUid = result.user.uid; // firebase user uid
+            const userPhotoURL = result.user.photoURL; // firebase user photoURL
+            const user = {
+                userUid,
+                userPhotoURL
+            }
+            localStorage.setItem('user', JSON.stringify(user)); // 로컬스토리지에 넣겠다 문자열로
             window.location.replace('/home');
         })
         .catch((error) => {
