@@ -9,13 +9,7 @@ export type LoginIconProps = {
 };
 // Login component end!
 
-// User infomation start!
-// export interface UserProviderProps {
-//     children: React.ReactNode;
-// }
-
-// export interface UserInfomation {
-//     userUid: string;
-//     userPhotoURL: string;
-// }
-// User infomation end!
+export type isLoggedInProps = {
+    isLoggedIn: boolean;
+}
+// Login ProtectedRoute End!

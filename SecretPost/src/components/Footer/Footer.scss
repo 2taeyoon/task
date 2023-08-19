@@ -1,5 +1,7 @@
 @import '../../pages/mixin.scss';
 
-.footer_wrap {
-    svg { width: 30px; height: 30px; }
+.footer_wrap { display: flex; align-items: center; justify-content: space-around; position: absolute; bottom: 0; width: 100%; height: 70px; background: #f6f7fb; box-shadow: 0 -2px 0 0 #f1f0f5;
+    svg { width: 35px; height: 35px; fill: #b5b5b8;
+        &:hover { fill: #171717; }
+    }
 }

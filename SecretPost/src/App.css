@@ -1,2 +1,2 @@
 /*::-webkit-scrollbar { display: none; }*/
-.App { position: relative; width: 100%; max-width: 768px; height: 100vh; max-height: 100vh; margin: 0 auto; background: #fdfdfd; color: #171717; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.App { position: relative; width: 100%; max-width: 600px; height: 100vh; max-height: 100vh; margin: 0 auto; background: #fdfdfd; color: #171717; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
