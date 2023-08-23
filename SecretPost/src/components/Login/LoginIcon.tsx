@@ -2,12 +2,12 @@ import React from 'react'
 import { LoginIconProps } from '../../models/PropsType'
 
 
-const LoginIcon = ( {bgStyle, logoStyle, colorStyle, text, googleLoginHandler, githubLoginHandler}: LoginIconProps ) => {
+const LoginIcon = ( {bgStyle, logoStyle, colorStyle, text, GoogleLoginHandler, GithubLoginHandler}: LoginIconProps ) => {
     const handleLoginClick = () => {
-        if(googleLoginHandler){
-            googleLoginHandler();
-        } else if(githubLoginHandler){
-            githubLoginHandler();
+        if(GoogleLoginHandler){
+            GoogleLoginHandler();
+        } else if(GithubLoginHandler){
+            GithubLoginHandler();
         }
     };
     return (
