@@ -1,22 +1,36 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Post from './pages/Post/Post';
 import Upload from './pages/Upload/Upload';
 import Mypage from './pages/Mypage/Mypage';
 import Login from './pages/Login/Login';
+import { UserState, setUser } from './api/reducers';
 
 
 const App: React.FC = () => {
-    // type isLoggedInProps = {
-    //     isLoggedIn: boolean;
-    // }
-    //const isLoggedIn = useSelector((state: isLoggedInProps) => state.isLoggedIn);
-    //console.log('isLoggedIn',isLoggedIn)
 
+    //const dispatch = useDispatch();
+    const stringUser: string | null = localStorage.getItem('user');
+    const userInfo = stringUser ? JSON.parse(stringUser) : null;
+    
+    
+    // console.log('aaaaaaaaaa',isAuthenticated)
+    // if(userInfo){
+    //     dispatch(setUser(userInfo));
+    // }
+
+    // useEffect(() => {
+    //     if (userInfo) {
+    //         dispatch(setUser(userInfo));
+    //     }
+    // }, [userInfo, dispatch]);
+
+    //const isAuthenticated = useSelector((state: { user: UserState }) => state.user.isAuthenticated)
+    
     return (
         <div className="App">
             <BrowserRouter>
@@ -24,27 +38,27 @@ const App: React.FC = () => {
                     <Route path="/" element={<Login />} />
                     <Route
                         path="/home"
-                        // element={ isLoggedIn ? <Home /> : <Navigate to="/" replace /> }
+                        // element={ isAuthenticated ? <Home /> : <Navigate to="/" replace /> }
                         element={<Home />}
                     />
                     <Route
                         path="/post"
-                        //element={ isLoggedIn ? <Post /> : <Navigate to="/" replace /> }
+                        //element={ isAuthenticated ? <Post /> : <Navigate to="/" replace /> }
                         element={<Home />}
                     />
                     <Route
                         path="/upload"
-                        //element={ isLoggedIn ? <Upload /> : <Navigate to="/" replace /> }
+                        //element={ isAuthenticated ? <Upload /> : <Navigate to="/" replace /> }
                         element={<Home />}
                     />
                     <Route
                         path="/mypage"
-                        //element={ isLoggedIn ? <Mypage /> : <Navigate to="/" replace /> }
+                        //element={ isAuthenticated ? <Mypage /> : <Navigate to="/" replace /> }
                         element={<Home />}
                     />
                 </Routes>
             </BrowserRouter>
-            {/* isLoggedIn && <Footer />*/}
+            { /*<Footer />*/ }
         </div>
     );
 }

@@ -9,23 +9,23 @@ export type LoginIconProps = {
 };
 // Login component end!
 
-// Login ProtectedRoute Start!
-export type isLoggedInProps = {
-    isLoggedIn: boolean;
-}
-// Login ProtectedRoute End!
-
-
 // export interface UserProps {
 //     uid: string;
 //     photoURL: string;
 // }
 
-export interface UserProps {
-    uid: string | null;
-    photoURL: string | '';
-}
+// export interface UserProps {
+//     uid: string;
+//     photoURL: string | '';
+//     isAuthenticated: boolean;
+// }
 
-declare module 'react-redux' {
-    interface DefaultRootState extends UserProps {}
-}
+// declare module 'react-redux' {
+//     interface DefaultRootState extends UserProps {}
+// }
+
+// export interface UserState {
+//     isAuthenticated: boolean;
+//     uid: string | null;
+//     photoURL: string | null;
+// }

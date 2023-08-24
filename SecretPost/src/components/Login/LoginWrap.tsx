@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import LoginIcon from './LoginIcon';
 import SecretLogo from './SecretLogo';
 import { githubLogin } from '../../api/firebase';
-import { DefaultRootState, useDispatch, useSelector } from 'react-redux';
-import { setUser, store } from '../../api/reducers';
+import { useDispatch, useSelector } from 'react-redux';
+import { UserState, setUser } from '../../api/reducers';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
-import { UserProps } from '../../models/PropsType';
 
 
 const LoginWrap = () => {
@@ -14,6 +13,11 @@ const LoginWrap = () => {
     // console.log('user',user);
 
     const dispatch = useDispatch();
+    const isAuthenticated = useSelector((state: { user: UserState }) => state.user.isAuthenticated)
+
+    useEffect(() => {
+        console.log('isAuthenticated:', isAuthenticated);
+    }, [isAuthenticated]);
 
     const GoogleLoginHandler = async () => {
         const auth = getAuth();
@@ -21,21 +25,21 @@ const LoginWrap = () => {
         try {
             const result = await signInWithPopup(auth, googleProvider);
             const { uid, photoURL } = result.user;
-            const userInfo: UserProps = {
+            const userInfo = {
+                isAuthenticated: true,
                 uid,
                 photoURL
-            }
-            dispatch(setUser(userInfo)); // Redux store에 사용자 정보 저장
-
-            //console.log('store.getState', dispatch(setUser(user)));
+            };
+            localStorage.setItem('user', JSON.stringify(userInfo));
+            dispatch(setUser(userInfo));
+            window.location.replace('/home');
+            //console.log('isAuthenticated after login:', userInfo.isAuthenticated);
+            //console.log('result.user',result.user) // 확인하기 위한 용도
         } catch (error) {
             console.error('Error message:', error);
         }
     }
-    
-    const user:UserProps = useSelector((state: DefaultRootState) => state.user);
-    console.log('user',user)
-    
+
     return (
         <div className='login_wrap'>
             <SecretLogo />
