@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import LoginIcon from './LoginIcon';
 import SecretLogo from './SecretLogo';
 import { githubLogin } from '../../api/firebase';
-import { useDispatch, useSelector } from 'react-redux';
-import { UserState, setUser } from '../../api/reducers';
+import { useDispatch } from 'react-redux';
+import { setUser } from '../../api/reducers';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 
 
@@ -13,26 +13,27 @@ const LoginWrap = () => {
     // console.log('user',user);
 
     const dispatch = useDispatch();
-    const isAuthenticated = useSelector((state: { user: UserState }) => state.user.isAuthenticated)
+    //const isAuthenticated = useSelector((state: { user: UserState }) => state.user.uid)
 
-    useEffect(() => {
-        console.log('isAuthenticated:', isAuthenticated);
-    }, [isAuthenticated]);
+    // useEffect(() => {
+    //     console.log('isAuthenticated:', isAuthenticated);
+    // }, [isAuthenticated]);
 
     const GoogleLoginHandler = async () => {
         const auth = getAuth();
         const googleProvider = new GoogleAuthProvider();
         try {
             const result = await signInWithPopup(auth, googleProvider);
-            const { uid, photoURL } = result.user;
-            const userInfo = {
-                isAuthenticated: true,
-                uid,
-                photoURL
-            };
-            localStorage.setItem('user', JSON.stringify(userInfo));
+            const uid = result.user.uid;
+            const userInfo = { uid: uid };
             dispatch(setUser(userInfo));
-            window.location.replace('/home');
+            localStorage.setItem('user', JSON.stringify(userInfo));
+            const getUser: string | null = localStorage.getItem('user');
+            const user = getUser ? JSON.parse(getUser) : null;
+
+            if (user) {
+                window.location.replace('/home');
+            }
             //console.log('isAuthenticated after login:', userInfo.isAuthenticated);
             //console.log('result.user',result.user) // 확인하기 위한 용도
         } catch (error) {
