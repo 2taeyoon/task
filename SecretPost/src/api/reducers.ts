@@ -1,7 +1,7 @@
 import { createSlice, configureStore, PayloadAction } from '@reduxjs/toolkit';
 
 
-interface UserState {
+export interface UserState {
     uid: string | null;
 }
 

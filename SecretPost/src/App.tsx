@@ -11,7 +11,7 @@ import Login from './pages/Login/Login';
 
 const App: React.FC = () => {
     const stringUser: string | null = localStorage.getItem('user');
-    const userInfo = stringUser ? JSON.parse(stringUser) : null;
+    const getUser = stringUser ? JSON.parse(stringUser) : null;
 
     return (
         <div className="App">
@@ -23,23 +23,23 @@ const App: React.FC = () => {
                     />
                     <Route
                         path="/home"
-                        element={ userInfo ? <Home /> : <Navigate to="/" replace /> }
+                        element={ getUser ? <Home /> : <Navigate to="/" replace /> }
                     />
                     <Route
                         path="/post"
-                        element={ userInfo ? <Post /> : <Navigate to="/" replace /> }
+                        element={ getUser ? <Post /> : <Navigate to="/" replace /> }
                     />
                     <Route
                         path="/upload"
-                        element={ userInfo ? <Upload /> : <Navigate to="/" replace /> }
+                        element={ getUser ? <Upload /> : <Navigate to="/" replace /> }
                     />
                     <Route
                         path="/mypage"
-                        element={ userInfo ? <Mypage /> : <Navigate to="/" replace /> }
+                        element={ getUser ? <Mypage /> : <Navigate to="/" replace /> }
                     />
                     
                 </Routes>
-                { userInfo && <Footer/>}
+                { getUser && <Footer/>}
             </BrowserRouter>
         </div>
     );
