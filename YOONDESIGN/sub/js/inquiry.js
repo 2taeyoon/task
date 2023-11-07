@@ -7,7 +7,7 @@ const phone3 = document.getElementById('phone3');
 const email = document.getElementById('email');
 const subject = document.getElementById('subject');
 const description = document.getElementById('description');
-const recaptcha = document.querySelector('.g-recaptcha');
+//const recaptcha = document.querySelector('.g-recaptcha');
 const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
 agree.addEventListener('change', () => {
@@ -49,25 +49,26 @@ const submitOk = () => {
     } else if (!emailRegex.test(email.value)) {
         return alert('올바른 이메일 주소를 입력해주세요.');
     } else {
-        recaptcha.classList.add('on');
+        //recaptcha.classList.add('on');
+        alert("미구현");
     }
     
 
-    if(recaptcha && !isCheck){
-        alert("'로봇이 아닙니다'를 체크해주세요.");
-        return false;
-    } else {
-        yourName.value = "";
-        phone1.value = "";
-        phone2.value = "";
-        phone3.value = "";
-        email.value = "";
-        subject.value = "";
-        description.value = "";
-        agree.checked = false;
-        recaptcha.classList.remove('on');
+    // if(recaptcha && !isCheck){
+    //     alert("'로봇이 아닙니다'를 체크해주세요.");
+    //     return false;
+    // } else {
+    //     yourName.value = "";
+    //     phone1.value = "";
+    //     phone2.value = "";
+    //     phone3.value = "";
+    //     email.value = "";
+    //     subject.value = "";
+    //     description.value = "";
+    //     agree.checked = false;
+    //     //recaptcha.classList.remove('on');
 
-        alert("Action 및 Php 미구현");
-        return true;
-    }
+    //     alert("미구현");
+    //     return true;
+    // }
 }
