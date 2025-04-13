@@ -49,8 +49,8 @@ HTML, CSS, JavaScript 기반으로 제작되었으며, PC 및 모바일 대응�
 
 ## 📷 미리보기
 
-![folder_image](./readme/netmarble1.jpg)
-![folder_image](./readme/netmarble2.jpg)
-![folder_image](./readme/netmarble3.jpg)
-![folder_image](./readme/netmarble4.jpg)
-![folder_image](./readme/netmarble5.jpg)
+![image1](./readme/netmarble1.jpg)
+![image2](./readme/netmarble2.jpg)
+![image3](./readme/netmarble3.jpg)
+![image4](./readme/netmarble4.jpg)
+![image5](./readme/netmarble5.jpg)
