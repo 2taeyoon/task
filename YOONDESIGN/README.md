@@ -51,7 +51,7 @@ HTML, SCSS, JavaScript 기반으로 개발되었으며, 브랜드 아이덴티�
 
 ## 📷 미리보기
 
-![folder_image](./readme/yoondesign1.png)
-![folder_image](./readme/yoondesign2.png)
-![folder_image](./readme/yoondesign3.png)
-![folder_image](./readme/yoondesign4.png)
+![folder_image](./readme/yoondesign1.jpg)
+![folder_image](./readme/yoondesign2.jpg)
+![folder_image](./readme/yoondesign3.jpg)
+![folder_image](./readme/yoondesign4.jpg)
