@@ -57,11 +57,11 @@ MyDays는 Firebase를 기반으로 한 **감성 D-Day 관리 및 기록 웹 애�
 
 ## 📷 미리보기
 
-![folder_image](./readme/mydays1.jpg)
-![folder_image](./readme/mydays2.jpg)
-![folder_image](./readme/mydays3.jpg)
-![folder_image](./readme/mydays4.jpg)
-![folder_image](./readme/mydays5.jpg)
-![folder_image](./readme/mydays6.jpg)
-![folder_image](./readme/mydays7.jpg)
-![folder_image](./readme/mydays8.jpg)
+![image1](./readme/mydays1.jpg)
+![image2](./readme/mydays2.jpg)
+![image3](./readme/mydays3.jpg)
+![image4](./readme/mydays4.jpg)
+![image5](./readme/mydays5.jpg)
+![image6](./readme/mydays6.jpg)
+![image7](./readme/mydays7.jpg)
+![image8](./readme/mydays8.jpg)
