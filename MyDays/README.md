@@ -48,22 +48,20 @@ MyDays는 Firebase를 기반으로 한 **감성 D-Day 관리 및 기록 웹 애�
 
 ---
 
-## 📷 미리보기
-
-<div style="display: grid; grid-auto-flow: column; grid-auto-columns: 300px; gap: 12px; overflow-x: auto; height: 550px; scroll-snap-type: x mandatory;">
-  <img src="./readme/mydays1.jpg" style="object-fit:cover; scroll-snap-align:start;" />
-  <img src="./readme/mydays2.jpg" style="object-fit:cover; scroll-snap-align:start;" />
-  <img src="./readme/mydays3.jpg" style="object-fit:cover; scroll-snap-align:start;" />
-  <img src="./readme/mydays4.jpg" style="object-fit:cover; scroll-snap-align:start;" />
-  <img src="./readme/mydays5.jpg" style="object-fit:cover; scroll-snap-align:start;" />
-  <img src="./readme/mydays6.jpg" style="object-fit:cover; scroll-snap-align:start;" />
-  <img src="./readme/mydays7.jpg" style="object-fit:cover; scroll-snap-align:start;" />
-  <img src="./readme/mydays8.jpg" style="object-fit:cover; scroll-snap-align:start;" />
-</div>
-
----
-
 ## 📎 기타
 
 - 본 프로젝트는 개인 포트폴리오 용도로 제작된 **자체 기획 웹앱**입니다.
 - Firebase 연동이 필요하므로 직접 배포 시에는 API 키 및 설정이 필요합니다.
+
+---
+
+## 📷 미리보기
+
+![folder_image](./readme/mydays1.png)
+![folder_image](./readme/mydays2.png)
+![folder_image](./readme/mydays3.png)
+![folder_image](./readme/mydays4.png)
+![folder_image](./readme/mydays5.png)
+![folder_image](./readme/mydays6.png)
+![folder_image](./readme/mydays7.png)
+![folder_image](./readme/mydays8.png)

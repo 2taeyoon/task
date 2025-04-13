@@ -43,17 +43,15 @@ HTML, SCSS, JavaScript 기반으로 개발되었으며, 브랜드 아이덴티�
 
 ---
 
-## 📷 미리보기
+## 📎 참고
 
-<div style="display: grid; grid-auto-flow: column; grid-auto-columns: 600px; gap: 12px; overflow: auto; height: 500px; scroll-snap-type: x mandatory;">
-  <img src="./readme/yoondesign1.jpg" style="object-fit:cover; scroll-snap-align:start;"/>
-  <img src="./readme/yoondesign2.jpg" style="object-fit:cover; scroll-snap-align:start;"/>
-  <img src="./readme/yoondesign3.jpg" style="object-fit:cover; scroll-snap-align:start;"/>
-	<img src="./readme/yoondesign4.jpg" style="object-fit:cover; scroll-snap-align:start;"/>
-</div>
+- 본 프로젝트는 실제 기업 사이트와 무관한 개인 포트폴리오 목적의 사이트입니다.
 
 ---
 
-## 📎 기타
+## 📷 미리보기
 
-- 본 프로젝트는 실제 기업 사이트와 무관한 개인 포트폴리오 목적의 사이트입니다.
+![folder_image](./readme/yoondesign1.png)
+![folder_image](./readme/yoondesign2.png)
+![folder_image](./readme/yoondesign3.png)
+![folder_image](./readme/yoondesign4.png)

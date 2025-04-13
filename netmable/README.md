@@ -41,19 +41,16 @@ HTML, CSS, JavaScript 기반으로 제작되었으며, PC 및 모바일 대응�
 
 ---
 
-## 📷 미리보기
-
-<div style="display: grid; grid-auto-flow: column; grid-auto-columns: 600px; gap: 12px; overflow: auto; height: 600px; padding-bottom: 8px; scroll-snap-type: x mandatory;">
-  <img src="./readme/netmarble1.jpg" style="object-fit:cover;scroll-snap-align:start;" />
-  <img src="./readme/netmarble2.jpg" style="object-fit:cover;scroll-snap-align:start;" />
-  <img src="./readme/netmarble3.jpg" style="object-fit:cover;scroll-snap-align:start;" />
-	<img src="./readme/netmarble4.jpg" style="object-fit:cover;scroll-snap-align:start;" />
-	<img src="./readme/netmarble5.jpg" style="object-fit:cover;scroll-snap-align:start;" />
-</div>
-
----
-
 ## 📎 참고
 
 본 프로젝트는 학습 목적으로 제작된 클론코딩이며, 실제 Netmarble 사이트와 무관합니다.
 
+---
+
+## 📷 미리보기
+
+![folder_image](./readme/netmarble1.png)
+![folder_image](./readme/netmarble2.png)
+![folder_image](./readme/netmarble3.png)
+![folder_image](./readme/netmarble4.png)
+![folder_image](./readme/netmarble5.png)
